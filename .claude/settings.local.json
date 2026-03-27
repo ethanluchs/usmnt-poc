@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-react-app:*)",
+      "Read(//c/Users/eluch/OneDrive/Desktop/Projects/**)",
+      "Bash(npm create:*)",
+      "Bash(find 'C:\\\\Users\\\\eluch\\\\OneDrive\\\\Desktop\\\\Projects\\\\usmnt poc' -not -path */node_modules/* -not -path */.next/* -type f)",
+      "Bash(grep -E \"\\\\.\\(js|jsx|ts|tsx|json|css|md\\)$\")"
+    ]
+  }
+}
