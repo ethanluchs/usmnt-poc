@@ -51,27 +51,28 @@ export default function Game() {
     const loadDaily = async () => {
       try {
         const today = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
-        console.log(today)
+        console.log("Game: loading daily puzzle for", today)
         const ref = doc(db, "dailyPuzzles", today)
         const snap = await getDoc(ref)
+        console.log("Game: getDoc completed", { mounted, hasSnap: !!snap })
         if (!mounted) return
-        if (snap.exists()) {
+        const exists = typeof snap?.exists === "function" ? snap.exists() : !!snap?.exists
+        console.log("Game: doc exists?", exists)
+        if (exists) {
           const data = snap.data()
-          // data may either be an array at root or contain a field like `stops`.
-          let stops = null
-          if (Array.isArray(data)) stops = data
-          else if (Array.isArray(data.stops)) stops = data.stops
-          else if (Array.isArray(data.points)) stops = data.points
+          console.log("Game: daily puzzle data:", data)
+          // Expect `data.locations` to be an array of { lat, lng, city, country, label }
+          let stops = Array.isArray(data.locations) ? data.locations : null
 
           if (stops && stops.length > 0) {
             const playerFromDaily = {
               name: `Daily ${today}`,
               stops: stops.map((pt) => ({
-                lat: pt.latitude ?? pt.lat ?? pt.latlng?.[0] ?? pt.lat,
-                lng: pt.longitude ?? pt.lng ?? pt.latlng?.[1] ?? pt.lng,
-                city: pt.city || pt.label || "",
+                lat: pt.lat,
+                lng: pt.lng,
+                city: pt.city || "",
                 country: pt.country || "",
-                label: pt.label || pt.city || "",
+                label: pt.label || "",
               })),
               position: "",
               caps: 0,
@@ -79,7 +80,11 @@ export default function Game() {
             }
             cardSaved.current = false
             setState(initState(playerFromDaily))
+          } else {
+            console.log("Game: daily puzzle doc found but `locations` is empty or missing")
           }
+        } else {
+          console.log(`Game: no daily puzzle document found for ${today}, falling back to local players`)
         }
       } catch (e) {
         console.error("Failed to load daily puzzle from Firestore", e)
