@@ -6,6 +6,8 @@ import { PLAYERS, getTodaysPlayer } from "../lib/players"
 import GuessInput from "./GuessInput"
 import ResultCard from "./ResultCard"
 import CardCollection from "./CardCollection"
+import { db } from "../firebase"
+import { doc, getDoc } from "firebase/firestore"
 
 const WorldMap = dynamic(() => import("./WorldMap"), { ssr: false })
 
@@ -39,9 +41,55 @@ function initState(player) {
 }
 
 export default function Game() {
-  const [state, setState]           = useState(() => initState(getTodaysPlayer()))
+  const [state, setState] = useState(() => initState(getTodaysPlayer()))
   const [showCollection, setShowCollection] = useState(false)
   const cardSaved = useRef(false)
+
+  // Try to load today's puzzle from Firestore collection `dailyPuzzles/{YYYY-MM-DD}`
+  useEffect(() => {
+    let mounted = true
+    const loadDaily = async () => {
+      try {
+        const today = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
+        console.log(today)
+        const ref = doc(db, "dailyPuzzles", today)
+        const snap = await getDoc(ref)
+        if (!mounted) return
+        if (snap.exists()) {
+          const data = snap.data()
+          // data may either be an array at root or contain a field like `stops`.
+          let stops = null
+          if (Array.isArray(data)) stops = data
+          else if (Array.isArray(data.stops)) stops = data.stops
+          else if (Array.isArray(data.points)) stops = data.points
+
+          if (stops && stops.length > 0) {
+            const playerFromDaily = {
+              name: `Daily ${today}`,
+              stops: stops.map((pt) => ({
+                lat: pt.latitude ?? pt.lat ?? pt.latlng?.[0] ?? pt.lat,
+                lng: pt.longitude ?? pt.lng ?? pt.latlng?.[1] ?? pt.lng,
+                city: pt.city || pt.label || "",
+                country: pt.country || "",
+                label: pt.label || pt.city || "",
+              })),
+              position: "",
+              caps: 0,
+              line: "",
+            }
+            cardSaved.current = false
+            setState(initState(playerFromDaily))
+          }
+        }
+      } catch (e) {
+        console.error("Failed to load daily puzzle from Firestore", e)
+      }
+    }
+    loadDaily()
+    return () => {
+      mounted = false
+    }
+  }, [])
 
   const { player, revealedCount, voluntaryReveals, wrongGuesses, gameOver, won } = state
   const score        = calcScore(voluntaryReveals, wrongGuesses.length)
