@@ -1,5 +1,10 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import { useAuth } from "./AuthProvider"
+import { db } from "../firebase"
+import { collection, getDocs, onSnapshot } from "firebase/firestore"
+
 const RARITY = {
   legendary: {
     label: "Legendary", stars: 5,
@@ -92,8 +97,45 @@ function TradeCard({ card }) {
 export default function CardCollection({ onClose }) {
   if (typeof window === "undefined") return null
 
-  const cards = JSON.parse(localStorage.getItem("trailblazer-cards") || "[]")
-  const sorted = [...cards].sort((a, b) => {
+  const { user } = useAuth()
+  const [masterCards, setMasterCards] = useState([]) // [{ id, imageURL, name? }]
+  const [unlockedMap, setUnlockedMap] = useState(new Map()) // cardId -> unlocked_at
+
+  useEffect(() => {
+    // load master cards once
+    let mounted = true
+    ;(async () => {
+      try {
+        const snap = await getDocs(collection(db, "master_cards"))
+        if (!mounted) return
+        const masters = snap.docs.map(d => ({ id: d.id, ...(d.data() || {}) }))
+        setMasterCards(masters)
+      } catch (e) {
+        console.error("Failed to load master_cards", e)
+      }
+    })()
+    return () => { mounted = false }
+  }, [])
+
+  useEffect(() => {
+    if (!user) {
+      setUnlockedMap(new Map())
+      return
+    }
+    const coll = collection(db, "users", user.uid, "cards")
+    const unsub = onSnapshot(coll, (snap) => {
+      const m = new Map()
+      snap.docs.forEach(d => {
+        m.set(d.id, d.data()?.unlocked_at || d.data()?.unlockedAt || null)
+      })
+      setUnlockedMap(m)
+    }, (err) => console.error("users/{uid}/cards snapshot error", err))
+    return () => unsub()
+  }, [user])
+
+  // If not signed in, fall back to localStorage cards (existing behavior)
+  const localCards = JSON.parse(localStorage.getItem("trailblazer-cards") || "[]")
+  const sorted = [...localCards].sort((a, b) => {
     const rd = (RARITY_ORDER[a.rarity] ?? 4) - (RARITY_ORDER[b.rarity] ?? 4)
     return rd !== 0 ? rd : new Date(b.date) - new Date(a.date)
   })
@@ -114,7 +156,7 @@ export default function CardCollection({ onClose }) {
               Collection
             </h2>
             <p className="text-[10px] text-slate-400" style={{ fontFamily: "Inter, sans-serif" }}>
-              {cards.length} card{cards.length !== 1 ? "s" : ""} earned
+              {masterCards.length} card{masterCards.length !== 1 ? "s" : ""} earned
             </p>
           </div>
           <button onClick={onClose}
@@ -125,14 +167,41 @@ export default function CardCollection({ onClose }) {
 
         {/* Cards */}
         <div className="overflow-y-auto p-5">
-          {sorted.length === 0 ? (
-            <p className="text-center text-slate-500 text-sm py-12" style={{ fontFamily: "Inter, sans-serif" }}>
-              No cards yet. Finish a game to earn your first.
-            </p>
+          {/* If user is signed in, show master grid with unlock state; otherwise show local saved cards */}
+          {user ? (
+            masterCards.length === 0 ? (
+              <p className="text-center text-slate-500 text-sm py-12" style={{ fontFamily: "Inter, sans-serif" }}>
+                Loading collection...
+              </p>
+            ) : (
+              <div className="flex flex-wrap gap-3 justify-center">
+                {masterCards.map((m) => {
+                  const unlocked = unlockedMap.has(m.id)
+                  return (
+                    <div key={m.id} className="relative flex-shrink-0 rounded-2xl border-2 border-white/5 bg-slate-800 overflow-hidden" style={{ width: 120, height: 172 }}>
+                      {unlocked ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={m.imageURL} alt={m.name || m.id} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="w-full h-full bg-gray-400/30 flex items-center justify-center">
+                          <div className="w-20 h-24 bg-gray-500/40" />
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            )
           ) : (
-            <div className="flex flex-wrap gap-3 justify-center">
-              {sorted.map((card, i) => <TradeCard key={i} card={card} />)}
-            </div>
+            sorted.length === 0 ? (
+              <p className="text-center text-slate-500 text-sm py-12" style={{ fontFamily: "Inter, sans-serif" }}>
+                No cards yet. Finish a game to earn your first.
+              </p>
+            ) : (
+              <div className="flex flex-wrap gap-3 justify-center">
+                {sorted.map((card, i) => <TradeCard key={i} card={card} />)}
+              </div>
+            )
           )}
         </div>
 

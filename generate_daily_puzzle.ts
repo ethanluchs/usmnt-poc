@@ -4,7 +4,6 @@ import * as admin from "firebase-admin";
 // No need for GeoPoint from @google-cloud/firestore for this specific structure,
 // as lat/lng are stored as simple numbers within a map.
 
-// TODO: Replace with the path to your downloaded service account key JSON file
 // Example: "./path/to/your-service-account-key.json"
 const serviceAccount = require("../PrivateKeys/soccerguesser-3eb7e-firebase-adminsdk-fbsvc-c7ebfe036c.json");
 
