@@ -3,7 +3,7 @@ import AuthProvider from '../components/AuthProvider'
 
 export const metadata = {
   title: 'Trailblazer',
-  description: 'Guess the USMNT player from their career stops',
+  description: 'Guess the World Cup 2026 player from their career stops',
 }
 
 export default function RootLayout({ children }) {
