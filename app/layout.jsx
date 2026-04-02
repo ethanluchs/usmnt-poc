@@ -2,7 +2,7 @@ import './globals.css'
 import AuthProvider from '../components/AuthProvider'
 
 export const metadata = {
-  title: 'Trailblazer',
+  title: 'Wordle Cup',
   description: 'Guess the World Cup 2026 player from their career stops',
 }
 
