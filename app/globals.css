@@ -12,4 +12,5 @@
 html, body {
   height: 100%;
   font-family: 'FWC2026', sans-serif;
+  overflow: hidden;
 }
