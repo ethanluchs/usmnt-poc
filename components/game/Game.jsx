@@ -24,7 +24,7 @@ export default function Game() {
   return (
     <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-black">
 
-      //Top div w title+theme switcher
+      {/* Top div w title+theme switcher */}
       <div className="absolute top-0 left-0 right-0 flex justify-center items-center py-4 z-10 gap-3">
         <h1 className="text-2xl tracking-widest uppercase text-black dark:text-[#ede8d0]">Wordle Cup</h1>
         <button onClick={toggleTheme} className="flex items-center justify-center text-black dark:text-[#ede8d0] transition-colors">
@@ -40,7 +40,7 @@ export default function Game() {
         </button>
       </div>
 
-    //Map 
+      {/* Map */}
       <ComposableMap projection="geoMercator"
       width={800} height={450}
       style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }}>
@@ -64,7 +64,7 @@ export default function Game() {
         </ZoomableGroup>
       </ComposableMap>
 
-      //Bottom bar contains most other stuff
+      {/* most ui for guessing */}
       <BottomBar />
     </main>
   )
