@@ -4,8 +4,7 @@ import { MOCK_PLAYERS } from "../../lib/mockData"
 
 const btnClass = "border border-black dark:border-[#ede8d0] rounded px-4 py-2 bg-[#ede8d0] dark:bg-black text-black dark:text-[#ede8d0] hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none"
 
-function AutocompleteInput({ onSubmit, disabled }) {
-  const [input, setInput] = useState("")
+function AutocompleteInput({ input, setInput, onSubmit, disabled }) {
   const [showDropdown, setShowDropdown] = useState(false)
 
   const filtered = input.length > 1
@@ -67,13 +66,21 @@ function GuessPills({ incorrectGuesses }) {
 }
 
 export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, solved }) {
+  const [input, setInput] = useState("")
   const isDisabled = solved || incorrectGuesses.length >= 5
+
+  const handleGuess = () => {
+    if (input.trim()) {
+      onGuess(input.trim())
+      setInput("")
+    }
+  }
 
   return (
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3">
       <div className="flex gap-2">
-        <AutocompleteInput onSubmit={onGuess} disabled={isDisabled} />
-        <button onClick={() => {}} disabled={isDisabled} className={btnClass}>Guess</button>
+        <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} />
+        <button onClick={handleGuess} disabled={isDisabled} className={btnClass}>Guess</button>
         <button onClick={onNextStop} disabled={solved} className={btnClass}>Next Stop →</button>
       </div>
       <GuessPills incorrectGuesses={incorrectGuesses} />

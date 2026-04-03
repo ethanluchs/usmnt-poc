@@ -4,14 +4,21 @@ import TopBar from "./TopBar"
 import WorldMap from "./WorldMap"
 import BottomBar from "./BottomBar"
 import LoadingOverlay from "../LoadingOverlay"
+import PuzzleTransition from "./PuzzleTransition"
 import { AnimatePresence } from "framer-motion"
+import { useGameState } from "../../lib/useGameState"
 
 export default function Game() {
   const [isDark, setIsDark] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [showOverlay, setShowOverlay] = useState(true)
-  const [incorrectGuesses] = useState([])
-  const [solved] = useState(false)
+  const [showTransition, setShowTransition] = useState(false)
+
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedCountryCodes, onGuess, onNextStop, onNextPuzzle } = useGameState()
+
+  useEffect(() => {
+    if (solved) setShowTransition(true)
+  }, [solved])
 
   useEffect(() => {
     const dark = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -31,20 +38,29 @@ export default function Game() {
         {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
       </AnimatePresence>
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} />
+      <AnimatePresence>
+        {showTransition && (
+          <PuzzleTransition
+            puzzleNumber={puzzleIndex + 2}
+            onDone={() => { setShowTransition(false); onNextPuzzle() }}
+          />
+        )}
+      </AnimatePresence>
+
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
 
       <WorldMap
         isDark={isDark}
         isDragging={isDragging}
         onMoveStart={() => setIsDragging(true)}
         onMoveEnd={() => setIsDragging(false)}
-        revealedCountryCodes={new Set()}
+        revealedCountryCodes={revealedCountryCodes}
       />
 
       <BottomBar
         incorrectGuesses={incorrectGuesses}
-        onGuess={() => {}}
-        onNextStop={() => {}}
+        onGuess={onGuess}
+        onNextStop={onNextStop}
         solved={solved}
       />
     </main>
