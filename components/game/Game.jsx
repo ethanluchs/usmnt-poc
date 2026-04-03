@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react"
 import { ComposableMap, Geography, Geographies, ZoomableGroup } from "react-simple-maps"
-import { fetchTodaysPuzzle, fetchPlayer } from "../../lib/game"
+import { MOCK_PUZZLE, MOCK_PLAYERS } from "../../lib/mockData"
 import BottomBar from "./BottomBar"
 import AsciiOverlay from "../AsciiOverlay"
 
@@ -24,13 +24,8 @@ export default function Game() {
   const [currentStop, setCurrentStop] = useState(0);
 
   useEffect(() => {
-    async function load() {
-      const puzzle = await fetchTodaysPuzzle()
-      if (!puzzle) return
-      const playerData = await fetchPlayer(puzzle.playerId)
-      setPlayer(playerData)
-    }
-    load()
+    const playerData = MOCK_PLAYERS.find(p => p.id === MOCK_PUZZLE.playerId)
+    if (playerData) setPlayer(playerData)
   }, []);
 
   const toggleTheme = () => {
