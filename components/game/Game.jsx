@@ -3,12 +3,13 @@ import { useState, useEffect } from "react"
 import TopBar from "./TopBar"
 import WorldMap from "./WorldMap"
 import BottomBar from "./BottomBar"
-import AsciiOverlay from "../AsciiOverlay"
+import LoadingOverlay from "../LoadingOverlay"
+import { AnimatePresence } from "framer-motion"
 
 export default function Game() {
   const [isDark, setIsDark] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
-  const [showOverlay, setShowOverlay] = useState(false) //set to false cause its annoying. either change back to true or put on bw screens like login -> game
+  const [showOverlay, setShowOverlay] = useState(true)
   const [incorrectGuesses] = useState([])
   const [solved] = useState(false)
 
@@ -26,7 +27,9 @@ export default function Game() {
 
   return (
     <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-black">
-      {showOverlay && <AsciiOverlay isDark={isDark} onDone={() => setShowOverlay(false)} />}
+      <AnimatePresence>
+        {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
+      </AnimatePresence>
 
       <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} />
 
