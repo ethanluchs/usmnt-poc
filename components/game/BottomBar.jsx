@@ -70,7 +70,7 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
   const isDisabled = solved || incorrectGuesses.length >= 5
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3 bg-[#ede8d0]/70 dark:bg-black/70 rounded-t-xl">
+    <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3">
       <div className="flex gap-2">
         <AutocompleteInput onSubmit={onGuess} disabled={isDisabled} />
         <button onClick={() => {}} disabled={isDisabled} className={btnClass}>Guess</button>

@@ -8,7 +8,7 @@ import AsciiOverlay from "../AsciiOverlay"
 export default function Game() {
   const [isDark, setIsDark] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
-  const [showOverlay, setShowOverlay] = useState(true)
+  const [showOverlay, setShowOverlay] = useState(false) //set to false cause its annoying. either change back to true or put on bw screens like login -> game
   const [incorrectGuesses] = useState([])
   const [solved] = useState(false)
 
@@ -28,7 +28,7 @@ export default function Game() {
     <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-black">
       {showOverlay && <AsciiOverlay isDark={isDark} onDone={() => setShowOverlay(false)} />}
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} />
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} />
 
       <WorldMap
         isDark={isDark}
