@@ -6,7 +6,8 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
   const tan = isDark ? "#000000" : "#ede8d0"
   const tanHover = isDark ? "#1a1a1a" : "#e0dbbf"
   const stroke = isDark ? "#ede8d0" : "#000000"
-  const highlight = isDark ? "#4a90d9" : "#2563eb"
+  const highlight = isDark ? "#c0855a" : "#a85f35"
+  const highlightHover = isDark ? "#d4996e" : "#bf7040"
 
   return (
     <ComposableMap
@@ -31,7 +32,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
                   geography={geo}
                   style={{
                     default: { fill: isRevealed ? highlight : tan, stroke, strokeWidth: 0.5, outline: "none" },
-                    hover:   { fill: isRevealed ? highlight : tanHover, stroke, strokeWidth: 0.5, outline: "none" },
+                    hover:   { fill: isRevealed ? highlightHover : tanHover, stroke, strokeWidth: 0.5, outline: "none" },
                   }}
                 />
               )
