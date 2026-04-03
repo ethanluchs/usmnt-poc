@@ -1,7 +1,9 @@
 'use client'
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { ComposableMap, Geography, Geographies, ZoomableGroup } from "react-simple-maps"
+import { fetchTodaysPuzzle, fetchPlayer } from "../../lib/game"
 import BottomBar from "./BottomBar"
+import AsciiOverlay from "../AsciiOverlay"
 
 const geoUrl =
   "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
@@ -9,6 +11,27 @@ const geoUrl =
 export default function Game() {
   const [isDragging, setIsDragging] = useState(false);
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+    }
+  }, []);
+  const [showOverlay, setShowOverlay] = useState(true);
+  const [player, setPlayer] = useState(null);
+  const [currentStop, setCurrentStop] = useState(0);
+
+  useEffect(() => {
+    async function load() {
+      const puzzle = await fetchTodaysPuzzle()
+      if (!puzzle) return
+      const playerData = await fetchPlayer(puzzle.playerId)
+      setPlayer(playerData)
+    }
+    load()
+  }, []);
 
   const toggleTheme = () => {
     setIsDark(prev => {
@@ -23,9 +46,11 @@ export default function Game() {
 
   return (
     <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-black">
+      {showOverlay && <AsciiOverlay isDark={isDark} onDone={() => setShowOverlay(false)} />}
 
       {/* Top div w title+theme switcher */}
-      <div className="absolute top-0 left-0 right-0 flex justify-center items-center py-4 z-10 gap-3">
+      <div className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 z-10 gap-1 backdrop-blur-sm bg-[#ede8d0]/70 dark:bg-black/70 rounded-b-xl pb-3">
+      <div className="flex items-center gap-3">
         <h1 className="text-2xl tracking-widest uppercase text-black dark:text-[#ede8d0]">Wordle Cup</h1>
         <button onClick={toggleTheme} className="flex items-center justify-center text-black dark:text-[#ede8d0] transition-colors">
           {isDark ? (
@@ -38,6 +63,8 @@ export default function Game() {
             </svg>
           )}
         </button>
+      </div>
+        <p className="text-xs tracking-widest text-black dark:text-[#ede8d0] opacity-60">PUZZLE 1 / 5</p>
       </div>
 
       {/* Map */}
