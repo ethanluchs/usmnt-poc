@@ -32,7 +32,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
       onMouseLeave={() => setIsExpanded(false)}
       className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 pb-3 z-10 gap-1 rounded-b-xl"
     >
-      {/* Fading background */}
+      {/* background */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -46,7 +46,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
       </AnimatePresence>
 
       {/* Letters + icon in one animation loop */}
-      <div className="relative flex items-center gap-1">
+      <div className="relative flex items-center justify-center gap-1 ml-10">
         <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
             <motion.span
@@ -69,7 +69,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.2 }}
               onClick={onToggleTheme}
               className="flex items-center justify-center text-black dark:text-[#ede8d0] ml-2"
             >
