@@ -14,7 +14,7 @@ export default function Game() {
   const [showOverlay, setShowOverlay] = useState(true)
   const [showTransition, setShowTransition] = useState(false)
 
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedCountryCodes, onGuess, onNextStop, onNextPuzzle } = useGameState()
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle } = useGameState()
 
   useEffect(() => {
     if (solved) setShowTransition(true)
@@ -54,7 +54,7 @@ export default function Game() {
         isDragging={isDragging}
         onMoveStart={() => setIsDragging(true)}
         onMoveEnd={() => setIsDragging(false)}
-        revealedCountryCodes={revealedCountryCodes}
+        revealedStops={revealedStops}
       />
 
       <BottomBar
