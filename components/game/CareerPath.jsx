@@ -1,14 +1,34 @@
-// CareerPath renders inside ZoomableGroup (SVG context)
-// stops: array of careerStop objects { lat, lng, club, country, years, order }
-// Renders lines between stops and a marker at each stop
+'use client'
+import { Line, Marker } from "react-simple-maps"
+import StopCard from "./StopCard"
+
+//{ order: 1, club: "PA Classics", country: "USA", countryCode: "840", lat: 40.0379, lng: -76.3055, years: "2008-2015", note: "Hometown youth club, Lancaster County PA" }
+//This is given in array stops
+
 
 export default function CareerPath({ stops = [], isDark }) {
   if (stops.length === 0) return null
+  return (
+    <g>
+      {stops.map((stop, i) => {
+        const next = stops[i + 1]
+        return (
+          <g key={stop.order}>
+            {next && (<Line from={[stop.lng, stop.lat]} to={[next.lng, next.lat]} stroke={"#ede8d0"}/>)}
 
-  // TODO: convert lat/lng to SVG coordinates using react-simple-maps useProjection or Marker
-  // We are given a stop object to work with
-  // TODO: draw animated SVG lines between consecutive stops
-  // TODO: render a StopMarker at each stop position
-
-  return null
+            <Marker coordinates={[stop.lng, stop.lat]}>
+              <StopCard
+                stop={stop}
+                country={stop.country}
+                years={stop.years}
+                club={stop.club}
+                order={stop.order}
+                isDark={isDark}
+              />
+            </Marker>
+          </g>
+        )
+      })}
+    </g>
+  )
 }
