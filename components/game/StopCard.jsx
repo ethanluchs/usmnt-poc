@@ -1,21 +1,35 @@
 'use client'
-// StopCard shows on hover/click of a stop marker
-// Positioned absolutely over the map at the stop's screen coordinates
+import { motion } from "motion/react"
 
-export default function StopCard({ stop, country, years, club, order, isDark }) {
+export default function StopCard({ stop, x, y, isDark }) {
   if (!stop) return null
 
-  // TODO: position card at x/y with smart edge detection (flip if near screen edge)
-  // TODO: animate in with framer-motion
-  // TODO: show club, country, years
+  const bg = isDark ? "#0a0a0a" : "#ede8d0"
+  const border = isDark ? "#ede8d0" : "#000000"
+  const text = isDark ? "#ede8d0" : "#000000"
 
   return (
-    <>
-      <div className="border border-rounded flex flex-col">
-          <p>Stop{order}/5</p>
-          <p>Club:{club}</p>
-          <p>{years}</p>
-      </div>
-    </>
+    <foreignObject x={x + 6} y={y - 28} width={90} height={50} style={{ overflow: "visible" }}>
+      <motion.div
+        initial={{ opacity: 0, y: 4 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 4 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        style={{
+          background: bg,
+          border: `1px solid ${border}`,
+          color: text,
+          padding: "4px 7px",
+          fontSize: "5px",
+          lineHeight: 1.7,
+          whiteSpace: "normal",
+          maxWidth: "90px",
+          pointerEvents: "none",
+        }}
+      >
+        <div style={{ fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.05em" }}>{stop.club}</div>
+        <div style={{ opacity: 0.5 }}>{stop.years}</div>
+      </motion.div>
+    </foreignObject>
   )
 }
