@@ -33,7 +33,7 @@ export default function Game() {
   }
 
   return (
-    <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-black">
+    <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917]">
       <AnimatePresence>
         {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
       </AnimatePresence>

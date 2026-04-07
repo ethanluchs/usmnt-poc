@@ -26,7 +26,7 @@ export default function CareerPath({ stops = [], isDark }) {
   if (stops.length === 0) return null
 
   const points = stops.map(stop => projection([stop.lng, stop.lat]))
-  const color = isDark ? "#ede8d0" : "#000000"
+  const color = isDark ? "#b8b2a0" : "#000000"
   const accent = color
 
   return (

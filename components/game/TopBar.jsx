@@ -56,7 +56,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15, delay: i * 0.02 }}
-              className="text-2xl tracking-widest uppercase text-black dark:text-[#ede8d0]"
+              className="text-2xl tracking-widest uppercase text-black dark:text-[#b8b2a0]"
             >
               {letter}
             </motion.span>
@@ -71,7 +71,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={onToggleTheme}
-              className="flex items-center justify-center text-black dark:text-[#ede8d0] ml-2"
+              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-2"
             >
               {isDark ? <SunIcon /> : <MoonIcon />}
             </motion.button>
@@ -86,7 +86,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative text-xs tracking-widest text-black dark:text-[#ede8d0] opacity-60"
+            className="relative text-xs tracking-widest text-black dark:text-[#b8b2a0] opacity-60"
           >
             PUZZLE {puzzleIndex} / {totalPuzzles}
           </motion.p>
