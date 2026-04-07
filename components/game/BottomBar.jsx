@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { MOCK_PLAYERS } from "../../lib/mockData"
 
 const btnClass = "border border-black dark:border-[#ede8d0] rounded px-4 py-2 bg-[#ede8d0] dark:bg-black text-black dark:text-[#ede8d0] hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none"
@@ -46,20 +47,31 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled }) {
   )
 }
 
+
 function GuessPills({ incorrectGuesses }) {
   return (
     <div className="flex gap-2 justify-center">
       {Array.from({ length: 5 }).map((_, i) => (
-        <span
-          key={i}
-          className={`border rounded px-2 py-1 text-sm min-w-[80px] text-center ${
-            incorrectGuesses[i]
-              ? "border-red-400 bg-red-100 dark:bg-red-950 text-red-500"
-              : "border-gray-300 dark:border-gray-700 bg-[#ede8d0] dark:bg-black text-transparent"
-          }`}
-        >
-          {incorrectGuesses[i] || "·"}
-        </span>
+        <AnimatePresence key={i} mode="wait">
+          {incorrectGuesses[i] ? (
+            <motion.span
+              key={incorrectGuesses[i]}
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="border border-red-700 dark:border-red-400 bg-[#ede8d0] dark:bg-black text-red-700 dark:text-red-500 rounded px-2 py-1 text-sm min-w-[80px] text-center"
+            >
+              {incorrectGuesses[i]}
+            </motion.span>
+          ) : (
+            <motion.span
+              key="empty"
+              className="border border-gray-300 dark:border-gray-700 bg-[#ede8d0] dark:bg-black text-transparent rounded px-2 py-1 text-sm min-w-[80px] text-center"
+            >
+              ·
+            </motion.span>
+          )}
+        </AnimatePresence>
       ))}
     </div>
   )
