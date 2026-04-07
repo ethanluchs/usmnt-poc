@@ -13,12 +13,12 @@ export default function LoadingOverlay({ onDone }) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#ede8d0] dark:bg-black gap-6"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#ede8d0] dark:bg-[#1a1917] gap-6"
     >
-      <h1 className="text-6xl tracking-widest uppercase text-black dark:text-[#ede8d0]">
+      <h1 className="text-6xl tracking-widest uppercase text-black dark:text-[#b8b2a0]">
         Wordle Cup
       </h1>
-      <div className="w-8 h-8 border-2 border-black dark:border-[#ede8d0] border-t-transparent rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-black dark:border-[#b8b2a0] border-t-transparent rounded-full animate-spin" />
     </motion.div>
   )
 }

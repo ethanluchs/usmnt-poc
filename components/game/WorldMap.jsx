@@ -4,9 +4,9 @@ import CareerPath from "./CareerPath"
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
 export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, revealedStops }) {
-  const tan = isDark ? "#000000" : "#ede8d0"
-  const tanHover = isDark ? "#1a1a1a" : "#e0dbbf"
-  const stroke = isDark ? "#ede8d0" : "#000000"
+  const tan = isDark ? "#1a1917" : "#ede8d0"
+  const tanHover = isDark ? "#242220" : "#e0dbbf"
+  const stroke = isDark ? "#b8b2a0" : "#000000"
 
   return (
     <ComposableMap

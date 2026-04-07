@@ -4,9 +4,9 @@ import { motion } from "motion/react"
 export default function StopCard({ stop, x, y, isDark }) {
   if (!stop) return null
 
-  const bg = isDark ? "#0a0a0a" : "#ede8d0"
-  const border = isDark ? "#ede8d0" : "#000000"
-  const text = isDark ? "#ede8d0" : "#000000"
+  const bg = isDark ? "#1a1917" : "#ede8d0"
+  const border = isDark ? "#b8b2a0" : "#000000"
+  const text = isDark ? "#b8b2a0" : "#000000"
 
   return (
     <foreignObject x={x + 6} y={y - 28} width={90} height={50} style={{ overflow: "visible" }}>
