@@ -45,7 +45,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
         )}
       </AnimatePresence>
 
-      {/* Letters + icon in one animation loop */}
+      {/* letters and icon*/}
       <div className="relative flex items-center justify-center gap-1 ml-10">
         <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (

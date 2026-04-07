@@ -36,7 +36,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
           }
         </Geographies>
 
-        {/* Career path lines + stop markers */}
+        {/* career path lines + stop markers */}
         <CareerPath stops={revealedStops} isDark={isDark} />
       </ZoomableGroup>
     </ComposableMap>
