@@ -1,6 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from "motion/react"
 import { useState } from "react"
+import InfoModal from "./InfoModal"
 
 const SunIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,6 +24,7 @@ const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
 
 export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
   const [isExpanded, setIsExpanded] = useState(true)
+  const [showInfo, setShowInfo] = useState(false)
 
   if (isDragging && isExpanded) setIsExpanded(false)
 
@@ -76,6 +78,20 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
               {isDark ? <SunIcon /> : <MoonIcon />}
             </motion.button>
           )}
+          {isExpanded && (
+            <motion.button
+              key="info-toggle"
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setShowInfo(true)}
+              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-1 text-sm leading-none opacity-60 hover:opacity-100 transition-opacity"
+            >
+              ?
+            </motion.button>
+          )}
         </AnimatePresence>
       </div>
 
@@ -91,6 +107,9 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
             PUZZLE {puzzleIndex} / {totalPuzzles}
           </motion.p>
         )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
     </div>
   )
