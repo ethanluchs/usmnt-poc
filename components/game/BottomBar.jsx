@@ -28,7 +28,7 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled }) {
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
         disabled={disabled}
-        className="border rounded placeholder:text-gray-700 dark:placeholder:text-gray-400 border-black dark:border-[#b8b2a0] bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40"
+        className="border rounded placeholder:text-gray-500 dark:placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40"
       />
       {showDropdown && filtered.length > 0 && (
         <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
