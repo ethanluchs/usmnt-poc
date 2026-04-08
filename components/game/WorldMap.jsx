@@ -3,7 +3,7 @@ import CareerPath from "./CareerPath"
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
-export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, revealedStops }) {
+export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, revealedStops, puzzleIndex, currentStop }) {
   const tan = isDark ? "#1a1917" : "#ede8d0"
   const tanHover = isDark ? "#242220" : "#e0dbbf"
   const stroke = isDark ? "#b8b2a0" : "#000000"
@@ -37,7 +37,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
         </Geographies>
 
         {/* career path lines + stop markers */}
-        <CareerPath stops={revealedStops} isDark={isDark} />
+        <CareerPath key={puzzleIndex} stops={revealedStops} isDark={isDark} currentStop={currentStop} />
       </ZoomableGroup>
     </ComposableMap>
   )
