@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 export default function StopCard({ stop, x, y, isDark }) {
   if (!stop) return null
 
-  const bg = isDark ? "#1a1917" : "#ede8d0"
+  const bg = isDark ? "#000000" : "#ffffff"
   const border = isDark ? "#b8b2a0" : "#000000"
   const text = isDark ? "#b8b2a0" : "#000000"
 
