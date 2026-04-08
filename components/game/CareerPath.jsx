@@ -6,7 +6,7 @@ import StopCard from "./StopCard"
 
 // stop shape: { order, club, country, lat, lng, years }
 
-export default function CareerPath({ stops = [], isDark }) {
+export default function CareerPath({ stops = [], isDark, currentStop }) {
   const { projection } = useMapContext()
   const [hoveredStop, setHoveredStop] = useState(null)
   const [pinnedStop, setPinnedStop] = useState(null)
@@ -16,7 +16,7 @@ export default function CareerPath({ stops = [], isDark }) {
   const handleBackgroundClick = () => setPinnedStop(null)
 
   useEffect(() => {
-    if (stops.length === 0) return
+    if (stops.length === 0 || currentStop === 0) return
     const last = stops[stops.length - 1]
     const pt = projection([last.lng, last.lat])
     const t = setTimeout(() => setPinnedStop({ stop: last, x: pt[0], y: pt[1] }), 450)
