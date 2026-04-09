@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import TopBar from "./TopBar"
 import WorldMap from "./WorldMap"
 import BottomBar from "./BottomBar"
@@ -16,17 +17,24 @@ export default function Game() {
   const [showTransition, setShowTransition] = useState(false)
   const [showSessionOver, setShowSessionOver] = useState(false)
   const [puzzlesCompleted, setPuzzlesCompleted] = useState(0)
+  const [guessResult, setGuessResult] = useState(null) // 'wrong' | 'correct' | null
 
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle } = useGameState()
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop } = useGameState()
+
+  const handleGuess = (name) => {
+    const result = onGuess(name)
+    setGuessResult(result)
+    if (result === 'wrong') setTimeout(() => setGuessResult(null), 900)
+  }
 
   useEffect(() => {
     if (!solved) return
     if (isLastPuzzle) {
       setPuzzlesCompleted(prev => prev + 1)
       setShowSessionOver(true)
-    } else {
-      setShowTransition(true)
+      return
     }
+    setShowTransition(true)
   }, [solved, isLastPuzzle])
 
   useEffect(() => {
@@ -34,6 +42,7 @@ export default function Game() {
   }, [sessionOver])
 
   const handleNextPuzzle = () => {
+    setGuessResult(null)
     setShowTransition(false)
     setPuzzlesCompleted(prev => prev + 1)
     onNextPuzzle()
@@ -57,7 +66,11 @@ export default function Game() {
   }
 
   return (
-    <main className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917]">
+    <motion.main
+      className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917]"
+      animate={guessResult === 'wrong' ? { x: [0, -12, 12, -9, 9, -5, 5, 0] } : { x: 0 }}
+      transition={{ duration: 0.45, ease: "easeInOut" }}
+    >
       <AnimatePresence>
         {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
       </AnimatePresence>
@@ -91,14 +104,16 @@ export default function Game() {
         revealedStops={revealedStops}
         puzzleIndex={puzzleIndex}
         currentStop={currentStop}
+        guessResult={guessResult}
       />
 
       <BottomBar
         incorrectGuesses={incorrectGuesses}
-        onGuess={onGuess}
+        onGuess={handleGuess}
         onNextStop={onNextStop}
         solved={solved}
+        isLastStop={isLastStop}
       />
-    </main>
+    </motion.main>
   )
 }

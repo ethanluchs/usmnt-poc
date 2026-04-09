@@ -13,4 +13,9 @@ html, body {
   height: 100%;
   font-family: 'FWC2026', sans-serif;
   overflow: hidden;
+  background-color: #ede8d0;
+}
+
+html.dark, html.dark body {
+  background-color: #1a1917;
 }
