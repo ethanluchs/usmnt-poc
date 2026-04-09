@@ -6,12 +6,34 @@ import StopCard from "./StopCard"
 
 // stop shape: { order, club, country, lat, lng, years }
 
-export default function CareerPath({ stops = [], isDark, currentStop }) {
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return [r, g, b]
+}
+
+function lerpColor(hexA, hexB, t) {
+  const [r1, g1, b1] = hexToRgb(hexA)
+  const [r2, g2, b2] = hexToRgb(hexB)
+  const r = Math.round(r1 + (r2 - r1) * t)
+  const g = Math.round(g1 + (g2 - g1) * t)
+  const b = Math.round(b1 + (b2 - b1) * t)
+  return `rgb(${r},${g},${b})`
+}
+
+export default function CareerPath({ stops = [], isDark, currentStop, onPanTo }) {
   const { projection } = useMapContext()
   const [hoveredStop, setHoveredStop] = useState(null)
   const [pinnedStop, setPinnedStop] = useState(null)
   const activeStop = pinnedStop ?? hoveredStop
   const seenIndices = useRef(new Set())
+
+  const darkBlue  = isDark ? "#1a4a6e" : "#0d2e4a"
+  const lightBlue = isDark ? "#7ec8e3" : "#4a9bbf"
+  const totalStops = stops.length
+  // earliest stop = darkest, most recent = lightest
+  const lineColor = (i) => lerpColor(darkBlue, lightBlue, totalStops <= 1 ? 1 : (i + 0.5) / (totalStops - 1))
 
   const handleBackgroundClick = () => setPinnedStop(null)
 
@@ -26,8 +48,6 @@ export default function CareerPath({ stops = [], isDark, currentStop }) {
   if (stops.length === 0) return null
 
   const points = stops.map(stop => projection([stop.lng, stop.lat]))
-  const color = isDark ? "#b8b2a0" : "#000000"
-  const accent = color
 
   return (
     <g>
@@ -44,12 +64,12 @@ export default function CareerPath({ stops = [], isDark, currentStop }) {
             key={`line-${i}`}
             d={d}
             fill="none"
-            stroke={accent}
+            stroke={lineColor(i)}
             strokeWidth={1}
             strokeDasharray="4 3"
-            initial={!seenIndices.current.has(i) ? { opacity: 0 } : false}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2, ease: "anticipate" }}
+            initial={!seenIndices.current.has(i) ? { pathLength: 0, opacity: 0 } : false}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ pathLength: { duration: 1.2, ease: "easeInOut" }, opacity: { duration: 0.3 } }}
           />
         )
       })}
@@ -59,8 +79,8 @@ export default function CareerPath({ stops = [], isDark, currentStop }) {
           <motion.circle
             cx={pt[0]} cy={pt[1]}
             r={pinnedStop?.stop === stops[i] ? 4.5 : 3}
-            fill={color}
-            stroke={accent}
+            fill={isDark ? "#b8b2a0" : "#1a1917"}
+            stroke={isDark ? "#b8b2a0" : "#1a1917"}
             strokeWidth={1}
             initial={!seenIndices.current.has(i) ? { scale: 0, opacity: 0 } : false}
             animate={{ scale: 1, opacity: 1 }}
@@ -69,12 +89,15 @@ export default function CareerPath({ stops = [], isDark, currentStop }) {
             style={{ cursor: "pointer" }}
             onMouseEnter={() => setHoveredStop({ stop: stops[i], x: pt[0], y: pt[1] })}
             onMouseLeave={() => setHoveredStop(null)}
-            onClick={() => setPinnedStop(prev => prev?.stop === stops[i] ? null : { stop: stops[i], x: pt[0], y: pt[1] })}
+            onClick={() => {
+              setPinnedStop(prev => prev?.stop === stops[i] ? null : { stop: stops[i], x: pt[0], y: pt[1] })
+              onPanTo?.(stops[i].lng, stops[i].lat)
+            }}
           />
           <motion.text
             x={pt[0]} y={pt[1] + 1.5}
             fontSize={pinnedStop?.stop === stops[i] ? 5.5 : 4}
-            fill={isDark ? "#000000" : "#ede8d0"}
+            fill={isDark ? "#1a1917" : "#ede8d0"}
             textAnchor="middle"
             initial={!seenIndices.current.has(i) ? { opacity: 0 } : false}
             animate={{ opacity: 1 }}
