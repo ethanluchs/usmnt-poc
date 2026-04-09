@@ -25,9 +25,11 @@ export default function StopCard({ stop, x, y, isDark }) {
           whiteSpace: "normal",
           maxWidth: "90px",
           pointerEvents: "none",
+          position: "relative",
         }}
       >
-        <div style={{ fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.05em" }}>{stop.club}</div>
+        <div style={{ position: "absolute", top: "3px", right: "5px", fontSize: "5px", fontWeight: "bold", opacity: 1 }}>#{stop.order}</div>
+        <div style={{ fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.05em", paddingRight: "10px" }}>{stop.club}</div>
         <div style={{ opacity: 0.5 }}>{stop.years}</div>
       </motion.div>
     </foreignObject>
