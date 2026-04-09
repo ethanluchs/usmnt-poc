@@ -20,9 +20,14 @@ export default function Game() {
   const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle } = useGameState()
 
   useEffect(() => {
-    if (solved && !isLastPuzzle) setShowTransition(true)
-    if (solved && isLastPuzzle) { setPuzzlesCompleted(prev => prev + 1); setShowSessionOver(true) }
-  }, [solved])
+    if (!solved) return
+    if (isLastPuzzle) {
+      setPuzzlesCompleted(prev => prev + 1)
+      setShowSessionOver(true)
+    } else {
+      setShowTransition(true)
+    }
+  }, [solved, isLastPuzzle])
 
   useEffect(() => {
     if (sessionOver) setShowSessionOver(true)
@@ -30,24 +35,24 @@ export default function Game() {
 
   const handleNextPuzzle = () => {
     setShowTransition(false)
-    if (isLastPuzzle) {
-      setPuzzlesCompleted(prev => prev + 1)
-      setShowSessionOver(true)
-    } else {
-      setPuzzlesCompleted(prev => prev + 1)
-      onNextPuzzle()
-    }
+    setPuzzlesCompleted(prev => prev + 1)
+    onNextPuzzle()
   }
 
   useEffect(() => {
-    const dark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const stored = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const dark = stored ? stored === 'dark' : prefersDark
     if (dark) { document.documentElement.classList.add("dark"); setIsDark(true) }
+    else { document.documentElement.classList.remove("dark") }
   }, [])
 
   const toggleTheme = () => {
     setIsDark(prev => {
-      document.documentElement.classList.toggle("dark", !prev)
-      return !prev
+      const next = !prev
+      document.documentElement.classList.toggle("dark", next)
+      localStorage.setItem('theme', next ? 'dark' : 'light')
+      return next
     })
   }
 
