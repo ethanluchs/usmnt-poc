@@ -56,6 +56,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
   const springLat = useSpring(targetLat, { stiffness: 120, damping: 28 })
 
   const actualCenter = useRef([0, 10])
+  const hasDragged = useRef(false)
 
   useMotionValueEvent(springLng, "change", () => {
     const lng = springLng.get()
@@ -67,11 +68,14 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
   useEffect(() => {
     if (revealedStops.length === 0) return
     const last = revealedStops[revealedStops.length - 1]
-    const [curLng, curLat] = actualCenter.current
-    targetLng.jump(curLng)
-    targetLat.jump(curLat)
-    springLng.jump(curLng)
-    springLat.jump(curLat)
+    if (hasDragged.current) {
+      const [curLng, curLat] = actualCenter.current
+      targetLng.jump(curLng)
+      targetLat.jump(curLat)
+      springLng.jump(curLng)
+      springLat.jump(curLat)
+      hasDragged.current = false
+    }
     setZoom(zoomRef.current)
     targetLng.set(last.lng)
     targetLat.set(last.lat)
@@ -107,6 +111,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
         onMoveEnd={({ coordinates, zoom: z }) => {
           actualCenter.current = coordinates
           zoomRef.current = z
+          hasDragged.current = true
           onMoveEnd()
         }}
       >
