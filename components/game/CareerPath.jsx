@@ -6,10 +6,9 @@ import StopCard from "./StopCard"
 import { lerpColor } from "../../lib/color"
 import { getColors } from "../../lib/theme"
 
-export default function CareerPath({ stops = [], isDark, currentStop, onPanTo }) {
+export default function CareerPath({ stops = [], isDark, currentStop, onPanTo, pinnedStop, setPinnedStop }) {
   const { projection } = useMapContext()
   const [hoveredStop, setHoveredStop] = useState(null)
-  const [pinnedStop, setPinnedStop] = useState(null)
   const activeStop = pinnedStop ?? hoveredStop
   const seenIndices = useRef(new Set())
 
@@ -31,10 +30,6 @@ export default function CareerPath({ stops = [], isDark, currentStop, onPanTo })
 
   return (
     <g>
-      {pinnedStop && (
-        <rect x={-10000} y={-10000} width={20000} height={20000} fill="transparent" onClick={() => setPinnedStop(null)} />
-      )}
-
       {points.slice(0, -1).map((pt, i) => {
         const next = points[i + 1]
         const cx = (pt[0] + next[0]) / 2
@@ -70,7 +65,8 @@ export default function CareerPath({ stops = [], isDark, currentStop, onPanTo })
             style={{ cursor: "pointer" }}
             onMouseEnter={() => setHoveredStop({ stop: stops[i], x: pt[0], y: pt[1] })}
             onMouseLeave={() => setHoveredStop(null)}
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation()
               setPinnedStop(prev => prev?.stop === stops[i] ? null : { stop: stops[i], x: pt[0], y: pt[1] })
               onPanTo?.(stops[i].lng, stops[i].lat)
             }}

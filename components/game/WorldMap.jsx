@@ -33,9 +33,12 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
     countryFills[stop.countryCode] = lerpColor(darkBlue, lightBlue, t)
   })
 
+  const [pinnedStop, setPinnedStop] = useState(null)
+
   const { center, zoom, handleMoveStart, handleMoveEnd, panTo } = useMapPan({ revealedStops, puzzleIndex, panTarget })
 
   return (
+    <div style={{ width: "100%", height: "100%" }} onClick={() => setPinnedStop(null)}>
     <ComposableMap
       projection="geoMercator"
       width={800}
@@ -92,8 +95,11 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
           isDark={isDark}
           currentStop={currentStop}
           onPanTo={panTo}
+          pinnedStop={pinnedStop}
+          setPinnedStop={setPinnedStop}
         />
       </ZoomableGroup>
     </ComposableMap>
+    </div>
   )
 }
