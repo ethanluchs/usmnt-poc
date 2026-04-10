@@ -18,8 +18,9 @@ export default function Game() {
   const [showSessionOver, setShowSessionOver] = useState(false)
   const [puzzlesCompleted, setPuzzlesCompleted] = useState(0)
   const [guessResult, setGuessResult] = useState(null) // 'wrong' | 'correct' | null
+  const [panTarget, setPanTarget] = useState(null)
 
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop } = useGameState()
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop } = useGameState()
 
   const handleGuess = (name) => {
     const result = onGuess(name)
@@ -35,6 +36,7 @@ export default function Game() {
       return
     }
     setShowTransition(true)
+    if (nextFirstStop) setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600)
   }, [solved, isLastPuzzle])
 
   useEffect(() => {
@@ -43,6 +45,7 @@ export default function Game() {
 
   const handleNextPuzzle = () => {
     setGuessResult(null)
+    setPanTarget(null)
     setShowTransition(false)
     setPuzzlesCompleted(prev => prev + 1)
     onNextPuzzle()
@@ -105,6 +108,7 @@ export default function Game() {
         puzzleIndex={puzzleIndex}
         currentStop={currentStop}
         guessResult={guessResult}
+        panTarget={panTarget}
       />
 
       <BottomBar

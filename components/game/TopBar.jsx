@@ -23,7 +23,7 @@ const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"]
 const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
 
 export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
-  const [isExpanded, setIsExpanded] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
 
   if (isDragging && isExpanded) setIsExpanded(false)
