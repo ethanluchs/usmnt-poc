@@ -13,7 +13,7 @@ function lerpColor(hexA, hexB, t) {
   return `rgb(${Math.round(r1+(r2-r1)*t)},${Math.round(g1+(g2-g1)*t)},${Math.round(b1+(b2-b1)*t)})`
 }
 
-export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, revealedStops, puzzleIndex, currentStop, guessResult }) {
+export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, revealedStops, puzzleIndex, currentStop, guessResult, panTarget }) {
   const tan = isDark ? "#1a1917" : "#ede8d0"
   const tanHover = isDark ? "#242220" : "#e0dbbf"
   const baseStroke = isDark ? "#b8b2a0" : "#000000"
@@ -57,6 +57,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
 
   const actualCenter = useRef([0, 10])
   const hasDragged = useRef(false)
+  const lastPuzzleIndex = useRef(puzzleIndex)
 
   useMotionValueEvent(springLng, "change", () => {
     const lng = springLng.get()
@@ -67,19 +68,42 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
 
   useEffect(() => {
     if (revealedStops.length === 0) return
+    // puzzleIndex just changed but revealedStops are still stale — skip this render
+    if (puzzleIndex !== lastPuzzleIndex.current) {
+      lastPuzzleIndex.current = puzzleIndex
+      return
+    }
     const last = revealedStops[revealedStops.length - 1]
+    if (revealedStops.length === 1) {
+      // Snap instantly to first stop — no animation from world center
+      targetLng.jump(last.lng)
+      targetLat.jump(last.lat)
+      springLng.jump(last.lng)
+      springLat.jump(last.lat)
+      setCenter([last.lng, last.lat])
+      actualCenter.current = [last.lng, last.lat]
+      hasDragged.current = false
+      return
+    }
     if (hasDragged.current) {
       const [curLng, curLat] = actualCenter.current
       targetLng.jump(curLng)
       targetLat.jump(curLat)
       springLng.jump(curLng)
       springLat.jump(curLat)
+      setZoom(zoomRef.current)
       hasDragged.current = false
     }
-    setZoom(zoomRef.current)
     targetLng.set(last.lng)
     targetLat.set(last.lat)
   }, [revealedStops.length, puzzleIndex])
+
+  useEffect(() => {
+    if (!panTarget) return
+    setTimeout(() => setZoom(2), 300)
+    targetLng.set(panTarget.lng)
+    targetLat.set(panTarget.lat)
+  }, [panTarget])
 
   return (
     <ComposableMap
