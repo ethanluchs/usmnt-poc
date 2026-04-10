@@ -40,7 +40,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
   const { center, zoom, handleMoveStart, handleMoveEnd, panTo } = useMapPan({ revealedStops, puzzleIndex, panTarget })
 
   return (
-    <div style={{ width: "100%", height: "100%" }} onClick={() => setPinnedStop(null)}>
+    <div style={{ width: "100%", height: "100%" }} onClick={() => setPinnedStop(false)}>
     <ComposableMap
       projection="geoMercator"
       width={800}

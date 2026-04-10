@@ -26,7 +26,7 @@ export default function CareerPath({ stops = [], isDark, currentStop, onPanTo, p
   if (stops.length === 0) return null
 
   const points = stops.map(stop => projection([stop.lng, stop.lat]))
-  const activeStop = pinnedStop ?? hoveredStop ?? { stop: stops[0], x: points[0][0], y: points[0][1] }
+  const activeStop = pinnedStop || hoveredStop || (pinnedStop !== false ? { stop: stops[0], x: points[0][0], y: points[0][1] } : null)
 
   return (
     <g>
@@ -67,7 +67,7 @@ export default function CareerPath({ stops = [], isDark, currentStop, onPanTo, p
             onMouseLeave={() => setHoveredStop(null)}
             onClick={(e) => {
               e.stopPropagation()
-              setPinnedStop(prev => prev?.stop === stops[i] ? null : { stop: stops[i], x: pt[0], y: pt[1] })
+              setPinnedStop(prev => prev?.stop === stops[i] ? false : { stop: stops[i], x: pt[0], y: pt[1] })
               onPanTo?.(stops[i].lng, stops[i].lat)
             }}
           />
