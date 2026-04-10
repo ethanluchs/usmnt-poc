@@ -9,7 +9,6 @@ import { getColors } from "../../lib/theme"
 export default function CareerPath({ stops = [], isDark, currentStop, onPanTo, pinnedStop, setPinnedStop }) {
   const { projection } = useMapContext()
   const [hoveredStop, setHoveredStop] = useState(null)
-  const activeStop = pinnedStop ?? hoveredStop
   const seenIndices = useRef(new Set())
 
   const { text, textInv, darkBlue, lightBlue } = getColors(isDark)
@@ -27,6 +26,7 @@ export default function CareerPath({ stops = [], isDark, currentStop, onPanTo, p
   if (stops.length === 0) return null
 
   const points = stops.map(stop => projection([stop.lng, stop.lat]))
+  const activeStop = pinnedStop ?? hoveredStop ?? { stop: stops[0], x: points[0][0], y: points[0][1] }
 
   return (
     <g>

@@ -35,6 +35,8 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
 
   const [pinnedStop, setPinnedStop] = useState(null)
 
+  useEffect(() => { setPinnedStop(null) }, [puzzleIndex])
+
   const { center, zoom, handleMoveStart, handleMoveEnd, panTo } = useMapPan({ revealedStops, puzzleIndex, panTarget })
 
   return (
