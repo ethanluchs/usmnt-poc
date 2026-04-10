@@ -23,7 +23,7 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
       <input
         type="text"
         value={input}
-        onChange={e => { setInput(e.target.value); setShowDropdown(true) }}
+        onChange={e => { setInput(e.target.value.slice(0, 50)); setShowDropdown(true) }}
         onKeyDown={e => e.key === "Enter" && input.trim() && handleSelect(input.trim())}
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
