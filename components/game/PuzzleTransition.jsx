@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 export default function PuzzleTransition({ puzzleNumber, onDone }) {
   useEffect(() => {
@@ -9,7 +9,6 @@ export default function PuzzleTransition({ puzzleNumber, onDone }) {
   }, [onDone])
 
   return (
-    // OVERLAY BACKGROUND
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -17,7 +16,6 @@ export default function PuzzleTransition({ puzzleNumber, onDone }) {
       transition={{ duration: 2.0 }}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm"
     >
-      {/* PUZZLE NUMBER*/}
       <motion.span
         initial={{ scale: 0.6, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -26,8 +24,6 @@ export default function PuzzleTransition({ puzzleNumber, onDone }) {
       >
         {puzzleNumber}
       </motion.span>
-
-      {/* PUZZLE LABEL*/}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

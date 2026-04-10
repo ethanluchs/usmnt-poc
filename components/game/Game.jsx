@@ -1,23 +1,23 @@
 'use client'
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import TopBar from "./TopBar"
 import WorldMap from "./WorldMap"
 import BottomBar from "./BottomBar"
 import LoadingOverlay from "../LoadingOverlay"
 import PuzzleTransition from "./PuzzleTransition"
 import SessionOverScreen from "./SessionOverScreen"
-import { AnimatePresence } from "framer-motion"
 import { useGameState } from "../../lib/useGameState"
+import { useTheme } from "../../lib/useTheme"
 
 export default function Game() {
-  const [isDark, setIsDark] = useState(false)
+  const { isDark, toggleTheme } = useTheme()
   const [isDragging, setIsDragging] = useState(false)
   const [showOverlay, setShowOverlay] = useState(true)
   const [showTransition, setShowTransition] = useState(false)
   const [showSessionOver, setShowSessionOver] = useState(false)
   const [puzzlesCompleted, setPuzzlesCompleted] = useState(0)
-  const [guessResult, setGuessResult] = useState(null) // 'wrong' | 'correct' | null
+  const [guessResult, setGuessResult] = useState(null)
   const [panTarget, setPanTarget] = useState(null)
 
   const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop } = useGameState()
@@ -49,23 +49,6 @@ export default function Game() {
     setShowTransition(false)
     setPuzzlesCompleted(prev => prev + 1)
     onNextPuzzle()
-  }
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    const dark = stored ? stored === 'dark' : prefersDark
-    if (dark) { document.documentElement.classList.add("dark"); setIsDark(true) }
-    else { document.documentElement.classList.remove("dark") }
-  }, [])
-
-  const toggleTheme = () => {
-    setIsDark(prev => {
-      const next = !prev
-      document.documentElement.classList.toggle("dark", next)
-      localStorage.setItem('theme', next ? 'dark' : 'light')
-      return next
-    })
   }
 
   return (
