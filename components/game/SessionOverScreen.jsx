@@ -1,10 +1,9 @@
 'use client'
 import { motion } from "motion/react"
+import { getColors } from "../../lib/theme"
 
 export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectGuesses }) {
-  const bg = isDark ? "#1a1917" : "#ede8d0"
-  const text = isDark ? "#b8b2a0" : "#000000"
-  const dim = isDark ? "#6b6660" : "#888"
+  const { bg, text, dimmed } = getColors(isDark)
 
   return (
     <motion.div
@@ -19,7 +18,7 @@ export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectG
           <span style={{ color: text }} className="text-lg">
             {puzzlesCompleted} / 5 puzzles solved
           </span>
-          <span style={{ color: dim }} className="text-sm">
+          <span style={{ color: dimmed }} className="text-sm">
             {incorrectGuesses} wrong guess{incorrectGuesses !== 1 ? "es" : ""}
           </span>
         </div>

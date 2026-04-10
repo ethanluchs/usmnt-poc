@@ -1,9 +1,8 @@
 'use client'
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import { MOCK_PLAYERS } from "../../lib/mockData"
-
-const btnClass = "border border-black dark:border-[#b8b2a0] rounded px-4 py-2 bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none"
+import Button from "../ui/Button"
 
 function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuesses }) {
   const [showDropdown, setShowDropdown] = useState(false)
@@ -47,7 +46,6 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
     </div>
   )
 }
-
 
 function GuessPills({ incorrectGuesses }) {
   return (
@@ -93,8 +91,8 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3">
       <div className="flex gap-2">
         <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} />
-        <button onClick={handleGuess} disabled={isDisabled} className={btnClass}>Guess</button>
-        <button onClick={onNextStop} disabled={solved || isLastStop} className={btnClass}>Next Stop →</button>
+        <Button onClick={handleGuess} disabled={isDisabled}>Guess</Button>
+        <Button onClick={onNextStop} disabled={solved || isLastStop}>Next Stop →</Button>
       </div>
       <GuessPills incorrectGuesses={incorrectGuesses} />
     </div>
