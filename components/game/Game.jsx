@@ -7,8 +7,11 @@ import BottomBar from "./BottomBar"
 import LoadingOverlay from "../LoadingOverlay"
 import PuzzleTransition from "./PuzzleTransition"
 import SessionOverScreen from "./SessionOverScreen"
+import PlayerCard from "./PlayerCard.jsx"
+import CardOverlay from "./CardOverlay"
 import { useGameState } from "../../lib/useGameState"
 import { useTheme } from "../../lib/useTheme"
+
 
 export default function Game() {
   const { isDark, toggleTheme } = useTheme()
@@ -19,8 +22,11 @@ export default function Game() {
   const [puzzlesCompleted, setPuzzlesCompleted] = useState(0)
   const [guessResult, setGuessResult] = useState(null)
   const [panTarget, setPanTarget] = useState(null)
+  const [unlockedCards, setUnlockedCards] = useState([]);
+  const [showCards, setShowCards] = useState(false)
 
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop } = useGameState()
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops, 
+    onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop } = useGameState()
 
   const handleGuess = (name) => {
     const result = onGuess(name)
@@ -30,6 +36,7 @@ export default function Game() {
 
   useEffect(() => {
     if (!solved) return
+    if (player) setUnlockedCards(prev => [...prev, player])
     if (isLastPuzzle) {
       setPuzzlesCompleted(prev => prev + 1)
       setShowSessionOver(true)
@@ -80,7 +87,7 @@ export default function Game() {
         )}
       </AnimatePresence>
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)} cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
 
       <WorldMap
         isDark={isDark}
@@ -101,6 +108,10 @@ export default function Game() {
         solved={solved}
         isLastStop={isLastStop}
       />
+
+      <PlayerCard player={player} />
+
+      <CardOverlay isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
     </motion.main>
   )
 }

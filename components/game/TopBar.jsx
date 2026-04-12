@@ -3,26 +3,10 @@ import { motion, AnimatePresence } from "motion/react"
 import { useState } from "react"
 import InfoModal from "./InfoModal"
 
-const SunIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5" />
-    <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-  </svg>
-)
-
-const MoonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-)
-
 const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"]
 const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
 
-export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
+export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount = 0, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
 
@@ -48,17 +32,17 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
       </AnimatePresence>
 
       {/* letters and icon*/}
-      <div className="relative flex items-center justify-center gap-1 ml-10">
+      <motion.div layout className="relative flex items-center justify-center gap-1">
+        <CardButton onClick={onOpenCards} count={cardCount} />
         <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
             <motion.span
               key={letter === " " ? "space" : letter + i}
-              layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15, delay: i * 0.02 }}
-              className="text-2xl tracking-widest uppercase text-black dark:text-[#b8b2a0]"
+              className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
             >
               {letter}
             </motion.span>
@@ -93,7 +77,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
             </motion.button>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       {/* Puzzle counter */}
       <AnimatePresence>
@@ -114,3 +98,28 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
     </div>
   )
 }
+
+const SunIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5" />
+    <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+  </svg>
+)
+
+const MoonIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+)
+
+const CardButton = ({ onClick, count }) => (
+  <button
+    onClick={onClick}
+    className="w-6 h-6 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow mb-0.5"
+  >
+    {count}
+  </button>
+)
