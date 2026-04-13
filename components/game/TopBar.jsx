@@ -118,7 +118,7 @@ const MoonIcon = () => (
 const CardButton = ({ onClick, count }) => (
   <button
     onClick={onClick}
-    className="w-6 h-6 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow mb-0.5"
+    className="w-6 h-6 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow mb-0.5 hover:bg-gray-300"
   >
     {count}
   </button>
