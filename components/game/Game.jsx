@@ -87,7 +87,8 @@ export default function Game() {
         )}
       </AnimatePresence>
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)} cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)} 
+      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
 
       <WorldMap
         isDark={isDark}
@@ -111,7 +112,7 @@ export default function Game() {
 
       <PlayerCard player={player} />
 
-      <CardOverlay isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
+      <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
     </motion.main>
   )
 }
