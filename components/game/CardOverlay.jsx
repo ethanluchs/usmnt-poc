@@ -1,5 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from "motion/react"
+import PlayerCard from "./PlayerCard"
+
 export default function CardOverlay({ isDark, isOpen, onClose, unlockedCards = [] }) {
 
   return (
@@ -22,10 +24,16 @@ export default function CardOverlay({ isDark, isOpen, onClose, unlockedCards = [
             onClick={e => e.stopPropagation()}
           >
             {/* cards */}
-            {unlockedCards.length === 0 && (
+            {unlockedCards.length === 0 ? (
               <p className="text-sm text-center py-6 tracking-wide text-white">
                 No cards!
               </p>
+            ) : (
+              <div className="flex flex-wrap gap-4 justify-center">
+                {unlockedCards.map(player => (
+                  <PlayerCard key={player.id} player={player} />
+                ))}
+              </div>
             )}
           </motion.div>
         </motion.div>
