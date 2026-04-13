@@ -7,7 +7,6 @@ import BottomBar from "./BottomBar"
 import LoadingOverlay from "../LoadingOverlay"
 import PuzzleTransition from "./PuzzleTransition"
 import SessionOverScreen from "./SessionOverScreen"
-import PlayerCard from "./PlayerCard.jsx"
 import CardOverlay from "./CardOverlay"
 import { useGameState } from "../../lib/useGameState"
 import { useTheme } from "../../lib/useTheme"
@@ -109,8 +108,6 @@ export default function Game() {
         solved={solved}
         isLastStop={isLastStop}
       />
-
-      <PlayerCard player={player} />
 
       <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
     </motion.main>
