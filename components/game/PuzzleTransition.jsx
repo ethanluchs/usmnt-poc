@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import { motion } from "motion/react"
 
-export default function PuzzleTransition({ puzzleNumber, onDone }) {
+export default function PuzzleTransition({ puzzleNumber, totalPuzzles = 5, onDone }) {
   useEffect(() => {
     const t = setTimeout(onDone, 2500)
     return () => clearTimeout(t)
@@ -30,7 +30,7 @@ export default function PuzzleTransition({ puzzleNumber, onDone }) {
         transition={{ delay: 0.5, duration: 1.0 }}
         className="text-[#ede8d0] tracking-widest uppercase text-sm opacity-60"
       >
-        Puzzle {puzzleNumber} of 5
+        Puzzle {puzzleNumber} of {totalPuzzles}
       </motion.p>
     </motion.div>
   )
