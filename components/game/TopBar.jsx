@@ -6,7 +6,7 @@ import InfoModal from "./InfoModal"
 const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"]
 const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
 
-export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount = 0, puzzleIndex = 1, totalPuzzles = 5, isDragging = false, playerPool = [] }) {
+export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount = 0, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
 
@@ -34,7 +34,7 @@ export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount =
       {/* letters and icon*/}
       <motion.div layout className="relative flex items-center justify-center gap-1">
         <CardButton onClick={onOpenCards} count={cardCount} />
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
             <motion.span
               key={letter === " " ? "space" : letter + i}
@@ -93,14 +93,7 @@ export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount =
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {showInfo && (
-          <InfoModal
-            isDark={isDark}
-            onClose={() => setShowInfo(false)}
-            playerPool={playerPool}
-            totalPuzzles={totalPuzzles}
-          />
-        )}
+        {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
     </div>
   )
