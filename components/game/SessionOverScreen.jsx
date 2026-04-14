@@ -2,7 +2,7 @@
 import { motion } from "motion/react"
 import { getColors } from "../../lib/theme"
 
-export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectGuesses, totalPuzzles = 5 }) {
+export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectGuesses }) {
   const { bg, text, dimmed } = getColors(isDark)
 
   return (
@@ -16,7 +16,7 @@ export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectG
         <span style={{ color: text }} className="text-3xl tracking-widest uppercase">Session Over</span>
         <div className="flex flex-col gap-2">
           <span style={{ color: text }} className="text-lg">
-            {puzzlesCompleted} / {totalPuzzles} puzzles solved
+            {puzzlesCompleted} / 5 puzzles solved
           </span>
           <span style={{ color: dimmed }} className="text-sm">
             {incorrectGuesses} wrong guess{incorrectGuesses !== 1 ? "es" : ""}
