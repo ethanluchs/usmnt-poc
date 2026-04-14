@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import TopBar from "./TopBar"
 import WorldMap from "./WorldMap"
@@ -52,7 +52,6 @@ export default function Game() {
       setShowSessionOver(true)
       return
     }
-    advancingRef.current = false
     setShowTransition(true)
     if (nextFirstStop) {
       setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600)
@@ -68,9 +67,6 @@ export default function Game() {
   }, [sessionOver, sessionPlayers.length, loadingPuzzles])
 
   const handleNextPuzzle = () => {
-    if (advancingRef.current) return
-    advancingRef.current = true
-
     setGuessResult(null)
     setPanTarget(null)
     setShowTransition(false)
@@ -88,10 +84,9 @@ export default function Game() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {showTransition && totalPuzzles > 0 && (
+        {showTransition && (
           <PuzzleTransition
             puzzleNumber={puzzleIndex + 2}
-            totalPuzzles={totalPuzzles}
             onDone={handleNextPuzzle}
           />
         )}
@@ -103,13 +98,12 @@ export default function Game() {
             isDark={isDark}
             puzzlesCompleted={puzzlesCompleted}
             incorrectGuesses={incorrectGuesses.length}
-            totalPuzzles={totalPuzzles}
           />
         )}
       </AnimatePresence>
 
       <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)} 
-      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1} totalPuzzles={totalPuzzles} playerPool={playerPool} />
+      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
 
       <WorldMap
         isDark={isDark}
@@ -127,9 +121,8 @@ export default function Game() {
         incorrectGuesses={incorrectGuesses}
         onGuess={handleGuess}
         onNextStop={onNextStop}
-        solved={solved || !player || loadingPuzzles}
+        solved={solved}
         isLastStop={isLastStop}
-        playerPool={playerPool}
       />
 
       <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
