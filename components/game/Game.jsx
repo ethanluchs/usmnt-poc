@@ -31,8 +31,9 @@ export default function Game() {
   const advancingRef = useRef(false)
 
   // Puzzle-level state managed by useGameState hook
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops,
-    onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop, totalPuzzles } = useGameState(sessionPlayers)
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, 
+        revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, 
+        isLastPuzzle, isLastStop, nextFirstStop, totalPuzzles } = useGameState(sessionPlayers)
 
   const handleGuess = (name) => {
     const result = onGuess(name)
@@ -53,7 +54,7 @@ export default function Game() {
       playerName: player?.name,
       puzzleIndex,
     })
-    
+
     // Delegate card unlocking to session manager
     handlePuzzleSolvedRef.current(player, puzzleIndex)
 
