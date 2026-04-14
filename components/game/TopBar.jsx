@@ -37,7 +37,7 @@ export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount =
         <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
             <motion.span
-              key={letter === " " ? "space" : letter + i}
+              key={`${isExpanded ? 'exp' : 'col'}-${i}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
