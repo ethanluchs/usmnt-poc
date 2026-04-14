@@ -4,15 +4,8 @@ import { motion } from "motion/react"
 
 export default function PuzzleTransition({ puzzleNumber, totalPuzzles = 5, onDone }) {
   useEffect(() => {
-    console.log('🎬 PuzzleTransition mounted - puzzleNumber:', puzzleNumber, 'will call onDone in 2500ms')
-    const t = setTimeout(() => {
-      console.log('🎬 PuzzleTransition calling onDone')
-      onDone()
-    }, 2500)
-    return () => {
-      console.log('🎬 PuzzleTransition unmounting, clearing timeout')
-      clearTimeout(t)
-    }
+    const t = setTimeout(onDone, 2500)
+    return () => clearTimeout(t)
   }, [onDone])
 
   return (

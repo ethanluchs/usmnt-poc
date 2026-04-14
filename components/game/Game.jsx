@@ -8,17 +8,18 @@ import LoadingOverlay from "../LoadingOverlay"
 import PuzzleTransition from "./PuzzleTransition"
 import SessionOverScreen from "./SessionOverScreen"
 import CardOverlay from "./CardOverlay"
-import { useGameState } from "../../lib/useGameState"
-import { useTheme } from "../../lib/useTheme"
-import { useSessionManager } from "../../lib/useSessionManager"
+import { useGameState } from "../../lib/hooks/useGameState"
+import { useTheme } from "../../lib/hooks/useTheme"
+import { useSessionManager } from "../../lib/hooks/useSessionManager"
 import { useAuth } from "../AuthProvider"
 
 export default function Game() {
-  const { user } = useAuth()
+  const { user, loading: authLoading } = useAuth()
   const { isDark, toggleTheme } = useTheme()
-  
+  const userId = authLoading ? undefined : (user?.uid ?? null)
+
   // Session-level state managed by useSessionManager hook
-  const { sessionPlayers, playerPool, unlockedCards, loadingPuzzles, puzzlesCompleted, handlePuzzleSolved } = useSessionManager(user?.uid)
+  const { sessionPlayers, playerPool, unlockedCards, loadingPuzzles, puzzlesCompleted, handlePuzzleSolved } = useSessionManager(userId)
   
   // UI-only state
   const [isDragging, setIsDragging] = useState(false)
@@ -41,37 +42,20 @@ export default function Game() {
     if (result === 'wrong') setTimeout(() => setGuessResult(null), 900)
   }
 
-  // make sure useeffect only refires when game state changes
-  const handlePuzzleSolvedRef = useRef(handlePuzzleSolved)
-  useEffect(() => { handlePuzzleSolvedRef.current = handlePuzzleSolved }, [handlePuzzleSolved])
-
   // Handle puzzle completion: unlock card and manage UI transitions
   useEffect(() => {
     if (!solved || !player) return
 
-    console.log('🎯 solved useEffect fired', {
-      solved,
-      playerName: player?.name,
-      puzzleIndex,
-    })
+    handlePuzzleSolved(player, puzzleIndex)
 
-    // Delegate card unlocking to session manager
-    handlePuzzleSolvedRef.current(player, puzzleIndex)
-
-    // Handle UI transitions
     if (isLastPuzzle) {
-      console.log('🎯 Last puzzle - showing session over')
       setShowSessionOver(true)
       return
     }
-    console.log('🎯 Not last puzzle - showing transition. nextFirstStop:', nextFirstStop)
     advancingRef.current = false
     setShowTransition(true)
     if (nextFirstStop) {
-      setTimeout(() => {
-        console.log('🎯 Setting panTarget:', nextFirstStop)
-        setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat })
-      }, 600)
+      setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600)
     }
   }, [solved, player, puzzleIndex, isLastPuzzle, nextFirstStop, handlePuzzleSolved])
 
@@ -84,11 +68,9 @@ export default function Game() {
   }, [sessionOver, sessionPlayers.length, loadingPuzzles])
 
   const handleNextPuzzle = () => {
-    console.log('🎯 handleNextPuzzle called - advancingRef:', advancingRef.current)
     if (advancingRef.current) return
     advancingRef.current = true
 
-    console.log('🎯 Advancing to next puzzle - current puzzleIndex:', puzzleIndex)
     setGuessResult(null)
     setPanTarget(null)
     setShowTransition(false)
