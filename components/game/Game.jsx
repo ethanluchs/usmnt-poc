@@ -10,81 +10,29 @@ import SessionOverScreen from "./SessionOverScreen"
 import CardOverlay from "./CardOverlay"
 import { useGameState } from "../../lib/useGameState"
 import { useTheme } from "../../lib/useTheme"
-import { fetchLocationPuzzles, fetchUserUnlockedCardIds, saveUserUnlockedCard } from "../../lib/game"
+import { useSessionManager } from "../../lib/useSessionManager"
 import { useAuth } from "../AuthProvider"
-
-const SESSION_PUZZLE_COUNT = 5
-
-function shuffle(items) {
-  return [...items].sort(() => Math.random() - 0.5)
-}
 
 export default function Game() {
   const { user } = useAuth()
   const { isDark, toggleTheme } = useTheme()
+  
+  // Session-level state managed by useSessionManager hook
+  const { sessionPlayers, playerPool, unlockedCards, loadingPuzzles, puzzlesCompleted, handlePuzzleSolved } = useSessionManager(user?.uid)
+  
+  // UI-only state
   const [isDragging, setIsDragging] = useState(false)
   const [showOverlay, setShowOverlay] = useState(true)
   const [showTransition, setShowTransition] = useState(false)
   const [showSessionOver, setShowSessionOver] = useState(false)
-  const [puzzlesCompleted, setPuzzlesCompleted] = useState(0)
   const [guessResult, setGuessResult] = useState(null)
   const [panTarget, setPanTarget] = useState(null)
-  const [sessionPlayers, setSessionPlayers] = useState([])
-  const [playerPool, setPlayerPool] = useState([])
-  const [loadingPuzzles, setLoadingPuzzles] = useState(true)
-  const [unlockedCardIds, setUnlockedCardIds] = useState(new Set())
-  const [unlockedCards, setUnlockedCards] = useState([]);
   const [showCards, setShowCards] = useState(false)
-  const lastHandledSolvedKey = useRef(null)
-  const wasSolvedRef = useRef(false)
   const advancingRef = useRef(false)
 
+  // Puzzle-level state managed by useGameState hook
   const { player, puzzleIndex, currentStop, incorrectGuesses, solved, revealedStops,
     onGuess, onNextStop, onNextPuzzle, sessionOver, isLastPuzzle, isLastStop, nextFirstStop, totalPuzzles } = useGameState(sessionPlayers)
-
-  useEffect(() => {
-    let cancelled = false
-
-    const loadSession = async () => {
-      setLoadingPuzzles(true)
-
-      try {
-        const [allPuzzles, userCardIds] = await Promise.all([
-          fetchLocationPuzzles(),
-          user?.uid ? fetchUserUnlockedCardIds(user.uid) : Promise.resolve(new Set()),
-        ])
-
-        if (cancelled) return
-
-        const eligible = allPuzzles.filter((p) => !userCardIds.has(p.id))
-        const picked = shuffle(eligible).slice(0, Math.min(SESSION_PUZZLE_COUNT, eligible.length))
-
-        setUnlockedCardIds(userCardIds)
-        setPlayerPool(eligible.length > 0 ? eligible : allPuzzles)
-        setSessionPlayers(picked)
-        lastHandledSolvedKey.current = null
-        wasSolvedRef.current = false
-        advancingRef.current = false
-        setPuzzlesCompleted(0)
-        setShowSessionOver(picked.length === 0)
-      } catch (error) {
-        console.error("Failed to load puzzles", error)
-        if (!cancelled) {
-          setSessionPlayers([])
-          setPlayerPool([])
-          setShowSessionOver(true)
-        }
-      } finally {
-        if (!cancelled) setLoadingPuzzles(false)
-      }
-    }
-
-    loadSession()
-
-    return () => {
-      cancelled = true
-    }
-  }, [user?.uid])
 
   const handleGuess = (name) => {
     const result = onGuess(name)
@@ -92,57 +40,57 @@ export default function Game() {
     if (result === 'wrong') setTimeout(() => setGuessResult(null), 900)
   }
 
+  // make sure useeffect only refires when game state changes
+  const handlePuzzleSolvedRef = useRef(handlePuzzleSolved)
+  useEffect(() => { handlePuzzleSolvedRef.current = handlePuzzleSolved }, [handlePuzzleSolved])
+
+  // Handle puzzle completion: unlock card and manage UI transitions
   useEffect(() => {
-    if (!solved) {
-      wasSolvedRef.current = false
-      return
-    }
+    if (!solved || !player) return
 
-    if (wasSolvedRef.current) return
-    wasSolvedRef.current = true
+    console.log('🎯 solved useEffect fired', {
+      solved,
+      playerName: player?.name,
+      puzzleIndex,
+    })
+    
+    // Delegate card unlocking to session manager
+    handlePuzzleSolvedRef.current(player, puzzleIndex)
 
-    if (!player) return
-
-    const solvedKey = `${puzzleIndex}:${player.id}`
-    if (lastHandledSolvedKey.current === solvedKey) return
-    lastHandledSolvedKey.current = solvedKey
-
-    setUnlockedCards(prev => (prev.some(card => card.id === player.id) ? prev : [...prev, player]))
-
-    if (user?.uid && !unlockedCardIds.has(player.id)) {
-      saveUserUnlockedCard(user.uid, player).catch((error) => {
-        console.error("Failed to save unlocked card", error)
-      })
-      setUnlockedCardIds(prev => {
-        const next = new Set(prev)
-        next.add(player.id)
-        return next
-      })
-    }
-
+    // Handle UI transitions
     if (isLastPuzzle) {
-      setPuzzlesCompleted(prev => prev + 1)
+      console.log('🎯 Last puzzle - showing session over')
       setShowSessionOver(true)
       return
     }
+    console.log('🎯 Not last puzzle - showing transition. nextFirstStop:', nextFirstStop)
     advancingRef.current = false
     setShowTransition(true)
-    if (nextFirstStop) setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600)
-  }, [solved, puzzleIndex, player, isLastPuzzle, nextFirstStop, user?.uid, unlockedCardIds])
+    if (nextFirstStop) {
+      setTimeout(() => {
+        console.log('🎯 Setting panTarget:', nextFirstStop)
+        setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat })
+      }, 600)
+    }
+  }, [solved, player, puzzleIndex, isLastPuzzle, nextFirstStop, handlePuzzleSolved])
 
+  // Show session over screen when session ends or no puzzles available
   useEffect(() => {
     if (loadingPuzzles) return
-    if (sessionOver) setShowSessionOver(true)
-  }, [sessionOver, loadingPuzzles])
+    if (sessionOver || sessionPlayers.length === 0) {
+      setShowSessionOver(true)
+    }
+  }, [sessionOver, sessionPlayers.length, loadingPuzzles])
 
   const handleNextPuzzle = () => {
+    console.log('🎯 handleNextPuzzle called - advancingRef:', advancingRef.current)
     if (advancingRef.current) return
     advancingRef.current = true
 
+    console.log('🎯 Advancing to next puzzle - current puzzleIndex:', puzzleIndex)
     setGuessResult(null)
     setPanTarget(null)
     setShowTransition(false)
-    setPuzzlesCompleted(prev => prev + 1)
     onNextPuzzle()
   }
 
