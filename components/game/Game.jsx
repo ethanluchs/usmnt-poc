@@ -13,6 +13,8 @@ import { useTheme } from "../../lib/useTheme"
 import { fetchLocationPuzzles, fetchUserUnlockedCardIds, saveUserUnlockedCard } from "../../lib/game"
 import { useAuth } from "../AuthProvider"
 
+// test
+
 const SESSION_PUZZLE_COUNT = 5
 
 function shuffle(items) {
