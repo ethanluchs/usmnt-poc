@@ -4,7 +4,7 @@ import { ComposableMap, Geography, Geographies, ZoomableGroup } from "react-simp
 import CareerPath from "./CareerPath"
 import { lerpColor } from "../../lib/color"
 import { getColors } from "../../lib/theme"
-import { useMapPan } from "../../lib/useMapPan"
+import { useMapPan } from "../../lib/hooks/useMapPan"
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
