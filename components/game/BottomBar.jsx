@@ -1,15 +1,14 @@
 'use client'
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { MOCK_PLAYERS } from "../../lib/mockData"
 import Button from "../ui/Button"
 
-function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuesses }) {
+function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuesses, playerPool }) {
   const [showDropdown, setShowDropdown] = useState(false)
 
   const guessedNames = new Set(incorrectGuesses.map(g => g.toLowerCase()))
   const filtered = input.length > 1
-    ? MOCK_PLAYERS.filter(p => p.name.toLowerCase().includes(input.toLowerCase()) && !guessedNames.has(p.name.toLowerCase()))
+    ? playerPool.filter(p => p.name?.toLowerCase().includes(input.toLowerCase()) && !guessedNames.has(p.name.toLowerCase()))
     : []
 
   const handleSelect = (name) => {
@@ -76,7 +75,7 @@ function GuessPills({ incorrectGuesses }) {
   )
 }
 
-export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, solved, isLastStop }) {
+export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, solved, isLastStop, playerPool = [] }) {
   const [input, setInput] = useState("")
   const isDisabled = solved || incorrectGuesses.length >= 5
 
@@ -90,7 +89,7 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
   return (
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3">
       <div className="flex gap-2">
-        <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} />
+        <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} playerPool={playerPool} />
         <Button onClick={handleGuess} disabled={isDisabled}>Guess</Button>
         <Button onClick={onNextStop} disabled={solved || isLastStop}>Next Stop →</Button>
       </div>
