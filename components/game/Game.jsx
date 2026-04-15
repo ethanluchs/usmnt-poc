@@ -20,7 +20,7 @@ export default function Game() {
 
   // Session-level state managed by useSessionManager hook
   const { sessionPlayers, playerPool, unlockedCards, loadingPuzzles, puzzlesCompleted, handlePuzzleSolved } = useSessionManager(userId)
-  
+
   // UI-only state
   const [isDragging, setIsDragging] = useState(false)
   const [showOverlay, setShowOverlay] = useState(true)
@@ -32,8 +32,8 @@ export default function Game() {
   const advancingRef = useRef(false)
 
   // Puzzle-level state managed by useGameState hook
-  const { player, puzzleIndex, currentStop, incorrectGuesses, solved, 
-        revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver, 
+  const { player, puzzleIndex, currentStop, incorrectGuesses, solved,
+        revealedStops, onGuess, onNextStop, onNextPuzzle, sessionOver,
         isLastPuzzle, isLastStop, nextFirstStop, totalPuzzles } = useGameState(sessionPlayers)
 
   const handleGuess = (name) => {
@@ -52,6 +52,7 @@ export default function Game() {
       setShowSessionOver(true)
       return
     }
+    advancingRef.current = false
     setShowTransition(true)
     if (nextFirstStop) {
       setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600)
@@ -67,6 +68,9 @@ export default function Game() {
   }, [sessionOver, sessionPlayers.length, loadingPuzzles])
 
   const handleNextPuzzle = () => {
+    if (advancingRef.current) return
+    advancingRef.current = true
+
     setGuessResult(null)
     setPanTarget(null)
     setShowTransition(false)
@@ -84,9 +88,10 @@ export default function Game() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {showTransition && (
+        {showTransition && totalPuzzles > 0 && (
           <PuzzleTransition
             puzzleNumber={puzzleIndex + 2}
+            totalPuzzles={totalPuzzles}
             onDone={handleNextPuzzle}
           />
         )}
@@ -98,12 +103,13 @@ export default function Game() {
             isDark={isDark}
             puzzlesCompleted={puzzlesCompleted}
             incorrectGuesses={incorrectGuesses.length}
+            totalPuzzles={totalPuzzles}
           />
         )}
       </AnimatePresence>
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)} 
-      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={puzzleIndex + 1} />
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)}
+      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1} totalPuzzles={totalPuzzles} playerPool={playerPool} />
 
       <WorldMap
         isDark={isDark}
@@ -121,8 +127,9 @@ export default function Game() {
         incorrectGuesses={incorrectGuesses}
         onGuess={handleGuess}
         onNextStop={onNextStop}
-        solved={solved}
+        solved={solved || !player || loadingPuzzles}
         isLastStop={isLastStop}
+        playerPool={playerPool}
       />
 
       <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
