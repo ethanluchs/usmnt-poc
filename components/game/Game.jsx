@@ -132,7 +132,7 @@ export default function Game() {
         playerPool={playerPool}
       />
 
-      <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
+      <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} playerPool={playerPool} />
     </motion.main>
   )
 }
