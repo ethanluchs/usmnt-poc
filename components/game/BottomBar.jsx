@@ -77,7 +77,7 @@ function GuessPills({ incorrectGuesses }) {
   )
 }
 
-export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, solved, isLastStop, playerPool = [] }) {
+export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, solved, isLastStop, playerPool = [], onOpenCards, cardCount = 0 }) {
   const [input, setInput] = useState("")
   const isDisabled = solved || incorrectGuesses.length >= 5
 
@@ -94,8 +94,14 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
         <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} playerPool={playerPool} />
         <Button onClick={handleGuess} disabled={isDisabled}>Guess</Button>
         <Button onClick={onNextStop} disabled={solved || isLastStop}>Next Stop →</Button>
+        <button
+          onClick={onOpenCards}
+          className="w-8 h-8 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow hover:bg-gray-300"
+        >
+          {cardCount}
+        </button>
       </div>
-      <GuessPills incorrectGuesses={incorrectGuesses} />
+       { false && <GuessPills incorrectGuesses={incorrectGuesses} /> }
     </div>
   )
 }

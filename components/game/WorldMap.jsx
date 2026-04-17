@@ -37,10 +37,10 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
 
   useEffect(() => { setPinnedStop(null) }, [puzzleIndex])
 
-  const { center, zoom, handleMoveStart, handleMoveEnd, panTo } = useMapPan({ revealedStops, puzzleIndex, panTarget })
+  const { center, zoom, handleMoveStart, handleMoveEnd, handleWheel, panTo } = useMapPan({ revealedStops, puzzleIndex, panTarget })
 
   return (
-    <div style={{ width: "100%", height: "100%" }} onClick={() => setPinnedStop(false)}>
+    <div style={{ width: "100%", height: "100%" }} onClick={() => setPinnedStop(false)} onWheel={handleWheel}>
     <ComposableMap
       projection="geoMercator"
       width={800}
@@ -62,6 +62,7 @@ export default function WorldMap({ isDark, isDragging, onMoveStart, onMoveEnd, r
       <ZoomableGroup
         center={center} zoom={zoom} minZoom={1} maxZoom={7}
         translateExtent={[[-25, -125], [850, 550]]}
+        filterZoomEvent={(e) => e.type !== "wheel" && e.type !== "touchstart"}
         onMoveStart={() => { handleMoveStart(); onMoveStart() }}
         onMoveEnd={(e) => { handleMoveEnd(e); onMoveEnd() }}
       >
