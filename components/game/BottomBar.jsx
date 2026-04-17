@@ -49,7 +49,7 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
 function GuessPills({ incorrectGuesses }) {
   return (
     <div className="flex gap-2 justify-center">
-      {Array.from({ length: 5 }).map((_, i) => (
+      {Array.from({ length: 3 }).map((_, i) => (
         <AnimatePresence key={i} mode="wait">
           {incorrectGuesses[i] ? (
             <motion.span
@@ -57,14 +57,16 @@ function GuessPills({ incorrectGuesses }) {
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="border border-red-700 dark:border-red-400 bg-[#ede8d0] dark:bg-[#1a1917] text-red-700 dark:text-red-500 rounded px-2 py-1 text-sm min-w-[80px] text-center"
+              className="border border-red-700 dark:border-red-400 bg-[#ede8d0]
+               dark:bg-[#1a1917] text-red-700 dark:text-red-500 rounded px-2 py-1 text-sm min-w-[80px] text-center"
             >
               {incorrectGuesses[i]}
             </motion.span>
           ) : (
             <motion.span
               key="empty"
-              className="border border-gray-300 dark:border-gray-700 bg-[#ede8d0] dark:bg-[#1a1917] text-transparent rounded px-2 py-1 text-sm min-w-[80px] text-center"
+              className="border border-black/80 dark:border-[#b8b2a0] bg-[#ede8d0]
+               dark:bg-[#1a1917] text-transparent rounded px-2 py-1 text-sm min-w-[80px] text-center"
             >
               ·
             </motion.span>
