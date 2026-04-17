@@ -5,7 +5,7 @@ export default function PlayerCard({ player, unlocked = true, isDark = false }) 
     return (
       <div
         style={{ aspectRatio: '2.5 / 3.5' }}
-        className={`w-full rounded-xl ${isDark ? "bg-white/5" : "bg-black/8"} flex items-center justify-center`}
+        className={`w-full rounded-xl ${isDark ? "bg-white/5" : "bg-black/10"} flex items-center justify-center`}
       >
         <span className="text-3xl opacity-20">?</span>
       </div>
