@@ -1,0 +1,458 @@
+[
+  {
+    "id": "kimmich-joshua-loc",
+    "name": "Joshua Kimmich",
+    "nationality": "Germany",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "VfB Stuttgart",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "1998-2013",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "VfB Stuttgart II",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "2013-2015"
+      },
+      {
+        "order": 3,
+        "club": "RB Leipzig",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.3406321,
+        "lng": 12.3747329,
+        "years": "2015-2017"
+      },
+      {
+        "order": 4,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2017-present"
+      }
+    ]
+  },
+  {
+    "id": "wirtz-florian-loc",
+    "name": "Florian Wirtz",
+    "nationality": "Germany",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "1. FC Köln",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 50.938361,
+        "lng": 6.959974,
+        "years": "2010-2020",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Bayer 04 Leverkusen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.0324743,
+        "lng": 6.9881194,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "musiala-jamal-loc",
+    "name": "Jamal Musiala",
+    "nationality": "Germany",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2019-2020",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "havertz-kai-loc",
+    "name": "Kai Havertz",
+    "nationality": "Germany",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Alemannia Mariadorf",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 50.776351,
+        "lng": 6.083862,
+        "years": "2009-2010",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Bayer 04 Leverkusen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.0324743,
+        "lng": 6.9881194,
+        "years": "2010-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "Bayer 04 Leverkusen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.0324743,
+        "lng": 6.9881194,
+        "years": "2016-2020"
+      },
+      {
+        "order": 4,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "rüdiger-antonio-loc",
+    "name": "Antonio Rüdiger",
+    "nationality": "Germany",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "VfB Stuttgart",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "2011-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "VfB Stuttgart",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "2012-2015"
+      },
+      {
+        "order": 3,
+        "club": "AS Roma",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 41.8933203,
+        "lng": 12.4829321,
+        "years": "2015-2017"
+      },
+      {
+        "order": 4,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2017-2022"
+      },
+      {
+        "order": 5,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "tah-jonathan-loc",
+    "name": "Jonathan Tah",
+    "nationality": "Germany",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Hamburger SV",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 53.5501721,
+        "lng": 10.0013165,
+        "years": "2010-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Hamburger SV",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 53.5501721,
+        "lng": 10.0013165,
+        "years": "2015-2016"
+      },
+      {
+        "order": 3,
+        "club": "Bayer 04 Leverkusen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.0324743,
+        "lng": 6.9881194,
+        "years": "2016-present"
+      }
+    ]
+  },
+  {
+    "id": "schlotterbeck-nico-loc",
+    "name": "Nico Schlotterbeck",
+    "nationality": "Germany",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "SC Freiburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 47.9960901,
+        "lng": 7.8494005,
+        "years": "2015-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "SC Freiburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 47.9960901,
+        "lng": 7.8494005,
+        "years": "2019-2021"
+      },
+      {
+        "order": 3,
+        "club": "1. FSV Mainz 05",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 49.9995205,
+        "lng": 8.2736253,
+        "years": "2021-2022",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "VfB Stuttgart",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "2022-2023"
+      },
+      {
+        "order": 5,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5142273,
+        "lng": 7.4652789,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "sané-leroy-loc",
+    "name": "Leroy Sané",
+    "nationality": "Germany",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "SG Wattenscheid 09",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.4817107,
+        "lng": 7.1356618,
+        "years": "2001-2005",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "FC Schalke 04",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5110321,
+        "lng": 7.0960124,
+        "years": "2005-2013",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "FC Schalke 04",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5110321,
+        "lng": 7.0960124,
+        "years": "2014-2016"
+      },
+      {
+        "order": 4,
+        "club": "Manchester City FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2016-2020"
+      },
+      {
+        "order": 5,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "gnabry-serge-loc",
+    "name": "Serge Gnabry",
+    "nationality": "Germany",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "SG Wattenscheid 09",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.4817107,
+        "lng": 7.1356618,
+        "years": "2002-2011",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2011-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2016",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "West Bromwich Albion",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.5186579,
+        "lng": -1.9923114,
+        "years": "2016",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "SV Werder Bremen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 53.0758196,
+        "lng": 8.8071646,
+        "years": "2016-2017"
+      },
+      {
+        "order": 6,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2017-present"
+      }
+    ]
+  },
+  {
+    "id": "baumann-oliver-loc",
+    "name": "Oliver Baumann",
+    "nationality": "Germany",
+    "position": "GK",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "TSV 1860 Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2008-2010",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "TSV 1860 Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2010-2012"
+      },
+      {
+        "order": 3,
+        "club": "SC Freiburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 47.9960901,
+        "lng": 7.8494005,
+        "years": "2012-2014"
+      },
+      {
+        "order": 4,
+        "club": "TSG 1899 Hoffenheim",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 49.2531222,
+        "lng": 8.8769914,
+        "years": "2014-present"
+      }
+    ]
+  }
+]
