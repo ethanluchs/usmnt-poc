@@ -1,0 +1,702 @@
+{
+  "New England Revolution": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Foxborough",
+    "lat": 42.0653768,
+    "lng": -71.2478308
+  },
+  "Arsenal FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "PA Classics": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Lancaster",
+    "lat": 40.0379958,
+    "lng": -76.3056707
+  },
+  "FC Dallas": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Frisco",
+    "lat": 37.7879363,
+    "lng": -122.4075201
+  },
+  "Borussia Dortmund": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Dortmund",
+    "lat": 51.5142273,
+    "lng": 7.4652789
+  },
+  "Chelsea FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Schalke 04": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Gelsenkirchen",
+    "lat": 51.5110321,
+    "lng": 7.0960124
+  },
+  "Juventus FC": {
+    "country": "Italy",
+    "countryCode": "380",
+    "city": "Turin",
+    "lat": 45.0677551,
+    "lng": 7.6824892
+  },
+  "Leeds United": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Leeds",
+    "lat": 53.7974185,
+    "lng": -1.5437941
+  },
+  "Middlesbrough FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Middlesbrough",
+    "lat": 54.5760419,
+    "lng": -1.2344047
+  },
+  "Reims": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Reims",
+    "lat": 49.2577886,
+    "lng": 4.031926
+  },
+  "New York Red Bulls": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Harrison",
+    "lat": 32.5233959,
+    "lng": -94.3982158
+  },
+  "Paris Saint-Germain": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Paris",
+    "lat": 48.8534951,
+    "lng": 2.3483915
+  },
+  "Lille OSC": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Lille",
+    "lat": 50.6365654,
+    "lng": 3.0635282
+  },
+  "VfL Wolfsburg": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Wolfsburg",
+    "lat": 52.4205588,
+    "lng": 10.7861682
+  },
+  "FC Augsburg": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Augsburg",
+    "lat": 48.3690341,
+    "lng": 10.8979522
+  },
+  "New York City FC": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "New York",
+    "lat": 40.7127281,
+    "lng": -74.0060152
+  },
+  "RB Leipzig": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Leipzig",
+    "lat": 51.3406321,
+    "lng": 12.3747329
+  },
+  "Bayern Munich": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Munich",
+    "lat": 48.1371079,
+    "lng": 11.5753822
+  },
+  "Bayern Munich II": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Munich",
+    "lat": 48.1371079,
+    "lng": 11.5753822
+  },
+  "Rangers FC": {
+    "country": "Scotland",
+    "countryCode": "826",
+    "city": "Glasgow",
+    "lat": 55.861155,
+    "lng": -4.2501687
+  },
+  "VfB Stuttgart": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Stuttgart",
+    "lat": 48.7784485,
+    "lng": 9.1800132
+  },
+  "Everton FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Liverpool",
+    "lat": 53.3933411,
+    "lng": -2.9166389
+  },
+  "Birmingham City": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Birmingham",
+    "lat": 52.4796992,
+    "lng": -1.9026911
+  },
+  "Wigan Athletic": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Wigan",
+    "lat": 53.5457188,
+    "lng": -2.6264624
+  },
+  "Fulham FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Crystal Palace": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Ajax Amsterdam": {
+    "country": "Netherlands",
+    "countryCode": "528",
+    "city": "Amsterdam",
+    "lat": 52.3730796,
+    "lng": 4.8924534
+  },
+  "FC Barcelona": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "Barcelona",
+    "lat": 41.3825802,
+    "lng": 2.177073
+  },
+  "AC Milan": {
+    "country": "Italy",
+    "countryCode": "380",
+    "city": "Milan",
+    "lat": 45.4641943,
+    "lng": 9.1896346
+  },
+  "AFC Ajax": {
+    "country": "Netherlands",
+    "countryCode": "528",
+    "city": "Amsterdam",
+    "lat": 52.3730796,
+    "lng": 4.8924534
+  },
+  "Philadelphia Union": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Chester",
+    "lat": 39.9829308,
+    "lng": -75.7652424
+  },
+  "Philadelphia Union II": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Chester",
+    "lat": 39.9829308,
+    "lng": -75.7652424
+  },
+  "Los Angeles FC": {
+    "country": "USA",
+    "countryCode": "840",
+    "city": "Los Angeles",
+    "lat": 34.0536909,
+    "lng": -118.242766
+  },
+  "AS Monaco": {
+    "country": "Monaco",
+    "countryCode": "377",
+    "city": "Monaco",
+    "lat": 43.7323492,
+    "lng": 7.4276832
+  },
+  "AS Bondy": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Bondy",
+    "lat": 48.9031,
+    "lng": 2.48291
+  },
+  "Clairefontaine": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Clairefontaine-en-Yvelines",
+    "lat": 48.6112569,
+    "lng": 1.9131801
+  },
+  "Rennes": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Rennes",
+    "lat": 48.1113387,
+    "lng": -1.6800198
+  },
+  "Reading FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Reading",
+    "lat": 51.4514953,
+    "lng": -0.9836342
+  },
+  "Crystal Palace FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Montauban FC": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Montauban",
+    "lat": 44.0175835,
+    "lng": 1.3549991
+  },
+  "Real Sociedad": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "San Sebastián",
+    "lat": 43.3224219,
+    "lng": -1.9838889
+  },
+  "Atlético Madrid": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "Madrid",
+    "lat": 40.416782,
+    "lng": -3.703507
+  },
+  "Real Madrid CF": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "Madrid",
+    "lat": 40.416782,
+    "lng": -3.703507
+  },
+  "Stade Rennais FC": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Rennes",
+    "lat": 48.1113387,
+    "lng": -1.6800198
+  },
+  "AS Saint-Étienne": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Saint-Étienne",
+    "lat": 45.4401467,
+    "lng": 4.3873058
+  },
+  "Olympique de Marseille": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Marseille",
+    "lat": 43.2961743,
+    "lng": 5.3699525
+  },
+  "Club Atlético de Madrid": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "Madrid",
+    "lat": 40.416782,
+    "lng": -3.703507
+  },
+  "Alavés": {
+    "country": "Spain",
+    "countryCode": "724",
+    "city": "Vitoria-Gasteiz",
+    "lat": 42.8465088,
+    "lng": -2.6724025
+  },
+  "Sochaux-Montbéliard": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Montbéliard",
+    "lat": 47.5102368,
+    "lng": 6.7977564
+  },
+  "Liverpool FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Liverpool",
+    "lat": 53.3933411,
+    "lng": -2.9166389
+  },
+  "SCO Angers": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Angers",
+    "lat": 47.4739884,
+    "lng": -0.5515588
+  },
+  "FC Bayern Munich": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Munich",
+    "lat": 48.1371079,
+    "lng": 11.5753822
+  },
+  "Ridgeway Rovers": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Watford FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Watford",
+    "lat": 51.6553875,
+    "lng": -0.3957425
+  },
+  "Tottenham Hotspur": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "West Ham United": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "London",
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "Manchester City FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Manchester",
+    "lat": 53.4794892,
+    "lng": -2.2451148
+  },
+  "Manchester City": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Manchester",
+    "lat": 53.4794892,
+    "lng": -2.2451148
+  },
+  "Charlton Athletic": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Charlton",
+    "lat": 51.4826053,
+    "lng": 0.0365359
+  },
+  "Swansea City": {
+    "country": "Wales",
+    "countryCode": "826",
+    "city": "Swansea",
+    "lat": 51.6195955,
+    "lng": -3.9459248
+  },
+  "Barnsley FC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Barnsley",
+    "lat": 53.5527719,
+    "lng": -1.4827755
+  },
+  "Newcastle United": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Newcastle upon Tyne",
+    "lat": 54.9738474,
+    "lng": -1.6131572
+  },
+  "Manchester United": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Manchester",
+    "lat": 53.4794892,
+    "lng": -2.2451148
+  },
+  "Sunderland AFC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Sunderland",
+    "lat": 54.9058512,
+    "lng": -1.3828727
+  },
+  "Bradford City AFC": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Bradford",
+    "lat": 53.7944229,
+    "lng": -1.7519186
+  },
+  "Carlisle United": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Carlisle",
+    "lat": 54.8948478,
+    "lng": -2.9362311
+  },
+  "VfB Stuttgart II": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Stuttgart",
+    "lat": 48.7784485,
+    "lng": 9.1800132
+  },
+  "1. FC Köln": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Cologne",
+    "lat": 50.938361,
+    "lng": 6.959974
+  },
+  "Bayer 04 Leverkusen": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Leverkusen",
+    "lat": 51.0324743,
+    "lng": 6.9881194
+  },
+  "Alemannia Mariadorf": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Aachen",
+    "lat": 50.776351,
+    "lng": 6.083862
+  },
+  "AS Roma": {
+    "country": "Italy",
+    "countryCode": "380",
+    "city": "Rome",
+    "lat": 41.8933203,
+    "lng": 12.4829321
+  },
+  "Hamburger SV": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Hamburg",
+    "lat": 53.5501721,
+    "lng": 10.0013165
+  },
+  "SC Freiburg": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Freiburg im Breisgau",
+    "lat": 47.9960901,
+    "lng": 7.8494005
+  },
+  "1. FSV Mainz 05": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Mainz",
+    "lat": 49.9995205,
+    "lng": 8.2736253
+  },
+  "SG Wattenscheid 09": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Wattenscheid",
+    "lat": 51.4817107,
+    "lng": 7.1356618
+  },
+  "FC Schalke 04": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Gelsenkirchen",
+    "lat": 51.5110321,
+    "lng": 7.0960124
+  },
+  "West Bromwich Albion": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "West Bromwich",
+    "lat": 52.5186579,
+    "lng": -1.9923114
+  },
+  "SV Werder Bremen": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Bremen",
+    "lat": 53.0758196,
+    "lng": 8.8071646
+  },
+  "TSV 1860 Munich": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Munich",
+    "lat": 48.1371079,
+    "lng": 11.5753822
+  },
+  "TSG 1899 Hoffenheim": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Sinsheim",
+    "lat": 49.2531222,
+    "lng": 8.8769914
+  },
+  "KRC Genk": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Genk",
+    "lat": 50.9654864,
+    "lng": 5.5001456
+  },
+  "Werder Bremen": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Bremen",
+    "lat": 53.0758196,
+    "lng": 8.8071646
+  },
+  "Anderlecht": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Brussels",
+    "lat": 50.8467372,
+    "lng": 4.352493
+  },
+  "Inter Milan": {
+    "country": "Italy",
+    "countryCode": "380",
+    "city": "Milan",
+    "lat": 45.4641943,
+    "lng": 9.1896346
+  },
+  "RSC Anderlecht": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Brussels",
+    "lat": 50.8467372,
+    "lng": 4.352493
+  },
+  "Vitesse": {
+    "country": "Netherlands",
+    "countryCode": "528",
+    "city": "Arnhem",
+    "lat": 52.0056642,
+    "lng": 5.8762345
+  },
+  "Club Brugge": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Bruges",
+    "lat": 51.2085526,
+    "lng": 3.226772
+  },
+  "RC Lens": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Lens",
+    "lat": 50.4291723,
+    "lng": 2.8319805
+  },
+  "Club Brugge KV": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Bruges",
+    "lat": 51.2085526,
+    "lng": 3.226772
+  },
+  "Lierse SK": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Lier",
+    "lat": 51.131069,
+    "lng": 4.5696516
+  },
+  "Leicester City": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Leicester",
+    "lat": 52.6362,
+    "lng": -1.1331969
+  },
+  "Aston Villa": {
+    "country": "England",
+    "countryCode": "826",
+    "city": "Birmingham",
+    "lat": 52.4796992,
+    "lng": -1.9026911
+  },
+  "K.R.C. Genk": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Genk",
+    "lat": 50.9654864,
+    "lng": 5.5001456
+  },
+  "C.S. Marítimo": {
+    "country": "Portugal",
+    "countryCode": "620",
+    "city": "Funchal",
+    "lat": 32.6496497,
+    "lng": -16.9086783
+  },
+  "R.C. Strasbourg Alsace": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Strasbourg",
+    "lat": 48.584614,
+    "lng": 7.7507127
+  },
+  "Bologna F.C. 1909": {
+    "country": "Italy",
+    "countryCode": "380",
+    "city": "Bologna",
+    "lat": 44.4938203,
+    "lng": 11.3426327
+  },
+  "Lommel SK": {
+    "country": "Belgium",
+    "countryCode": "056",
+    "city": "Lommel",
+    "lat": 51.2305657,
+    "lng": 5.3076895
+  },
+  "FC Nantes": {
+    "country": "France",
+    "countryCode": "250",
+    "city": "Nantes",
+    "lat": 47.2186371,
+    "lng": -1.5541362
+  },
+  "Hertha BSC": {
+    "country": "Germany",
+    "countryCode": "276",
+    "city": "Berlin",
+    "lat": 52.5173885,
+    "lng": 13.3951309
+  }
+}

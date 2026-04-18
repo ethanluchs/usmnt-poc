@@ -1,0 +1,667 @@
+[
+  {
+    "id": "bruyne-kevin-loc",
+    "name": "Kevin De Bruyne",
+    "nationality": "Belgium",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2005-2008",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2008-2012"
+      },
+      {
+        "order": 3,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2012-2014"
+      },
+      {
+        "order": 4,
+        "club": "Werder Bremen",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 53.0758196,
+        "lng": 8.8071646,
+        "years": "2012-2013",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "VfL Wolfsburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 52.4205588,
+        "lng": 10.7861682,
+        "years": "2014-2015"
+      },
+      {
+        "order": 6,
+        "club": "Manchester City FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2015-present"
+      }
+    ]
+  },
+  {
+    "id": "lukaku-romelu-loc",
+    "name": "Romelu Lukaku",
+    "nationality": "Belgium",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2006-2009",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2009-2011"
+      },
+      {
+        "order": 3,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2011-2014"
+      },
+      {
+        "order": 4,
+        "club": "West Bromwich Albion",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.5186579,
+        "lng": -1.9923114,
+        "years": "2012-2013",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2013-2014"
+      },
+      {
+        "order": 6,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2014-2017"
+      },
+      {
+        "order": 7,
+        "club": "Manchester United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2017-2019"
+      },
+      {
+        "order": 8,
+        "club": "Inter Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2019-2021"
+      },
+      {
+        "order": 9,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2021-2022"
+      },
+      {
+        "order": 10,
+        "club": "Inter Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2022-2023",
+        "note": "Loan"
+      },
+      {
+        "order": 11,
+        "club": "AS Roma",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 41.8933203,
+        "lng": 12.4829321,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "doku-jérémy-loc",
+    "name": "Jérémy Doku",
+    "nationality": "Belgium",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2015-2018",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2018-2020"
+      },
+      {
+        "order": 3,
+        "club": "Stade Rennais FC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "courtois-thibaut-loc",
+    "name": "Thibaut Courtois",
+    "nationality": "Belgium",
+    "position": "GK",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2009-2011",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2011-2012"
+      },
+      {
+        "order": 3,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2011-2018",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Atlético Madrid",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2012-2014",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2014-2018"
+      },
+      {
+        "order": 6,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2018-present"
+      }
+    ]
+  },
+  {
+    "id": "onana-amadou-loc",
+    "name": "Amadou Onana",
+    "nationality": "Belgium",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Lille OSC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 50.6365654,
+        "lng": 3.0635282,
+        "years": "2020-2022"
+      },
+      {
+        "order": 2,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "openda-loïs-loc",
+    "name": "Loïs Openda",
+    "nationality": "Belgium",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2015-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2016-2019"
+      },
+      {
+        "order": 3,
+        "club": "Vitesse",
+        "country": "Netherlands",
+        "countryCode": "528",
+        "lat": 52.0056642,
+        "lng": 5.8762345,
+        "years": "2019-2020",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Vitesse",
+        "country": "Netherlands",
+        "countryCode": "528",
+        "lat": 52.0056642,
+        "lng": 5.8762345,
+        "years": "2020-2021"
+      },
+      {
+        "order": 5,
+        "club": "Club Brugge",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.2085526,
+        "lng": 3.226772,
+        "years": "2021-2022"
+      },
+      {
+        "order": 6,
+        "club": "RC Lens",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 50.4291723,
+        "lng": 2.8319805,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "ketelaere-charles-loc",
+    "name": "Charles De Ketelaere",
+    "nationality": "Belgium",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Club Brugge KV",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.2085526,
+        "lng": 3.226772,
+        "years": "2018-2022"
+      },
+      {
+        "order": 2,
+        "club": "AC Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "tielemans-youri-loc",
+    "name": "Youri Tielemans",
+    "nationality": "Belgium",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Lierse SK",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.131069,
+        "lng": 4.5696516,
+        "years": "2002-2013",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2013-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2015-2017"
+      },
+      {
+        "order": 4,
+        "club": "AS Monaco",
+        "country": "Monaco",
+        "countryCode": "377",
+        "lat": 43.7323492,
+        "lng": 7.4276832,
+        "years": "2017-2019"
+      },
+      {
+        "order": 5,
+        "club": "Leicester City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.6362,
+        "lng": -1.1331969,
+        "years": "2019-2023"
+      },
+      {
+        "order": 6,
+        "club": "Aston Villa",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.4796992,
+        "lng": -1.9026911,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "theate-arthur-loc",
+    "name": "Arthur Theate",
+    "nationality": "Belgium",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "K.R.C. Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2015-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "K.R.C. Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2019-2020"
+      },
+      {
+        "order": 3,
+        "club": "C.S. Marítimo",
+        "country": "Portugal",
+        "countryCode": "620",
+        "lat": 32.6496497,
+        "lng": -16.9086783,
+        "years": "2020-2021",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "R.C. Strasbourg Alsace",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.584614,
+        "lng": 7.7507127,
+        "years": "2021-2023"
+      },
+      {
+        "order": 5,
+        "club": "Bologna F.C. 1909",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 44.4938203,
+        "lng": 11.3426327,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "cuyper-maxim-loc",
+    "name": "Maxim De Cuyper",
+    "nationality": "Belgium",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Club Brugge KV",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.2085526,
+        "lng": 3.226772,
+        "years": "2018-2021",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Club Brugge KV",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.2085526,
+        "lng": 3.226772,
+        "years": "2021-2023"
+      },
+      {
+        "order": 3,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "debast-zeno-loc",
+    "name": "Zeno Debast",
+    "nationality": "Belgium",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2010-2021",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "lukebakio-dodi-loc",
+    "name": "Dodi Lukebakio",
+    "nationality": "Belgium",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2013-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "RSC Anderlecht",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.8467372,
+        "lng": 4.352493,
+        "years": "2015-2016"
+      },
+      {
+        "order": 3,
+        "club": "Lommel SK",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 51.2305657,
+        "lng": 5.3076895,
+        "years": "2016-2017",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "KRC Genk",
+        "country": "Belgium",
+        "countryCode": "056",
+        "lat": 50.9654864,
+        "lng": 5.5001456,
+        "years": "2017-2018"
+      },
+      {
+        "order": 5,
+        "club": "FC Nantes",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 47.2186371,
+        "lng": -1.5541362,
+        "years": "2018-2019",
+        "note": "Loan"
+      },
+      {
+        "order": 6,
+        "club": "Hertha BSC",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 52.5173885,
+        "lng": 13.3951309,
+        "years": "2019-2021"
+      },
+      {
+        "order": 7,
+        "club": "VfL Wolfsburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 52.4205588,
+        "lng": 10.7861682,
+        "years": "2021-2022"
+      },
+      {
+        "order": 8,
+        "club": "FC Augsburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.3690341,
+        "lng": 10.8979522,
+        "years": "2022-2023"
+      },
+      {
+        "order": 9,
+        "club": "FC Schalke 04",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5110321,
+        "lng": 7.0960124,
+        "years": "2023-present"
+      }
+    ]
+  }
+]

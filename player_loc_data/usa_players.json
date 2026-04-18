@@ -1,0 +1,542 @@
+[
+  {
+    "id": "pulisic-christian-loc",
+    "name": "Christian Pulisic",
+    "nationality": "USA",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "PA Classics",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 40.0379958,
+        "lng": -76.3056707,
+        "years": "2005-2012",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2012-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5142273,
+        "lng": 7.4652789,
+        "years": "2015-2020"
+      },
+      {
+        "order": 4,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "balogun-folarin-loc",
+    "name": "Folarin Balogun",
+    "nationality": "spec",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2018-2022",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Middlesbrough FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 54.5760419,
+        "lng": -1.2344047,
+        "years": "2022",
+        "note": "Loan"
+      },
+      {
+        "order": 3,
+        "club": "Reims",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 49.2577886,
+        "lng": 4.031926,
+        "years": "2022-2023",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "AS Monaco",
+        "country": "Monaco",
+        "countryCode": "377",
+        "lat": 43.7323492,
+        "lng": 7.4276832,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "weah-timothy-loc",
+    "name": "Timothy Weah",
+    "nationality": "USA",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "New York Red Bulls",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 32.5233959,
+        "lng": -94.3982158,
+        "years": "2014-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2017-2019"
+      },
+      {
+        "order": 3,
+        "club": "Lille OSC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 50.6365654,
+        "lng": 3.0635282,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "pepi-ricardo-loc",
+    "name": "Ricardo Pepi",
+    "nationality": "USA",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2019-2021"
+      },
+      {
+        "order": 2,
+        "club": "VfL Wolfsburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 52.4205588,
+        "lng": 10.7861682,
+        "years": "2021-2022",
+        "note": "Loan"
+      },
+      {
+        "order": 3,
+        "club": "FC Augsburg",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.3690341,
+        "lng": 10.8979522,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "reyna-gio-loc",
+    "name": "Gio Reyna",
+    "nationality": "USA",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "New York City FC",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 40.7127281,
+        "lng": -74.0060152,
+        "years": "2015-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5142273,
+        "lng": 7.4652789,
+        "years": "2019-present"
+      }
+    ]
+  },
+  {
+    "id": "mckennie-weston-loc",
+    "name": "Weston McKennie",
+    "nationality": "USA",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2011-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Schalke 04",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5110321,
+        "lng": 7.0960124,
+        "years": "2016-2021"
+      },
+      {
+        "order": 3,
+        "club": "Juventus FC",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.0677551,
+        "lng": 7.6824892,
+        "years": "2021-present"
+      },
+      {
+        "order": 4,
+        "club": "Leeds United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.7974185,
+        "lng": -1.5437941,
+        "years": "2022",
+        "note": "Loan"
+      }
+    ]
+  },
+  {
+    "id": "adams-tyler-loc",
+    "name": "Tyler Adams",
+    "nationality": "USA",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2013-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "New York Red Bulls",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 32.5233959,
+        "lng": -94.3982158,
+        "years": "2016-2019"
+      },
+      {
+        "order": 3,
+        "club": "RB Leipzig",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.3406321,
+        "lng": 12.3747329,
+        "years": "2019-2022"
+      },
+      {
+        "order": 4,
+        "club": "Leeds United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.7974185,
+        "lng": -1.5437941,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "tillman-malik-loc",
+    "name": "Malik Tillman",
+    "nationality": "USA",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2015-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2019-2021"
+      },
+      {
+        "order": 3,
+        "club": "Bayern Munich II",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2019-2021"
+      },
+      {
+        "order": 4,
+        "club": "Rangers FC",
+        "country": "Scotland",
+        "countryCode": "826",
+        "lat": 55.861155,
+        "lng": -4.2501687,
+        "years": "2021-2023",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "VfB Stuttgart",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.7784485,
+        "lng": 9.1800132,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "robinson-antonee-loc",
+    "name": "Antonee Robinson",
+    "nationality": "USA",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2013-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2015-2018"
+      },
+      {
+        "order": 3,
+        "club": "Birmingham City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.4796992,
+        "lng": -1.9026911,
+        "years": "2018",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Wigan Athletic",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.5457188,
+        "lng": -2.6264624,
+        "years": "2018-2020"
+      },
+      {
+        "order": 5,
+        "club": "Fulham FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "richards-chris-loc",
+    "name": "Chris Richards",
+    "nationality": "USA",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2016-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "FC Dallas",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 37.7879363,
+        "lng": -122.4075201,
+        "years": "2019",
+        "note": "Loan"
+      },
+      {
+        "order": 3,
+        "club": "Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2019-2021"
+      },
+      {
+        "order": 4,
+        "club": "Bayern Munich II",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2019-2021",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "Crystal Palace",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "dest-sergino-loc",
+    "name": "Sergino Dest",
+    "nationality": "USA",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Ajax Amsterdam",
+        "country": "Netherlands",
+        "countryCode": "528",
+        "lat": 52.3730796,
+        "lng": 4.8924534,
+        "years": "2018-2020"
+      },
+      {
+        "order": 2,
+        "club": "FC Barcelona",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 41.3825802,
+        "lng": 2.177073,
+        "years": "2020-2022"
+      },
+      {
+        "order": 3,
+        "club": "AC Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2022",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "AFC Ajax",
+        "country": "Netherlands",
+        "countryCode": "528",
+        "lat": 52.3730796,
+        "lng": 4.8924534,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "freese-matt-loc",
+    "name": "Matt Freese",
+    "nationality": "USA",
+    "position": "GK",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "New England Revolution",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 42.0653768,
+        "lng": -71.2478308,
+        "years": "2015-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Philadelphia Union",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 39.9829308,
+        "lng": -75.7652424,
+        "years": "2016-2021"
+      },
+      {
+        "order": 3,
+        "club": "Philadelphia Union II",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 39.9829308,
+        "lng": -75.7652424,
+        "years": "2019-2021",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Los Angeles FC",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 34.0536909,
+        "lng": -118.242766,
+        "years": "2022-present"
+      }
+    ]
+  }
+]

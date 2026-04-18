@@ -1,0 +1,528 @@
+[
+  {
+    "id": "mbappé-kylian-loc",
+    "name": "Kylian Mbappé",
+    "nationality": "France",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "AS Bondy",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.9031,
+        "lng": 2.48291,
+        "years": "2004-2013",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Clairefontaine",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.6112569,
+        "lng": 1.9131801,
+        "years": "2013-2014",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "AS Monaco",
+        "country": "Monaco",
+        "countryCode": "377",
+        "lat": 43.7323492,
+        "lng": 7.4276832,
+        "years": "2014-2018"
+      },
+      {
+        "order": 4,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2017-2022"
+      },
+      {
+        "order": 5,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "dembélé-ousmane-loc",
+    "name": "Ousmane Dembélé",
+    "nationality": "France",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Rennes",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "years": "2013-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Rennes",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "years": "2016"
+      },
+      {
+        "order": 3,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5142273,
+        "lng": 7.4652789,
+        "years": "2016-2017"
+      },
+      {
+        "order": 4,
+        "club": "FC Barcelona",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 41.3825802,
+        "lng": 2.177073,
+        "years": "2017-2023"
+      },
+      {
+        "order": 5,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "olise-michael-loc",
+    "name": "Michael Olise",
+    "nationality": "France",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2016-2020",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Reading FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.4514953,
+        "lng": -0.9836342,
+        "years": "2020-2021"
+      },
+      {
+        "order": 3,
+        "club": "Crystal Palace FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "griezmann-antoine-loc",
+    "name": "Antoine Griezmann",
+    "nationality": "France",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Montauban FC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 44.0175835,
+        "lng": 1.3549991,
+        "years": "2005-2009",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Real Sociedad",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 43.3224219,
+        "lng": -1.9838889,
+        "years": "2009-2014"
+      },
+      {
+        "order": 3,
+        "club": "Atlético Madrid",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2014-2019"
+      },
+      {
+        "order": 4,
+        "club": "FC Barcelona",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 41.3825802,
+        "lng": 2.177073,
+        "years": "2019-2021"
+      },
+      {
+        "order": 5,
+        "club": "Atlético Madrid",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2021-present",
+        "note": "Loan"
+      }
+    ]
+  },
+  {
+    "id": "tchouaméni-aurélien-loc",
+    "name": "Aurélien Tchouaméni",
+    "nationality": "France",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "AS Monaco",
+        "country": "Monaco",
+        "countryCode": "377",
+        "lat": 43.7323492,
+        "lng": 7.4276832,
+        "years": "2018-2021"
+      },
+      {
+        "order": 2,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "camavinga-eduardo-loc",
+    "name": "Eduardo Camavinga",
+    "nationality": "France",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Stade Rennais FC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "years": "2013-2020",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Stade Rennais FC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "years": "2020-2021"
+      },
+      {
+        "order": 3,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "saliba-william-loc",
+    "name": "William Saliba",
+    "nationality": "France",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "AS Saint-Étienne",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 45.4401467,
+        "lng": 4.3873058,
+        "years": "2016-2019",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "AS Saint-Étienne",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 45.4401467,
+        "lng": 4.3873058,
+        "years": "2019-2020"
+      },
+      {
+        "order": 3,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-present"
+      },
+      {
+        "order": 4,
+        "club": "Olympique de Marseille",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 43.2961743,
+        "lng": 5.3699525,
+        "years": "2021-2022",
+        "note": "Loan"
+      }
+    ]
+  },
+  {
+    "id": "hernandez-theo-loc",
+    "name": "Theo Hernandez",
+    "nationality": "France",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Club Atlético de Madrid",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2015-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Club Atlético de Madrid",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2016-2017"
+      },
+      {
+        "order": 3,
+        "club": "Alavés",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 42.8465088,
+        "lng": -2.6724025,
+        "years": "2016-2017",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2017-2019"
+      },
+      {
+        "order": 5,
+        "club": "Real Sociedad",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 43.3224219,
+        "lng": -1.9838889,
+        "years": "2018-2019",
+        "note": "Loan"
+      },
+      {
+        "order": 6,
+        "club": "AC Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "konaté-ibrahima-loc",
+    "name": "Ibrahima Konaté",
+    "nationality": "France",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Sochaux-Montbéliard",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 47.5102368,
+        "lng": 6.7977564,
+        "years": "2015-2017",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Sochaux-Montbéliard",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 47.5102368,
+        "lng": 6.7977564,
+        "years": "2017-2018"
+      },
+      {
+        "order": 3,
+        "club": "RB Leipzig",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.3406321,
+        "lng": 12.3747329,
+        "years": "2018-2021"
+      },
+      {
+        "order": 4,
+        "club": "Liverpool FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "upamecano-dayot-loc",
+    "name": "Dayot Upamecano",
+    "nationality": "France",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "SCO Angers",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 47.4739884,
+        "lng": -0.5515588,
+        "years": "2012-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "SCO Angers",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 47.4739884,
+        "lng": -0.5515588,
+        "years": "2015-2017"
+      },
+      {
+        "order": 3,
+        "club": "RB Leipzig",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.3406321,
+        "lng": 12.3747329,
+        "years": "2017-2021"
+      },
+      {
+        "order": 4,
+        "club": "FC Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "maignan-mike-loc",
+    "name": "Mike Maignan",
+    "nationality": "France",
+    "position": "GK",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Lille OSC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 50.6365654,
+        "lng": 3.0635282,
+        "years": "2011-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Lille OSC",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 50.6365654,
+        "lng": 3.0635282,
+        "years": "2015-2021"
+      },
+      {
+        "order": 3,
+        "club": "AC Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4641943,
+        "lng": 9.1896346,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "zaïre-emery-warren-loc",
+    "name": "Warren Zaïre-Emery",
+    "nationality": "France",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2021-present",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Paris Saint-Germain",
+        "country": "France",
+        "countryCode": "250",
+        "lat": 48.8534951,
+        "lng": 2.3483915,
+        "years": "2023-present"
+      }
+    ]
+  }
+]

@@ -1,0 +1,504 @@
+[
+  {
+    "id": "kane-harry-loc",
+    "name": "Harry Kane",
+    "nationality": "England",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Ridgeway Rovers",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "1999-2001",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Watford FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.6553875,
+        "lng": -0.3957425,
+        "years": "2001-2002",
+        "note": "Academy"
+      },
+      {
+        "order": 3,
+        "club": "Tottenham Hotspur",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2002-2011",
+        "note": "Academy"
+      },
+      {
+        "order": 4,
+        "club": "Tottenham Hotspur",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2011-2023"
+      },
+      {
+        "order": 5,
+        "club": "Bayern Munich",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 48.1371079,
+        "lng": 11.5753822,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "bellingham-jude-loc",
+    "name": "Jude Bellingham",
+    "nationality": "England",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Birmingham City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 52.4796992,
+        "lng": -1.9026911,
+        "years": "2019-2020"
+      },
+      {
+        "order": 2,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.5142273,
+        "lng": 7.4652789,
+        "years": "2020-2023"
+      },
+      {
+        "order": 3,
+        "club": "Real Madrid CF",
+        "country": "Spain",
+        "countryCode": "724",
+        "lat": 40.416782,
+        "lng": -3.703507,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "saka-bukayo-loc",
+    "name": "Bukayo Saka",
+    "nationality": "England",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2018-present",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2019-2020"
+      },
+      {
+        "order": 3,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-2021"
+      },
+      {
+        "order": 4,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2021-2022"
+      },
+      {
+        "order": 5,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2022-present"
+      }
+    ]
+  },
+  {
+    "id": "rice-declan-loc",
+    "name": "Declan Rice",
+    "nationality": "England",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "West Ham United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2014-2023",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "West Ham United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2017-2023"
+      },
+      {
+        "order": 3,
+        "club": "Arsenal FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "palmer-cole-loc",
+    "name": "Cole Palmer",
+    "nationality": "England",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Manchester City FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2019-2023",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Manchester City FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2020-2023"
+      },
+      {
+        "order": 3,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "foden-phil-loc",
+    "name": "Phil Foden",
+    "nationality": "England",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Manchester City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2016-present",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Manchester City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2017-2020"
+      },
+      {
+        "order": 3,
+        "club": "Manchester City",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "guéhi-marc-loc",
+    "name": "Marc Guéhi",
+    "nationality": "England",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2016-2020",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Charlton Athletic",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.4826053,
+        "lng": 0.0365359,
+        "years": "2019",
+        "note": "Loan"
+      },
+      {
+        "order": 3,
+        "club": "Swansea City",
+        "country": "Wales",
+        "countryCode": "826",
+        "lat": 51.6195955,
+        "lng": -3.9459248,
+        "years": "2020-2021",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Crystal Palace FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2021-present"
+      }
+    ]
+  },
+  {
+    "id": "stones-john-loc",
+    "name": "John Stones",
+    "nationality": "England",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Barnsley FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.5527719,
+        "lng": -1.4827755,
+        "years": "2011-2013",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Barnsley FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.5527719,
+        "lng": -1.4827755,
+        "years": "2013-2014"
+      },
+      {
+        "order": 3,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2014-2016"
+      },
+      {
+        "order": 4,
+        "club": "Manchester City FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2016-present"
+      }
+    ]
+  },
+  {
+    "id": "gordon-anthony-loc",
+    "name": "Anthony Gordon",
+    "nationality": "England",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Newcastle United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 54.9738474,
+        "lng": -1.6131572,
+        "years": "2022-present"
+      },
+      {
+        "order": 2,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2017-2022"
+      },
+      {
+        "order": 3,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2017-2018",
+        "note": "Academy"
+      }
+    ]
+  },
+  {
+    "id": "james-reece-loc",
+    "name": "Reece James",
+    "nationality": "England",
+    "position": "DF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2017-2018",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2018-2020",
+        "note": "Loan"
+      },
+      {
+        "order": 3,
+        "club": "Wigan Athletic",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.5457188,
+        "lng": -2.6264624,
+        "years": "2018-2019",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Chelsea FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074456,
+        "lng": -0.1277653,
+        "years": "2020-present"
+      }
+    ]
+  },
+  {
+    "id": "mainoo-kobbie-loc",
+    "name": "Kobbie Mainoo",
+    "nationality": "England",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Manchester United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.4794892,
+        "lng": -2.2451148,
+        "years": "2021-present",
+        "note": "Academy"
+      }
+    ]
+  },
+  {
+    "id": "pickford-jordan-loc",
+    "name": "Jordan Pickford",
+    "nationality": "England",
+    "position": "GK",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "Sunderland AFC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 54.9058512,
+        "lng": -1.3828727,
+        "years": "2010-2016",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Sunderland AFC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 54.9058512,
+        "lng": -1.3828727,
+        "years": "2016-2017"
+      },
+      {
+        "order": 3,
+        "club": "Bradford City AFC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.7944229,
+        "lng": -1.7519186,
+        "years": "2015",
+        "note": "Loan"
+      },
+      {
+        "order": 4,
+        "club": "Carlisle United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 54.8948478,
+        "lng": -2.9362311,
+        "years": "2016",
+        "note": "Loan"
+      },
+      {
+        "order": 5,
+        "club": "Everton FC",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.3933411,
+        "lng": -2.9166389,
+        "years": "2017-present"
+      }
+    ]
+  }
+]

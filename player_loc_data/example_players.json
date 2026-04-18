@@ -1,0 +1,91 @@
+[
+  {
+    "id": "pulisic-christian-loc",
+    "name": "Christian Pulisic",
+    "nationality": "USA",
+    "position": "FW",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "PA Classics",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 40.4406,
+        "lng": -79.9959,
+        "years": "2005-2015",
+        "note": "Academy"
+      },
+      {
+        "order": 2,
+        "club": "Borussia Dortmund",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.4818,
+        "lng": 7.2162,
+        "years": "2015-2019"
+      },
+      {
+        "order": 3,
+        "club": "Chelsea",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "years": "2019-2023"
+      },
+      {
+        "order": 4,
+        "club": "AC Milan",
+        "country": "Italy",
+        "countryCode": "380",
+        "lat": 45.4642,
+        "lng": 9.1900,
+        "years": "2023-present"
+      }
+    ]
+  },
+  {
+    "id": "adams-tyler-loc",
+    "name": "Tyler Adams",
+    "nationality": "USA",
+    "position": "MF",
+    "careerStops": [
+      {
+        "order": 1,
+        "club": "New York Red Bulls",
+        "country": "USA",
+        "countryCode": "840",
+        "lat": 40.7368,
+        "lng": -74.1508,
+        "years": "2015-2019"
+      },
+      {
+        "order": 2,
+        "club": "RB Leipzig",
+        "country": "Germany",
+        "countryCode": "276",
+        "lat": 51.3397,
+        "lng": 12.3731,
+        "years": "2019-2022"
+      },
+      {
+        "order": 3,
+        "club": "Leeds United",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 53.7775,
+        "lng": -1.5724,
+        "years": "2022-2023"
+      },
+      {
+        "order": 4,
+        "club": "Bournemouth",
+        "country": "England",
+        "countryCode": "826",
+        "lat": 50.7192,
+        "lng": -1.8808,
+        "years": "2023-present"
+      }
+    ]
+  }
+]
