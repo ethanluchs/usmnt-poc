@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import Button from "../ui/Button"
 
@@ -27,10 +27,10 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
         disabled={disabled}
-        className="border rounded placeholder:text-gray-500 dark:placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40"
+        className="border rounded placeholder:text-gray-500 dark:placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-white dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40"
       />
       {showDropdown && filtered.length > 0 && (
-        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-[#ede8d0] dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
+        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-white dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
           {filtered.map(p => (
             <li
               key={p.id}
@@ -46,33 +46,49 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
   )
 }
 
-function GuessPills({ incorrectGuesses }) {
+
+function StrikeDots({ incorrectGuesses, maxGuesses = 3 }) {
+  const [flashingIndex, setFlashingIndex] = useState(null)
+  const prevCount = useRef(incorrectGuesses.length)
+
+  useEffect(() => {
+    if (incorrectGuesses.length > prevCount.current) {
+      const newIndex = maxGuesses - incorrectGuesses.length
+      setFlashingIndex(newIndex)
+      setTimeout(() => setFlashingIndex(null), 400)
+    }
+    prevCount.current = incorrectGuesses.length
+  }, [incorrectGuesses.length, maxGuesses])
+
+  const remaining = maxGuesses - incorrectGuesses.length
+
   return (
-    <div className="flex gap-2 justify-center">
-      {Array.from({ length: 3 }).map((_, i) => (
-        <AnimatePresence key={i} mode="wait">
-          {incorrectGuesses[i] ? (
-            <motion.span
-              key={incorrectGuesses[i]}
-              initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="border border-red-700 dark:border-red-400 bg-[#ede8d0]
-               dark:bg-[#1a1917] text-red-700 dark:text-red-500 rounded px-2 py-1 text-sm min-w-[80px] text-center"
-            >
-              {incorrectGuesses[i]}
-            </motion.span>
-          ) : (
-            <motion.span
-              key="empty"
-              className="border border-black/80 dark:border-[#b8b2a0] bg-[#ede8d0]
-               dark:bg-[#1a1917] text-transparent rounded px-2 py-1 text-sm min-w-[80px] text-center"
-            >
-              ·
-            </motion.span>
-          )}
-        </AnimatePresence>
-      ))}
+    <div className="flex gap-1.5">
+      {Array.from({ length: maxGuesses }).map((_, i) => {
+        const isGone = i >= remaining
+        const isFlashing = i === flashingIndex
+        return (
+          <AnimatePresence key={i} mode="wait">
+            {isFlashing ? (
+              <motion.div
+                key="flash"
+                initial={{ backgroundColor: "#ffffff" }}
+                animate={{ backgroundColor: "#dc2626" }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.25 }}
+                className="w-2 h-2 rounded-full border border-black dark:border-[#b8b2a0]"
+              />
+            ) : !isGone ? (
+              <motion.div
+                key="dot"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-2 h-2 rounded-full bg-white dark:bg-[#b8b2a0] border border-black"
+              />
+            ) : null}
+          </AnimatePresence>
+        )
+      })}
     </div>
   )
 }
@@ -90,18 +106,20 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
 
   return (
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pt-3 pb-3">
-      <div className="flex gap-2">
-        <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} playerPool={playerPool} />
-        <Button onClick={handleGuess} disabled={isDisabled}>Guess</Button>
-        <Button onClick={onNextStop} disabled={solved || isLastStop}>Next Stop →</Button>
-        <button
-          onClick={onOpenCards}
-          className="w-8 h-8 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow hover:bg-gray-300"
-        >
-          {cardCount}
-        </button>
+      <div className="flex flex-col gap-1.5">
+        <StrikeDots incorrectGuesses={incorrectGuesses} />
+        <div className="flex gap-2">
+          <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} playerPool={playerPool} />
+          <Button onClick={handleGuess} disabled={isDisabled} className="bg-white dark:bg-[#1a1917]">Guess</Button>
+          <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white dark:bg-[#1a1917]">Next Stop →</Button>
+          <button
+            onClick={onOpenCards}
+            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-[#1a1917] border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#242220]"
+          >
+            {cardCount}
+          </button>
+        </div>
       </div>
-       { false && <GuessPills incorrectGuesses={incorrectGuesses} /> }
     </div>
   )
 }
