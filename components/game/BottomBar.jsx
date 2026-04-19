@@ -120,7 +120,7 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
           <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white dark:bg-black dark:text-[#b8b2a0] dark:border-[#b8b2a0]">Next Stop →</Button>
           <button
             onClick={onOpenCards}
-            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-black border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#1a1917]"
+            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-black border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#1a1917] transition-colors duration-300"
           >
             {cardCount}
           </button>
