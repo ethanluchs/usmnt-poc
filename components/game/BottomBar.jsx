@@ -8,7 +8,7 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
 
   const guessedNames = new Set(incorrectGuesses.map(g => g.toLowerCase()))
   const filtered = input.length > 1
-    ? playerPool.filter(p => p.name?.toLowerCase().includes(input.toLowerCase()) && !guessedNames.has(p.name.toLowerCase()))
+    ? playerPool.filter(p => p.name?.toLowerCase().includes(input.toLowerCase()))
     : []
 
   const handleSelect = (name) => {
@@ -31,15 +31,21 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
       />
       {showDropdown && filtered.length > 0 && (
         <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-white dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
-          {filtered.map(p => (
-            <li
-              key={p.id}
-              onMouseDown={() => handleSelect(p.name)}
-              className="px-3 py-2 text-sm cursor-pointer hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black transition-colors"
-            >
-              {p.name}
-            </li>
-          ))}
+          {filtered.map(p => {
+            const isGuessed = guessedNames.has(p.name.toLowerCase())
+            return (
+              <li
+                key={p.id}
+                onMouseDown={() => !isGuessed && handleSelect(p.name)}
+                className={`px-3 py-2 text-sm transition-colors ${isGuessed
+                  ? "line-through opacity-40 cursor-default"
+                  : "cursor-pointer hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black"
+                }`}
+              >
+                {p.name}
+              </li>
+            )
+          })}
         </ul>
       )}
     </div>
