@@ -14,8 +14,12 @@ html, body {
   font-family: 'FWC2026', sans-serif;
   overflow: hidden;
   background-color: #ede8d0;
+  transition: background-color 0.3s ease;
 }
 
 html.dark, html.dark body {
   background-color: #1a1917;
 }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }

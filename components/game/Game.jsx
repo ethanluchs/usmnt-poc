@@ -79,7 +79,7 @@ export default function Game() {
 
   return (
     <motion.main
-      className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917]"
+      className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917] transition-colors duration-300"
       animate={guessResult === 'wrong' ? { x: [0, -12, 12, -9, 9, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
@@ -108,8 +108,7 @@ export default function Game() {
         )}
       </AnimatePresence>
 
-      <TopBar isDark={isDark} onToggleTheme={toggleTheme} onOpenCards={() => setShowCards(true)}
-      cardCount={unlockedCards.length} isDragging={isDragging} puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1} totalPuzzles={totalPuzzles} playerPool={playerPool} />
+      <TopBar isDark={isDark} onToggleTheme={toggleTheme} isDragging={isDragging} puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1} totalPuzzles={totalPuzzles} />
 
       <WorldMap
         isDark={isDark}
@@ -130,9 +129,11 @@ export default function Game() {
         solved={solved || !player || loadingPuzzles}
         isLastStop={isLastStop}
         playerPool={playerPool}
+        onOpenCards={() => setShowCards(true)}
+        cardCount={unlockedCards.length}
       />
 
-      <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} />
+      <CardOverlay isDark={isDark} isOpen={showCards} onClose={() => setShowCards(false)} unlockedCards={unlockedCards} playerPool={playerPool} />
     </motion.main>
   )
 }
