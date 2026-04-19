@@ -27,10 +27,10 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
         disabled={disabled}
-        className="border rounded placeholder:text-gray-500 dark:placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-white dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40"
+        className="border rounded placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-white dark:bg-black text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40 transition-colors duration-300"
       />
       {showDropdown && filtered.length > 0 && (
-        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-white dark:bg-[#1a1917] text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
+        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-white dark:bg-black text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
           {filtered.map(p => {
             const isGuessed = guessedNames.has(p.name.toLowerCase())
             return (
@@ -116,11 +116,11 @@ export default function BottomBar({ incorrectGuesses = [], onGuess, onNextStop, 
         <StrikeDots incorrectGuesses={incorrectGuesses} />
         <div className="flex gap-2">
           <AutocompleteInput input={input} setInput={setInput} onSubmit={onGuess} disabled={isDisabled} incorrectGuesses={incorrectGuesses} playerPool={playerPool} />
-          <Button onClick={handleGuess} disabled={isDisabled} className="bg-white dark:bg-[#1a1917]">Guess</Button>
-          <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white dark:bg-[#1a1917]">Next Stop →</Button>
+          <Button onClick={handleGuess} disabled={isDisabled} className="bg-white dark:bg-black dark:text-[#b8b2a0] dark:border-[#b8b2a0]">Guess</Button>
+          <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white dark:bg-black dark:text-[#b8b2a0] dark:border-[#b8b2a0]">Next Stop →</Button>
           <button
             onClick={onOpenCards}
-            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-[#1a1917] border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#242220]"
+            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-black border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#1a1917]"
           >
             {cardCount}
           </button>
