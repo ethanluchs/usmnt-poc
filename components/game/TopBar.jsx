@@ -6,7 +6,7 @@ import InfoModal from "./InfoModal"
 const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"]
 const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
 
-export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount = 0, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
+export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
 
@@ -33,7 +33,6 @@ export default function TopBar({ isDark, onToggleTheme, onOpenCards, cardCount =
 
       {/* letters and icon*/}
       <motion.div layout className="relative flex items-center justify-center gap-1">
-        <CardButton onClick={onOpenCards} count={cardCount} />
         <AnimatePresence mode="wait">
           {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
             <motion.span
@@ -115,11 +114,3 @@ const MoonIcon = () => (
   </svg>
 )
 
-const CardButton = ({ onClick, count }) => (
-  <button
-    onClick={onClick}
-    className="w-6 h-6 shrink-0 self-center rounded-full bg-white flex items-center justify-center text-black text-xs font-bold leading-none shadow mb-0.5 hover:bg-gray-300"
-  >
-    {count}
-  </button>
-)
