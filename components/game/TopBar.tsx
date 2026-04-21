@@ -51,11 +51,12 @@ export default function TopBar({
             {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15, delay: i * 0.02 }}
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -6, filter: "blur(4px)" }}
+                transition={{ duration: 0.2, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
                 className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
+                style={{ display: "inline-block", minWidth: letter === " " ? "0.5rem" : undefined }}
               >
                 {letter}
               </motion.span>
