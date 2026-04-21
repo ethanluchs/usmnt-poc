@@ -1,18 +1,27 @@
-'use client'
-import { useEffect } from "react"
-import { motion } from "motion/react"
+"use client";
+import { useEffect } from "react";
+import { motion } from "motion/react";
 
-export default function PuzzleTransition({ puzzleNumber, onDone }) {
+interface PuzzleTransitionProps {
+  puzzleNumber: number;
+  totalPuzzles?: number;
+  onDone: () => void;
+}
+
+export default function PuzzleTransition({
+  puzzleNumber,
+  onDone,
+}: PuzzleTransitionProps) {
   useEffect(() => {
-    const t = setTimeout(onDone, 2500)
-    return () => clearTimeout(t)
-  }, [onDone])
+    const t = setTimeout(onDone, 2500);
+    return () => clearTimeout(t);
+  }, [onDone]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.50 } }}
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
       transition={{ duration: 2.0 }}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm"
     >
@@ -33,5 +42,5 @@ export default function PuzzleTransition({ puzzleNumber, onDone }) {
         Puzzle {puzzleNumber} of 5
       </motion.p>
     </motion.div>
-  )
+  );
 }
