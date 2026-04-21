@@ -1,24 +1,37 @@
-'use client'
-import { motion, AnimatePresence } from "motion/react"
-import { useState } from "react"
-import InfoModal from "./InfoModal"
+"use client";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import InfoModal from "./InfoModal";
 
-const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"]
-const LETTERS_COLLAPSED = ["W", "C", "2", "6"]
+const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"];
+const LETTERS_COLLAPSED = ["W", "C", "2", "6"];
 
-export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPuzzles = 5, isDragging = false }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [showInfo, setShowInfo] = useState(false)
+interface TopBarProps {
+  isDark: boolean;
+  onToggleTheme: () => void;
+  puzzleIndex?: number;
+  totalPuzzles?: number;
+  isDragging?: boolean;
+}
 
-  if (isDragging && isExpanded) setIsExpanded(false)
+export default function TopBar({
+  isDark,
+  onToggleTheme,
+  puzzleIndex = 1,
+  totalPuzzles = 5,
+  isDragging = false,
+}: TopBarProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+
+  if (isDragging && isExpanded) setIsExpanded(false);
 
   return (
     <div
-      onMouseEnter={() => { if (!isDragging) setIsExpanded(true) }}
+      onMouseEnter={() => { if (!isDragging) setIsExpanded(true); }}
       onMouseLeave={() => setIsExpanded(false)}
       className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 pb-3 z-10 gap-1 rounded-b-xl"
     >
-      {/* background */}
       <AnimatePresence mode="popLayout">
         {isExpanded && (
           <motion.div
@@ -31,22 +44,25 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
         )}
       </AnimatePresence>
 
-      {/* letters and icon*/}
       <motion.div layout className="relative flex items-center justify-center gap-1">
+        {/* mode="wait" is valid here because there is exactly one child key ("exp" or "col") */}
         <AnimatePresence mode="wait">
-          {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
-            <motion.span
-              key={`${isExpanded ? 'exp' : 'col'}-${i}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.15, delay: i * 0.02 }}
-              className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
-            >
-              {letter}
-            </motion.span>
-          ))}
-
+          <motion.div key={isExpanded ? "exp" : "col"} className="flex gap-1">
+            {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15, delay: i * 0.02 }}
+                className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence>
           {isExpanded && (
             <motion.button
               key="theme-toggle"
@@ -78,7 +94,6 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
         </AnimatePresence>
       </motion.div>
 
-      {/* Puzzle counter */}
       <AnimatePresence>
         {isExpanded && (
           <motion.p
@@ -95,7 +110,7 @@ export default function TopBar({ isDark, onToggleTheme, puzzleIndex = 1, totalPu
         {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
 const SunIcon = () => (
@@ -106,11 +121,10 @@ const SunIcon = () => (
     <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
   </svg>
-)
+);
 
 const MoonIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
-)
-
+);

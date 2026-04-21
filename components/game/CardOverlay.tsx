@@ -1,13 +1,30 @@
-'use client'
-import { motion, AnimatePresence } from "motion/react"
-import PlayerCard from "./PlayerCard"
-import { useAuth } from "../AuthProvider"
+"use client";
+import { motion, AnimatePresence } from "motion/react";
+import PlayerCard from "./PlayerCard";
+import { useAuth } from "../AuthProvider";
+import { Player } from "../../lib/types";
 
-export default function CardOverlay({ isDark, isOpen, onClose, unlockedCards = [], playerPool = [] }) {
-  const { user, signInWithGoogle } = useAuth()
-  const unlockedIds = new Set(unlockedCards.map(c => c.id))
-  const sortedPool = [...playerPool].sort((a, b) => Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id))
-  )
+interface CardOverlayProps {
+  isDark: boolean;
+  isOpen: boolean;
+  onClose: () => void;
+  unlockedCards?: Player[];
+  playerPool?: Player[];
+}
+
+export default function CardOverlay({
+  isDark,
+  isOpen,
+  onClose,
+  unlockedCards = [],
+  playerPool = [],
+}: CardOverlayProps) {
+  const { user, signInWithGoogle } = useAuth();
+  const unlockedIds = new Set(unlockedCards.map((c) => c.id));
+  const sortedPool = [...playerPool].sort(
+    (a, b) =>
+      Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id))
+  );
 
   return (
     <AnimatePresence>
@@ -27,7 +44,10 @@ export default function CardOverlay({ isDark, isOpen, onClose, unlockedCards = [
             <div className="flex items-center gap-4">
               {!user && (
                 <span className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
-                  <a className="underline cursor-pointer" onClick={signInWithGoogle}>Sign in</a>{" to save progress"}
+                  <a className="underline cursor-pointer" onClick={signInWithGoogle}>
+                    Sign in
+                  </a>
+                  {" to save progress"}
                 </span>
               )}
               <button
@@ -41,16 +61,19 @@ export default function CardOverlay({ isDark, isOpen, onClose, unlockedCards = [
 
           {/* grid */}
           <div className="flex-1 overflow-y-auto scrollbar-none px-12 pb-16">
-            {(
-              <div className="grid grid-cols-5 gap-4 sm:grid-cols-6">
-                {sortedPool.map(player => (
-                  <PlayerCard key={player.id} player={player} unlocked={unlockedIds.has(player.id)} isDark={isDark} />
-                ))}
-              </div>
-            )}
+            <div className="grid grid-cols-5 gap-4 sm:grid-cols-6">
+              {sortedPool.map((player) => (
+                <PlayerCard
+                  key={player.id}
+                  player={player}
+                  unlocked={unlockedIds.has(player.id)}
+                  isDark={isDark}
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
