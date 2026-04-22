@@ -1,4 +1,18 @@
-export default function Button({ onClick, disabled, children, className = "" }) {
+import React from "react";
+
+interface ButtonProps {
+  onClick?: () => void;
+  disabled?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function Button({
+  onClick,
+  disabled,
+  children,
+  className = "",
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -7,5 +21,5 @@ export default function Button({ onClick, disabled, children, className = "" }) 
     >
       {children}
     </button>
-  )
+  );
 }

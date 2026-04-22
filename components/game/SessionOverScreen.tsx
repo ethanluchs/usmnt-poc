@@ -1,11 +1,21 @@
-'use client'
-import { motion } from "motion/react"
-import { getColors } from "../../lib/theme"
-import { useAuth } from "../AuthProvider"
+"use client";
+import { motion } from "motion/react";
+import { getColors } from "../../lib/theme";
+import { useAuth } from "../AuthProvider";
 
-export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectGuesses }) {
-  const { bg, text, dimmed } = getColors(isDark)
-  const { user, signInWithGoogle } = useAuth()
+interface SessionOverScreenProps {
+  isDark: boolean;
+  puzzlesCompleted: number;
+  incorrectGuesses: number;
+  totalPuzzles?: number;
+}
+
+export default function SessionOverScreen({
+  isDark,
+  puzzlesCompleted,
+}: SessionOverScreenProps) {
+  const { bg, text } = getColors(isDark);
+  const { user, signInWithGoogle } = useAuth();
 
   return (
     <motion.div
@@ -21,7 +31,10 @@ export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectG
           </span>
           {!user && (
             <span style={{ color: text }} className="text-md">
-              <a className="underline cursor-pointer" onClick={signInWithGoogle}>Sign in</a>{" to save progress"}
+              <a className="underline cursor-pointer" onClick={signInWithGoogle}>
+                Sign in
+              </a>
+              {" to save progress"}
             </span>
           )}
         </div>
@@ -34,5 +47,5 @@ export default function SessionOverScreen({ isDark, puzzlesCompleted, incorrectG
         </button>
       </div>
     </motion.div>
-  )
+  );
 }
