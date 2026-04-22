@@ -7,46 +7,47 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut as firebaseSignOut,
+  User,
 } from "firebase/auth";
 import { db } from "../firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { AuthContextValue } from "../lib/types";
 
-const AuthContext = createContext({
+const AuthContext = createContext<AuthContextValue>({
   user: null,
   loading: true,
   signInWithGoogle: async () => {},
   signOut: async () => {},
 });
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setLoading(false);
-        if (u) {
-          // Persist a lightweight user profile document to Firestore at `users/{uid}`
-          const saveProfile = async () => {
-            try {
-              await setDoc(
-                doc(db, "users", u.uid),
-                {
-                  uid: u.uid,
-                  displayName: u.displayName || null,
-                  email: u.email || null,
-                  photoURL: u.photoURL || null,
-                  lastSeen: serverTimestamp(),
-                },
-                { merge: true }
-              );
-            } catch (e) {
-              console.error("Failed to write user profile to Firestore", e);
-            }
-          };
-          saveProfile();
-        }
+      if (u) {
+        const saveProfile = async () => {
+          try {
+            await setDoc(
+              doc(db, "users", u.uid),
+              {
+                uid: u.uid,
+                displayName: u.displayName || null,
+                email: u.email || null,
+                photoURL: u.photoURL || null,
+                lastSeen: serverTimestamp(),
+              },
+              { merge: true }
+            );
+          } catch (e) {
+            console.error("Failed to write user profile to Firestore", e);
+          }
+        };
+        saveProfile();
+      }
     });
     return () => unsub();
   }, []);
@@ -77,7 +78,7 @@ export function AuthProvider({ children }) {
   );
 }
 
-export function useAuth() {
+export function useAuth(): AuthContextValue {
   return useContext(AuthContext);
 }
 

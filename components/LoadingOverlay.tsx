@@ -1,12 +1,16 @@
-'use client'
-import { useEffect } from "react"
-import { motion } from "framer-motion"
+"use client";
+import { useEffect } from "react";
+import { motion } from "motion/react";
 
-export default function LoadingOverlay({ onDone }) {
+interface LoadingOverlayProps {
+  onDone: () => void;
+}
+
+export default function LoadingOverlay({ onDone }: LoadingOverlayProps) {
   useEffect(() => {
-    const t = setTimeout(onDone, 800)
-    return () => clearTimeout(t)
-  }, [onDone])
+    const t = setTimeout(onDone, 800);
+    return () => clearTimeout(t);
+  }, [onDone]);
 
   return (
     <motion.div
@@ -20,5 +24,5 @@ export default function LoadingOverlay({ onDone }) {
       </h1>
       <div className="w-8 h-8 border-2 border-black dark:border-[#b8b2a0] border-t-transparent rounded-full animate-spin" />
     </motion.div>
-  )
+  );
 }
