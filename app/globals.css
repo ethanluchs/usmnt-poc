@@ -23,3 +23,27 @@ html.dark, html.dark body {
 
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+@font-face {
+  font-family: 'DSEG7';
+  src: url('/fonts/DSEG7Classic-Regular.woff2') format('woff2'),
+       url('/fonts/DSEG7Classic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dseg {
+  font-family: 'DSEG7', monospace;
+}
+
+.bulb-glow {
+  color: #f5a623;
+  text-shadow:
+    0 0 4px #f5a623,
+    0 0 10px #f5a62388,
+    0 0 20px #f5a62344;
+}
+
+.bulb-dim {
+  color: #2a2a1a;
+}

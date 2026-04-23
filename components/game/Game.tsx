@@ -155,6 +155,8 @@ export default function Game() {
         playerPool={playerPool}
         onOpenCards={() => setShowCards(true)}
         cardCount={unlockedCards.length}
+        currentStop={currentStop + 1}
+        totalStops={player?.careerStops?.length ?? 0}
       />
 
       <CardOverlay
