@@ -82,6 +82,9 @@ export default function WorldMap({
         style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }}
       >
         <defs>
+          <pattern id="turf" x="0" y="0" width="270" height="180" patternUnits="userSpaceOnUse">
+            <image href="/turf_img.jpg" x="0" y="0" width="270" height="180" />
+          </pattern>
           <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
             <feFlood floodColor="#22c55e" floodOpacity="0.55" result="color" />
@@ -103,6 +106,7 @@ export default function WorldMap({
           onMoveStart={() => { handleMoveStart(); onMoveStart(); }}
           onMoveEnd={(e) => { handleMoveEnd(e); onMoveEnd(); }}
         >
+          <rect x="-2000" y="-2000" width="6000" height="6000" fill="url(#turf)" />
           <g
             filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
             style={{ transition: "filter 0.4s ease" }}
