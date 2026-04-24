@@ -1,15 +1,11 @@
-import { ThemeColors } from "./types";
-
-export function getColors(isDark: boolean): ThemeColors {
-  return {
-    bg: isDark ? "#1a1917" : "#ede8d0",
-    bgHover: isDark ? "#242220" : "#e0dbbf",
-    cardBg: isDark ? "#000000" : "#ffffff",
-    text: isDark ? "#b8b2a0" : "#000000",
-    textInv: isDark ? "#1a1917" : "#ede8d0",
-    stroke: isDark ? "#b8b2a0" : "#000000",
-    dimmed: isDark ? "#6b6660" : "#888888",
-    darkBlue: isDark ? "#1a4a6e" : "#0d2e4a",
-    lightBlue: isDark ? "#7ec8e3" : "#4a9bbf",
-  };
-}
+export const colors = {
+  bg: "#ede8d0",
+  bgHover: "#e0dbbf",
+  cardBg: "#ffffff",
+  text: "#000000",
+  textInv: "#ede8d0",
+  stroke: "#000000",
+  dimmed: "#888888",
+  darkBlue: "#0d2e4a",
+  lightBlue: "#4a9bbf",
+};
