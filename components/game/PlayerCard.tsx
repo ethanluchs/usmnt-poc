@@ -3,21 +3,16 @@ import { Player } from "../../lib/types";
 interface PlayerCardProps {
   player: Player | null;
   unlocked?: boolean;
-  isDark?: boolean;
 }
 
-export default function PlayerCard({
-  player,
-  unlocked = true,
-  isDark = false,
-}: PlayerCardProps) {
+export default function PlayerCard({ player, unlocked = true }: PlayerCardProps) {
   if (!player) return null;
 
   if (!unlocked) {
     return (
       <div
         style={{ aspectRatio: "2.5 / 3.5" }}
-        className={`w-full rounded-xl ${isDark ? "bg-white/5" : "bg-black/10"} flex items-center justify-center`}
+        className="w-full bg-black/10 flex items-center justify-center"
       >
         <span className="text-3xl opacity-20">?</span>
       </div>
@@ -27,7 +22,7 @@ export default function PlayerCard({
   return (
     <div
       style={{ aspectRatio: "2.5 / 3.5" }}
-      className="w-full rounded-xl bg-yellow-400 p-3 flex flex-col items-center justify-center gap-2 shadow-lg text-black"
+      className="w-full bg-yellow-400 p-3 flex flex-col items-center justify-center gap-2 shadow-lg text-black"
     >
       <span className="text-2xl font-black">{player.position}</span>
       <span className="text-[10px] font-bold tracking-wide text-center leading-tight">

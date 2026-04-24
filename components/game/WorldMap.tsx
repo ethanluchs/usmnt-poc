@@ -9,14 +9,13 @@ import {
 } from "react-simple-maps";
 import CareerPath from "./CareerPath";
 import { lerpColor } from "../../lib/color";
-import { getColors } from "../../lib/theme";
+import { colors } from "../../lib/theme";
 import { useMapPan } from "../../lib/hooks/useMapPan";
 import { CareerStop, GuessResult, PanTarget, PinnedStop } from "../../lib/types";
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 interface WorldMapProps {
-  isDark: boolean;
   isDragging: boolean;
   onMoveStart: () => void;
   onMoveEnd: () => void;
@@ -28,7 +27,6 @@ interface WorldMapProps {
 }
 
 export default function WorldMap({
-  isDark,
   isDragging,
   onMoveStart,
   onMoveEnd,
@@ -38,7 +36,7 @@ export default function WorldMap({
   guessResult,
   panTarget,
 }: WorldMapProps) {
-  const { bg, bgHover, stroke, darkBlue, lightBlue } = getColors(isDark);
+  const { stroke, darkBlue, lightBlue } = colors;
 
   const strokeMV: MotionValue<string> = useMotionValue(stroke);
   const [strokeColor, setStrokeColor] = useState(stroke);
@@ -54,7 +52,7 @@ export default function WorldMap({
       : stroke;
     const duration = guessResult === "correct" ? 0.7 : prev === "correct" ? 0.5 : 0.2;
     animate(strokeMV, target, { duration, ease: "easeOut" });
-  }, [guessResult, stroke]);
+  }, [guessResult]);
 
   const total = revealedStops.length;
   const countryFills: Record<string, string> = {};
@@ -71,7 +69,7 @@ export default function WorldMap({
 
   return (
     <div
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", position: "relative" }}
       onClick={() => setPinnedStop(false)}
       onWheel={handleWheel as unknown as React.WheelEventHandler<HTMLDivElement>}
     >
@@ -82,7 +80,10 @@ export default function WorldMap({
         style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }}
       >
         <defs>
-          <pattern id="turf" x="0" y="0" width="270" height="180" patternUnits="userSpaceOnUse">
+          <pattern id="water" x="0" y="0" width="400" height="267" patternUnits="userSpaceOnUse">
+            <image href="/water.avif" x="0" y="0" width="400" height="267" />
+          </pattern>
+          <pattern id="grass" x="0" y="0" width="270" height="180" patternUnits="userSpaceOnUse">
             <image href="/turf_img.jpg" x="0" y="0" width="270" height="180" />
           </pattern>
           <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
@@ -106,7 +107,7 @@ export default function WorldMap({
           onMoveStart={() => { handleMoveStart(); onMoveStart(); }}
           onMoveEnd={(e) => { handleMoveEnd(e); onMoveEnd(); }}
         >
-          <rect x="-2000" y="-2000" width="6000" height="6000" fill="url(#turf)" />
+          <rect x="-2000" y="-2000" width="6000" height="6000" fill="url(#water)" />
           <g
             filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
             style={{ transition: "filter 0.4s ease" }}
@@ -114,15 +115,15 @@ export default function WorldMap({
             <Geographies geography={GEO_URL}>
               {({ geographies }) =>
                 geographies.map((geo) => {
-                  const fill = countryFills[String(geo.id)] ?? bg;
-                  const fillHover = countryFills[String(geo.id)] ?? bgHover;
+                  const isRevealed = countryFills[String(geo.id)] !== undefined;
+                  const fill = isRevealed ? "url(#grass)" : "#ffffff";
                   return (
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
                       style={{
                         default: { fill, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
-                        hover: { fill: fillHover, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
+                        hover: { fill, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
                       }}
                     />
                   );
@@ -134,7 +135,6 @@ export default function WorldMap({
           <CareerPath
             key={puzzleIndex}
             stops={revealedStops}
-            isDark={isDark}
             currentStop={currentStop}
             onPanTo={panTo}
             pinnedStop={pinnedStop}

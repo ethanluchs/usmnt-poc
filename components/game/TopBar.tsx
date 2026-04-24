@@ -1,131 +1,52 @@
 "use client";
-import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
-
-const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"];
-const LETTERS_COLLAPSED = ["W", "C", "2", "6"];
+import { AnimatePresence } from "motion/react";
 
 interface TopBarProps {
-  isDark: boolean;
-  onToggleTheme: () => void;
   puzzleIndex?: number;
   totalPuzzles?: number;
-  isDragging?: boolean;
 }
 
-export default function TopBar({
-  isDark,
-  onToggleTheme,
-  puzzleIndex = 1,
-  totalPuzzles = 5,
-  isDragging = false,
-}: TopBarProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function TopBar({ puzzleIndex = 1, totalPuzzles = 5 }: TopBarProps) {
   const [showInfo, setShowInfo] = useState(false);
 
-  if (isDragging && isExpanded) setIsExpanded(false);
-
   return (
-    <div
-      onMouseEnter={() => { if (!isDragging) setIsExpanded(true); }}
-      onMouseLeave={() => setIsExpanded(false)}
-      className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 pb-3 z-10 gap-1 rounded-b-xl"
-    >
-      <AnimatePresence mode="popLayout">
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`absolute inset-0 rounded-b-xl ${isDark ? "bg-black/70" : "bg-[#ede8d0]/70"}`}
-          />
-        )}
-      </AnimatePresence>
-
-      <motion.div layout className="relative flex items-center justify-center gap-1">
-        {/* mode="wait" is valid here because there is exactly one child key ("exp" or "col") */}
-        <AnimatePresence mode="wait">
-          <motion.div key={isExpanded ? "exp" : "col"} className="flex gap-1">
-            {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -6, filter: "blur(4px)" }}
-                transition={{ duration: 0.2, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
-                className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
-                style={{ display: "inline-block", minWidth: letter === " " ? "0.5rem" : undefined }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.button
-              key="theme-toggle"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={onToggleTheme}
-              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-2"
-            >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-            </motion.button>
-          )}
-          {isExpanded && (
-            <motion.button
-              key="info-toggle"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setShowInfo(true)}
-              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-1 text-sm leading-none opacity-60 hover:opacity-100 transition-opacity"
-            >
-              ?
-            </motion.button>
-          )}
-        </AnimatePresence>
-      </motion.div>
-
+    <div style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 10,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "6px 12px",
+      background: "#000080",
+      borderBottom: "2px solid #ffffff",
+      fontFamily: "Arial, sans-serif",
+    }}>
+      <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "14px", letterSpacing: "0.05em" }}>
+        WORDLE CUP — PUZZLE {puzzleIndex}/{totalPuzzles}
+      </span>
+      <button
+        onClick={() => setShowInfo(true)}
+        style={{
+          background: "#c0c0c0",
+          border: "2px solid",
+          borderColor: "#ffffff #808080 #808080 #ffffff",
+          color: "#000000",
+          fontSize: "11px",
+          fontFamily: "Arial, sans-serif",
+          padding: "1px 6px",
+          cursor: "pointer",
+        }}
+      >
+        ?
+      </button>
       <AnimatePresence>
-        {isExpanded && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="relative text-xs tracking-widest text-black dark:text-[#b8b2a0] opacity-60"
-          >
-            PUZZLE {puzzleIndex} / {totalPuzzles}
-          </motion.p>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
+        {showInfo && <InfoModal onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
     </div>
   );
 }
-
-const SunIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5" />
-    <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-  </svg>
-);
-
-const MoonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-);

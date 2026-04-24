@@ -1,8 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { useMotionValue, useSpring, useMotionValueEvent } from "motion/react";
 import { MoveEndPosition } from "react-simple-maps";
 import { CareerStop, PanTarget } from "../types";
+
+const STEPS = 6;
+const STEP_MS = 80;
 
 interface UseMapPanParams {
   revealedStops: CareerStop[];
@@ -27,31 +29,32 @@ export function useMapPan({
   const [center, setCenter] = useState<[number, number]>([0, 10]);
   const [zoom, setZoom] = useState(2);
   const zoomRef = useRef(2);
-  const isUserInteracting = useRef(false);
-
-  const targetLng = useMotionValue(0);
-  const targetLat = useMotionValue(10);
-  const targetZoom = useMotionValue(2);
-  const springLng = useSpring(targetLng, { stiffness: 120, damping: 28 });
-  const springLat = useSpring(targetLat, { stiffness: 120, damping: 28 });
-  const springZoom = useSpring(targetZoom, { stiffness: 120, damping: 28 });
-
   const actualCenter = useRef<[number, number]>([0, 10]);
+  const isUserInteracting = useRef(false);
   const hasDragged = useRef(false);
   const lastPuzzleIndex = useRef(puzzleIndex);
+  const stepTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  useMotionValueEvent(springLng, "change", () => {
-    if (isUserInteracting.current) return;
-    const lng = springLng.get();
-    const lat = springLat.get();
-    setCenter([lng, lat]);
-    actualCenter.current = [lng, lat];
-  });
+  function clearSteps() {
+    stepTimers.current.forEach(clearTimeout);
+    stepTimers.current = [];
+  }
 
-  useMotionValueEvent(springZoom, "change", (v) => {
-    if (isUserInteracting.current) return;
-    setZoom(v);
-  });
+  function stepTo(toLng: number, toLat: number) {
+    clearSteps();
+    const [fromLng, fromLat] = actualCenter.current;
+    for (let s = 1; s <= STEPS; s++) {
+      const t = s / STEPS;
+      const lng = fromLng + (toLng - fromLng) * t;
+      const lat = fromLat + (toLat - fromLat) * t;
+      const timer = setTimeout(() => {
+        if (isUserInteracting.current) return;
+        actualCenter.current = [lng, lat];
+        setCenter([lng, lat]);
+      }, s * STEP_MS);
+      stepTimers.current.push(timer);
+    }
+  }
 
   useEffect(() => {
     if (revealedStops.length === 0) return;
@@ -61,61 +64,41 @@ export function useMapPan({
     }
     const last = revealedStops[revealedStops.length - 1];
     if (revealedStops.length === 1) {
-      targetLng.jump(last.lng);
-      targetLat.jump(last.lat);
-      springLng.jump(last.lng);
-      springLat.jump(last.lat);
-      targetZoom.jump(2);
-      springZoom.jump(2);
-      zoomRef.current = 2;
-      setCenter([last.lng, last.lat]);
+      clearSteps();
       actualCenter.current = [last.lng, last.lat];
+      setCenter([last.lng, last.lat]);
+      setZoom(2);
+      zoomRef.current = 2;
       hasDragged.current = false;
       return;
     }
-    if (hasDragged.current) {
-      const [curLng, curLat] = actualCenter.current;
-      targetLng.jump(curLng);
-      targetLat.jump(curLat);
-      springLng.jump(curLng);
-      springLat.jump(curLat);
-      hasDragged.current = false;
-    }
+    hasDragged.current = false;
     isUserInteracting.current = false;
-    targetZoom.set(2);
+    setZoom(2);
     zoomRef.current = 2;
-    targetLng.set(last.lng);
-    targetLat.set(last.lat);
+    stepTo(last.lng, last.lat);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [revealedStops.length, puzzleIndex]);
 
   useEffect(() => {
     if (!panTarget) return;
     isUserInteracting.current = false;
-    targetZoom.set(2);
-    zoomRef.current = 2;
-    targetLng.set(panTarget.lng);
-    targetLat.set(panTarget.lat);
     hasDragged.current = false;
+    setZoom(2);
+    zoomRef.current = 2;
+    stepTo(panTarget.lng, panTarget.lat);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [panTarget]);
 
   const handleMoveStart = () => {
     isUserInteracting.current = true;
-    targetLng.jump(springLng.get());
-    targetLat.jump(springLat.get());
+    clearSteps();
   };
 
   const handleMoveEnd = ({ coordinates, zoom: z }: MoveEndPosition) => {
     actualCenter.current = coordinates;
     zoomRef.current = z;
     hasDragged.current = true;
-    targetZoom.jump(z);
-    springZoom.jump(z);
-    targetLng.jump(coordinates[0]);
-    targetLat.jump(coordinates[1]);
-    springLng.jump(coordinates[0]);
-    springLat.jump(coordinates[1]);
     isUserInteracting.current = false;
     setCenter(coordinates);
     setZoom(z);
@@ -123,24 +106,16 @@ export function useMapPan({
 
   const panTo = (lng: number, lat: number) => {
     isUserInteracting.current = false;
-    targetLng.set(lng);
-    targetLat.set(lat);
+    stepTo(lng, lat);
   };
 
   const handleWheel = (e: WheelEvent) => {
     e.preventDefault();
     isUserInteracting.current = true;
-    const [curLng, curLat] = actualCenter.current;
-    targetLng.jump(curLng);
-    targetLat.jump(curLat);
-    springLng.jump(curLng);
-    springLat.jump(curLat);
-
+    clearSteps();
     const factor = Math.pow(0.999, e.deltaY);
     const next = Math.min(7, Math.max(1, zoomRef.current * factor));
     zoomRef.current = next;
-    targetZoom.jump(next);
-    springZoom.jump(next);
     setZoom(next);
   };
 

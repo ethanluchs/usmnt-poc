@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import StopCard from "./StopCard";
 import { lerpColor } from "../../lib/color";
-import { getColors } from "../../lib/theme";
+import { colors } from "../../lib/theme";
 import { CareerStop, PinnedStop } from "../../lib/types";
 
 function isActivePinnedStop(
@@ -15,7 +15,6 @@ function isActivePinnedStop(
 
 interface CareerPathProps {
   stops?: CareerStop[];
-  isDark: boolean;
   currentStop: number;
   onPanTo?: (lng: number, lat: number) => void;
   pinnedStop: PinnedStop;
@@ -24,7 +23,6 @@ interface CareerPathProps {
 
 export default function CareerPath({
   stops = [],
-  isDark,
   currentStop,
   onPanTo,
   pinnedStop,
@@ -34,7 +32,7 @@ export default function CareerPath({
   const [hoveredStop, setHoveredStop] = useState<PinnedStop>(null);
   const seenIndices = useRef<Set<number>>(new Set());
 
-  const { text, textInv, darkBlue, lightBlue } = getColors(isDark);
+  const { text, textInv, darkBlue, lightBlue } = colors;
   const totalStops = stops.length;
   const lineColor = (i: number) =>
     lerpColor(darkBlue, lightBlue, totalStops <= 1 ? 1 : (i + 0.5) / (totalStops - 1));
@@ -133,7 +131,6 @@ export default function CareerPath({
             stop={activeStop.stop}
             x={activeStop.x}
             y={activeStop.y}
-            isDark={isDark}
           />
         )}
       </AnimatePresence>

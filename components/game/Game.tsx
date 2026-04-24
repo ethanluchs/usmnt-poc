@@ -9,14 +9,12 @@ import PuzzleTransition from "./PuzzleTransition";
 import SessionOverScreen from "./SessionOverScreen";
 import CardOverlay from "./CardOverlay";
 import { useGameState } from "../../lib/hooks/useGameState";
-import { useTheme } from "../../lib/hooks/useTheme";
 import { useSessionManager } from "../../lib/hooks/useSessionManager";
 import { useAuth } from "../AuthProvider";
 import { GuessResult, PanTarget } from "../../lib/types";
 
 export default function Game() {
   const { user, loading: authLoading } = useAuth();
-  const { isDark, toggleTheme } = useTheme();
   const userId = authLoading ? undefined : (user?.uid ?? null);
 
   const {
@@ -71,6 +69,7 @@ export default function Game() {
     }
     advancingRef.current = false;
     setShowTransition(true);
+    setTimeout(handleNextPuzzle, 800);
     if (nextFirstStop) {
       setTimeout(
         () => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }),
@@ -97,7 +96,7 @@ export default function Game() {
 
   return (
     <motion.main
-      className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917] transition-colors duration-300"
+      className="relative w-screen h-screen bg-[#ede8d0]"
       animate={guessResult === "wrong" ? { x: [0, -12, 12, -9, 9, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
@@ -105,6 +104,7 @@ export default function Game() {
         {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
       </AnimatePresence>
 
+      {/* PuzzleTransition disabled for now
       <AnimatePresence>
         {showTransition && totalPuzzles > 0 && (
           <PuzzleTransition
@@ -114,11 +114,11 @@ export default function Game() {
           />
         )}
       </AnimatePresence>
+      */}
 
       <AnimatePresence>
         {showSessionOver && (
           <SessionOverScreen
-            isDark={isDark}
             puzzlesCompleted={puzzlesCompleted}
             incorrectGuesses={incorrectGuesses.length}
             totalPuzzles={totalPuzzles}
@@ -127,15 +127,11 @@ export default function Game() {
       </AnimatePresence>
 
       <TopBar
-        isDark={isDark}
-        onToggleTheme={toggleTheme}
-        isDragging={isDragging}
         puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1}
         totalPuzzles={totalPuzzles}
       />
 
       <WorldMap
-        isDark={isDark}
         isDragging={isDragging}
         onMoveStart={() => setIsDragging(true)}
         onMoveEnd={() => setIsDragging(false)}
@@ -160,7 +156,6 @@ export default function Game() {
       />
 
       <CardOverlay
-        isDark={isDark}
         isOpen={showCards}
         onClose={() => setShowCards(false)}
         unlockedCards={unlockedCards}

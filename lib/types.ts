@@ -32,15 +32,3 @@ export interface AuthContextValue {
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
 }
-
-export interface ThemeColors {
-  bg: string;
-  bgHover: string;
-  cardBg: string;
-  text: string;
-  textInv: string;
-  stroke: string;
-  dimmed: string;
-  darkBlue: string;
-  lightBlue: string;
-}
