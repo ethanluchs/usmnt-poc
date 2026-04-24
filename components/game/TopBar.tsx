@@ -2,13 +2,15 @@
 import { useState } from "react";
 import InfoModal from "./InfoModal";
 import { AnimatePresence } from "motion/react";
+import { CareerStop } from "../../lib/types";
 
 interface TopBarProps {
   puzzleIndex?: number;
   totalPuzzles?: number;
+  revealedStops?: CareerStop[];
 }
 
-export default function TopBar({ puzzleIndex = 1, totalPuzzles = 5 }: TopBarProps) {
+export default function TopBar({ puzzleIndex = 1, totalPuzzles = 5, revealedStops = [] }: TopBarProps) {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
@@ -26,9 +28,25 @@ export default function TopBar({ puzzleIndex = 1, totalPuzzles = 5 }: TopBarProp
       borderBottom: "2px solid #ffffff",
       fontFamily: "Arial, sans-serif",
     }}>
-      <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "14px", letterSpacing: "0.05em" }}>
+      <span style={{ color: "#ffffff", fontWeight: "bold", fontSize: "14px", letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
         WORDLE CUP — PUZZLE {puzzleIndex}/{totalPuzzles}
       </span>
+
+      {/* revealed stops list */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, overflowX: "auto", margin: "0 16px", flexShrink: 1 }}>
+        {revealedStops.map((stop, i) => (
+          <span key={stop.order} style={{
+            color: "#ffffff",
+            fontSize: "11px",
+            fontFamily: "Arial, sans-serif",
+            whiteSpace: "nowrap",
+          }}>
+            #{stop.order} {stop.club} {stop.years}
+            {i < revealedStops.length - 1 && <span style={{ marginLeft: 8 }}>·</span>}
+          </span>
+        ))}
+      </div>
+
       <button
         onClick={() => setShowInfo(true)}
         style={{
@@ -40,6 +58,7 @@ export default function TopBar({ puzzleIndex = 1, totalPuzzles = 5 }: TopBarProp
           fontFamily: "Arial, sans-serif",
           padding: "1px 6px",
           cursor: "pointer",
+          flexShrink: 0,
         }}
       >
         ?

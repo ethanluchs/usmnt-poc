@@ -2,16 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Player } from "../../lib/types";
 
-const LABEL_STYLE: React.CSSProperties = {
-  fontFamily: "'Arial Black', 'Arial Bold', sans-serif",
-  fontSize: "16px",
-  letterSpacing: "0.1em",
-  textTransform: "uppercase",
-  color: "#ffffff",
-  fontWeight: "900",
-  textAlign: "center",
-};
-
 const LED_PANEL: React.CSSProperties = {
   background: "#0a0a06",
   border: "3px solid #111",
@@ -50,19 +40,6 @@ function LedDigit({ value, fontSize = 58, color = "#f5a623", width = 52, height 
   );
 }
 
-function LedNumber({ value, digits = 2, color = "#f5a623" }: {
-  value: number; digits?: number; color?: string;
-}) {
-  const str = String(Math.max(0, value)).padStart(digits, "0");
-  return (
-    <div style={{ display: "flex", gap: 2 }}>
-      {str.split("").map((d, i) => (
-        <LedDigit key={i} value={d} color={color} />
-      ))}
-    </div>
-  );
-}
-
 interface PlayerInputProps {
   inputRef: React.RefObject<HTMLInputElement | null>;
   input: string;
@@ -85,24 +62,20 @@ function PlayerInput({ inputRef, input, setInput, onSubmit, incorrectGuesses, pl
   };
 
   return (
-    <div style={{ position: "relative", width: 380, padding: "0 16px" }}>
-      {/* autocomplete dropdown — floats above */}
+    <div style={{ position: "relative", width: 320, padding: "0 16px" }}>
       {filtered.length > 0 && (
-        <ul
-          style={{
-            position: "absolute",
-            bottom: "calc(100% + 8px)",
-            left: -16,
-            right: -16,
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            overflow: "hidden",
-            background: "#1a3a6e",
-            outline: "3px solid #0f2a52",
-            boxShadow: "0 -4px 24px rgba(0,0,0,0.6), inset 0 2px 0 rgba(255,255,255,0.1), inset 0 -2px 0 rgba(0,0,0,0.4)",
-          }}
-        >
+        <ul style={{
+          position: "absolute",
+          bottom: "calc(100% + 8px)",
+          left: -16,
+          right: -16,
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+          overflow: "hidden",
+          background: "#1a3a6e",
+          outline: "3px solid #0f2a52",
+        }}>
           {filtered.slice(0, 6).map((p, i) => {
             const isGuessed = guessedNames.has(p.name.toLowerCase());
             return (
@@ -128,7 +101,6 @@ function PlayerInput({ inputRef, input, setInput, onSubmit, incorrectGuesses, pl
           })}
         </ul>
       )}
-
       <input
         ref={inputRef}
         type="text"
@@ -147,7 +119,7 @@ function PlayerInput({ inputRef, input, setInput, onSubmit, incorrectGuesses, pl
           outline: "none",
           width: "100%",
           color: isDisabled ? "rgba(255,255,255,0.25)" : "#ffffff",
-          fontSize: "22px",
+          fontSize: "26px",
           letterSpacing: "0.05em",
           fontFamily: "'Arial Black', 'Arial Bold', sans-serif",
           textTransform: "uppercase",
@@ -157,31 +129,6 @@ function PlayerInput({ inputRef, input, setInput, onSubmit, incorrectGuesses, pl
       />
     </div>
   );
-}
-
-interface LivesDisplayProps {
-  incorrectGuesses: string[];
-  maxGuesses?: number;
-}
-
-function LivesDisplay({ incorrectGuesses, maxGuesses = 3 }: LivesDisplayProps) {
-  const remaining = Math.max(maxGuesses - incorrectGuesses.length, 0);
-  const color = remaining <= 1 ? "#ef4444" : "#f5a623";
-
-  return <LedDigit value={String(remaining)} color={color} />;
-}
-
-interface BottomBarProps {
-  incorrectGuesses?: string[];
-  onGuess: (name: string) => void;
-  onNextStop: () => void;
-  solved: boolean;
-  isLastStop: boolean;
-  playerPool?: Player[];
-  onOpenCards?: () => void;
-  cardCount?: number;
-  currentStop?: number;
-  totalStops?: number;
 }
 
 function RedButton() {
@@ -205,7 +152,14 @@ function RedButton() {
   );
 }
 
-const DIVIDER: React.CSSProperties = { borderLeft: "2px solid #0f2a52" };
+interface BottomBarProps {
+  incorrectGuesses?: string[];
+  onGuess: (name: string) => void;
+  onNextStop: () => void;
+  solved: boolean;
+  isLastStop: boolean;
+  playerPool?: Player[];
+}
 
 export default function BottomBar({
   incorrectGuesses = [],
@@ -214,14 +168,12 @@ export default function BottomBar({
   solved,
   isLastStop,
   playerPool = [],
-  onOpenCards,
-  cardCount = 0,
-  currentStop = 0,
-  totalStops = 0,
 }: BottomBarProps) {
   const [input, setInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const isDisabled = solved || incorrectGuesses.length >= 5;
+  const remaining = Math.max(5 - incorrectGuesses.length, 0);
+  const livesColor = remaining <= 1 ? "#ef4444" : "#f5a623";
 
   const handleGuess = (name: string) => {
     if (name.trim()) {
@@ -230,82 +182,61 @@ export default function BottomBar({
     }
   };
 
-  // focus the inline input on any printable keypress
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (isDisabled) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (document.activeElement === inputRef.current) return;
-      if (e.key.length === 1) {
-        inputRef.current?.focus();
-      }
+      if (e.key.length === 1) inputRef.current?.focus();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [isDisabled]);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end pb-5 gap-6">
+    <div style={{
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-end",
+      paddingBottom: 20,
+      gap: 16,
+    }}>
+      {/* scoreboard panel: lives + input inline */}
+      <div style={{
+        background: "#1a3a6e",
+        outline: "3px solid #0f2a52",
+        boxShadow: "0 -4px 32px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.4)",
+        display: "flex",
+        alignItems: "stretch",
+        gap: 0,
+      }}>
+        {/* lives section */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "6px 16px 10px", borderRight: "2px solid #0f2a52" }}>
+          <span style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#ffffff", fontWeight: 900, marginBottom: 4 }}>Lives</span>
+          <LedDigit value={String(remaining)} color={livesColor} />
+        </div>
 
-      {/* ── SCOREBOARD PANEL ── */}
-      <div style={{ display: "inline-flex", flexDirection: "column" }}>
-        <div style={{
-          background: "#1a3a6e",
-          boxShadow: "0 -4px 32px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.4), inset 2px 0 0 rgba(255,255,255,0.08), inset -2px 0 0 rgba(0,0,0,0.3)",
-          outline: "3px solid #0f2a52",
-          display: "inline-flex",
-          flexDirection: "column",
-        }}>
-
-          {/* ── label row ── */}
-          <div style={{ display: "flex" }}>
-            <div style={{ width: 120, padding: "6px 0 3px", display: "flex", justifyContent: "center" }}>
-              <span style={LABEL_STYLE}>Lives</span>
-            </div>
-            <div style={{ width: 160, padding: "6px 0 3px", ...DIVIDER, display: "flex", justifyContent: "center" }}>
-              <span style={LABEL_STYLE}>Current Stop</span>
-            </div>
-            <div style={{ width: 160, padding: "6px 0 3px", ...DIVIDER, display: "flex", justifyContent: "center" }}>
-              <span style={LABEL_STYLE}>Total Stops</span>
-            </div>
-          </div>
-
-          {/* ── numbers row ── */}
-          <div style={{ display: "flex", alignItems: "center", padding: "4px 0 8px" }}>
-            <div style={{ width: 120, display: "flex", justifyContent: "center" }}>
-              <LivesDisplay incorrectGuesses={incorrectGuesses} />
-            </div>
-            <div style={{ width: 160, display: "flex", justifyContent: "center", ...DIVIDER }}>
-              <LedNumber value={currentStop} digits={2} />
-            </div>
-            <div style={{ width: 160, display: "flex", justifyContent: "center", ...DIVIDER }}>
-              <LedNumber value={totalStops} digits={2} />
-            </div>
-          </div>
-
-          {/* ── player name row ── */}
-          <div style={{ borderTop: "2px solid #0f2a52" }}>
-            <div style={{ padding: "4px 0 2px", display: "flex", justifyContent: "center" }}>
-              <span style={LABEL_STYLE}>Who is it?</span>
-            </div>
-            <div style={{ padding: "2px 0 8px", display: "flex", justifyContent: "center" }}>
-              <PlayerInput
-                inputRef={inputRef}
-                input={input}
-                setInput={setInput}
-                onSubmit={handleGuess}
-                incorrectGuesses={incorrectGuesses}
-                playerPool={playerPool}
-                isDisabled={isDisabled}
-              />
-            </div>
-          </div>
-
+        {/* input section */}
+        <div style={{ display: "flex", flexDirection: "column", padding: "6px 0 10px", justifyContent: "space-between" }}>
+          <span style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#ffffff", fontWeight: 900, textAlign: "center", marginBottom: 4 }}>Who is it?</span>
+          <PlayerInput
+            inputRef={inputRef}
+            input={input}
+            setInput={setInput}
+            onSubmit={handleGuess}
+            incorrectGuesses={incorrectGuesses}
+            playerPool={playerPool}
+            isDisabled={isDisabled}
+          />
         </div>
       </div>
 
-      {/* ── RED BUTTON ── */}
-      <div style={{ paddingBottom: "8px" }}>
+      {/* red button */}
+      <div style={{ paddingBottom: 8 }}>
         <button
           onClick={onNextStop}
           disabled={solved || isLastStop}
@@ -315,7 +246,6 @@ export default function BottomBar({
           <RedButton />
         </button>
       </div>
-
     </div>
   );
 }

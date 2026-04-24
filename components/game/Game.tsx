@@ -129,6 +129,7 @@ export default function Game() {
       <TopBar
         puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1}
         totalPuzzles={totalPuzzles}
+        revealedStops={revealedStops}
       />
 
       <WorldMap
@@ -149,10 +150,6 @@ export default function Game() {
         solved={solved || !player || loadingPuzzles}
         isLastStop={isLastStop}
         playerPool={playerPool}
-        onOpenCards={() => setShowCards(true)}
-        cardCount={unlockedCards.length}
-        currentStop={currentStop + 1}
-        totalStops={player?.careerStops?.length ?? 0}
       />
 
       <CardOverlay
