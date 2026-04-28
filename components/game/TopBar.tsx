@@ -32,19 +32,7 @@ export default function TopBar({
       onMouseLeave={() => setIsExpanded(false)}
       className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 pb-3 z-10 gap-1 rounded-b-xl"
     >
-      <AnimatePresence mode="popLayout">
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`absolute inset-0 rounded-b-xl ${isDark ? "bg-black/70" : "bg-[#ede8d0]/70"}`}
-          />
-        )}
-      </AnimatePresence>
-
-      <motion.div layout className="relative flex items-center justify-center gap-1">
+<motion.div layout className="relative flex items-center justify-center gap-1">
         {/* mode="wait" is valid here because there is exactly one child key ("exp" or "col") */}
         <AnimatePresence mode="wait">
           <motion.div key={isExpanded ? "exp" : "col"} className="flex gap-1">
