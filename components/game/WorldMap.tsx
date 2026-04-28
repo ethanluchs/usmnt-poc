@@ -117,7 +117,9 @@ export default function WorldMap({
   guessResult,
   panTarget,
 }: WorldMapProps) {
-  const { bg, bgHover, stroke } = getColors(isDark);
+  const { stroke } = getColors(isDark);
+  const bg = "#3a7a3a";
+  const bgHover = "#2a5c2a";
 
   const strokeMV: MotionValue<string> = useMotionValue(stroke);
   const [strokeColor, setStrokeColor] = useState(stroke);
@@ -153,7 +155,7 @@ export default function WorldMap({
         projection="geoMercator"
         width={800}
         height={450}
-        style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }}
+        style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none", background: "#1a6aaa" }}
       >
         <defs>
           <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">

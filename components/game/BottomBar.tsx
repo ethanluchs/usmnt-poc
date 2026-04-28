@@ -47,10 +47,10 @@ function AutocompleteInput({
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
         disabled={disabled}
-        className="border rounded placeholder:text-gray-500 border-black dark:border-[#b8b2a0] bg-white dark:bg-black text-black dark:text-[#b8b2a0] px-3 py-2 outline-none disabled:opacity-40 transition-colors duration-300"
+        className="border rounded placeholder:text-gray-500 border-black bg-[#ede8d0] text-black px-3 py-2 outline-none disabled:opacity-40"
       />
       {showDropdown && filtered.length > 0 && (
-        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black dark:border-[#b8b2a0] bg-white dark:bg-black text-black dark:text-[#b8b2a0] rounded overflow-hidden z-50">
+        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black bg-[#ede8d0] text-black rounded overflow-hidden z-50">
           {filtered.map((p) => {
             const isGuessed = guessedNames.has(p.name.toLowerCase());
             return (
@@ -60,7 +60,7 @@ function AutocompleteInput({
                 className={`px-3 py-2 text-sm transition-colors ${
                   isGuessed
                     ? "line-through opacity-40 cursor-default"
-                    : "cursor-pointer hover:bg-black hover:text-[#ede8d0] dark:hover:bg-[#ede8d0] dark:hover:text-black"
+                    : "cursor-pointer hover:bg-black hover:text-[#ede8d0]"
                 }`}
               >
                 {p.name}
@@ -168,15 +168,15 @@ export default function BottomBar({
             incorrectGuesses={incorrectGuesses}
             playerPool={playerPool}
           />
-          <Button onClick={handleGuess} disabled={isDisabled} className="bg-white dark:bg-black dark:text-[#b8b2a0] dark:border-[#b8b2a0]">
+          <Button onClick={handleGuess} disabled={isDisabled} className="bg-[#ede8d0]">
             Guess
           </Button>
-          <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white dark:bg-black dark:text-[#b8b2a0] dark:border-[#b8b2a0]">
+          <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-[#ede8d0]">
             Next Stop →
           </Button>
           <button
             onClick={onOpenCards}
-            className="w-8 h-8 shrink-0 self-center rounded-full bg-white dark:bg-black border border-black dark:border-[#b8b2a0] flex items-center justify-center text-black dark:text-[#b8b2a0] text-xs font-bold leading-none shadow hover:bg-gray-300 dark:hover:bg-[#1a1917] transition-colors duration-300"
+            className="w-8 h-8 shrink-0 self-center rounded-full bg-[#ede8d0] border border-black flex items-center justify-center text-black text-xs font-bold leading-none shadow hover:bg-[#d8d3bb] transition-colors duration-300"
           >
             {cardCount}
           </button>

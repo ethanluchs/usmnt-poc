@@ -5,17 +5,8 @@ export function useTheme(): { isDark: boolean; toggleTheme: () => void } {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const dark = stored ? stored === "dark" : prefersDark;
-    if (dark) {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    // dark mode preserved but disabled — always light
+    document.documentElement.classList.remove("dark");
   }, []);
 
   const toggleTheme = () => {
