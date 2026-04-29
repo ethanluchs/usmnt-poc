@@ -76,7 +76,7 @@ export default function TopBar({
         dragElastic={0.05}
         onDragEnd={handleDragEnd}
         style={{ y, pointerEvents: "auto" }}
-        className={`fixed inset-0 z-40 flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-[#ede8d0]"}`}
+        className={`fixed inset-0 z-40 flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-white"}`}
       >
         <CardOverlay
           isDark={isDark}
@@ -94,7 +94,7 @@ export default function TopBar({
         onClick={() => isOpen ? snapClosed() : snapOpen()}
       >
         <div style={{
-          background: "#ede8d0",
+          background: "#ffffff",
           borderRadius: "0 0 8px 8px",
           padding: "6px 20px 10px",
           display: "flex",

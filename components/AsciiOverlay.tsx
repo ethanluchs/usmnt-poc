@@ -57,7 +57,7 @@ export default function AsciiOverlay({
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-500 ${fading ? "opacity-0" : "opacity-100"} ${isDark ? "bg-black" : "bg-[#ede8d0]"}`}
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-500 ${fading ? "opacity-0" : "opacity-100"} ${isDark ? "bg-black" : "bg-white"}`}
     >
       <pre
         className={`leading-[1] overflow-hidden select-none ${isDark ? "text-[#ede8d0]" : "text-black"}`}
