@@ -29,21 +29,19 @@ export default function TopBar({
   const [screenH, setScreenH] = useState(800);
   const dragControls = useDragControls();
 
-  // Read window height only on client to avoid hydration mismatch
   useEffect(() => {
     setScreenH(window.innerHeight);
   }, []);
 
-  const y = useMotionValue(-800); // start hidden; will snap after screenH is known
+  const y = useMotionValue(-800);
   const tabY = useMotionValue(0);
 
-  // Once screenH is known, push overlay to correct hidden position
   useEffect(() => {
     if (screenH === 800) return;
     y.set(-screenH);
   }, [screenH]);
 
-  // Tab tracks overlay: tabY = y + screenH (0 when hidden, screenH when open — but tab sits at top so it starts at 0)
+  // tabY = y + screenH so the tab sits at 0 when overlay is hidden, follows it when dragging
   useEffect(() => {
     return y.on("change", (v) => {
       tabY.set(v + screenH);
@@ -70,7 +68,6 @@ export default function TopBar({
 
   return (
     <div className="absolute top-0 left-0 right-0 flex justify-center z-50" style={{ pointerEvents: "none" }}>
-      {/* overlay — always mounted, slides in from top */}
       <motion.div
         drag="y"
         dragControls={dragControls}
@@ -90,7 +87,6 @@ export default function TopBar({
         />
       </motion.div>
 
-      {/* tab — rides at the bottom edge of the overlay */}
       <motion.div
         style={{ y: tabY, pointerEvents: "auto" }}
         className="absolute top-0 flex justify-center"

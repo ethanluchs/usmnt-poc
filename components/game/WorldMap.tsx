@@ -1,98 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useMotionValue, animate, MotionValue } from "motion/react";
-import {
-  ComposableMap,
-  Geography,
-  Geographies,
-  ZoomableGroup,
-  useMapContext,
-} from "react-simple-maps";
+import { ComposableMap, ZoomableGroup } from "react-simple-maps";
 import CareerPath from "./CareerPath";
+import FlagGeographies from "./FlagGeographies";
 import { getColors } from "../../lib/theme";
-import { getFlagUrl } from "../../lib/countryFlags";
 import { useMapPan } from "../../lib/hooks/useMapPan";
 import { CareerStop, GuessResult, PanTarget, PinnedStop } from "../../lib/types";
-
-const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
-
-function FlagGeographies({ revealedCodes, bg, bgHover, strokeColor, guessResult }: {
-  revealedCodes: Set<string>;
-  bg: string;
-  bgHover: string;
-  strokeColor: string;
-  guessResult: string | null;
-}) {
-  const { path } = useMapContext() as any;
-
-  return (
-    <g
-      filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
-      style={{ transition: "filter 0.4s ease" }}
-    >
-      <Geographies geography={GEO_URL}>
-        {({ geographies }) => {
-          const patterns: React.ReactNode[] = [];
-          const shapes: React.ReactNode[] = [];
-
-          geographies.forEach((geo) => {
-            const code = String(geo.id);
-            const isRevealed = revealedCodes.has(code);
-            const flagUrl = isRevealed ? getFlagUrl(code) : null;
-
-            if (flagUrl) {
-              const bounds = path.bounds(geo as any);
-              const bx = bounds[0][0];
-              const by = bounds[0][1];
-              const bw = bounds[1][0] - bounds[0][0];
-              const bh = bounds[1][1] - bounds[0][1];
-              // cover-scale: expand flag so it fills the bbox on both axes
-              const flagAspect = 2;
-              let fw, fh;
-              if (bw / bh > flagAspect) {
-                fw = bw; fh = bw / flagAspect;
-              } else {
-                fh = bh; fw = bh * flagAspect;
-              }
-              const fx = bx + (bw - fw) / 2;
-              const fy = by + (bh - fh) / 2;
-              patterns.push(
-                <pattern
-                  key={`pat-${code}`}
-                  id={`flag-${code}`}
-                  patternUnits="userSpaceOnUse"
-                  x={bx} y={by} width={bw} height={bh}
-                >
-                  <image
-                    href={flagUrl}
-                    x={fx - bx} y={fy - by}
-                    width={fw} height={fh}
-                    preserveAspectRatio="xMidYMid slice"
-                  />
-                </pattern>
-              );
-            }
-
-            const fill = flagUrl ? `url(#flag-${code})` : bg;
-            const fillHover = flagUrl ? `url(#flag-${code})` : bgHover;
-            shapes.push(
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                style={{
-                  default: { fill, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
-                  hover: { fill: fillHover, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
-                }}
-              />
-            );
-          });
-
-          return <>{patterns.length > 0 && <defs>{patterns}</defs>}{shapes}</>;
-        }}
-      </Geographies>
-    </g>
-  );
-}
 
 interface WorldMapProps {
   isDark: boolean;
@@ -104,6 +18,7 @@ interface WorldMapProps {
   currentStop: number;
   guessResult: GuessResult;
   panTarget: PanTarget;
+  showAllCards?: boolean;
 }
 
 export default function WorldMap({
@@ -116,6 +31,7 @@ export default function WorldMap({
   currentStop,
   guessResult,
   panTarget,
+  showAllCards = false,
 }: WorldMapProps) {
   const { stroke } = getColors(isDark);
   const bg = "#3a7a3a";
@@ -173,7 +89,7 @@ export default function WorldMap({
           center={center}
           zoom={zoom}
           minZoom={1}
-          maxZoom={7}
+          maxZoom={4}
           translateExtent={[[-25, -125], [850, 550]]}
           filterZoomEvent={(e: Event) => e.type !== "wheel" && e.type !== "touchstart"}
           onMoveStart={() => { handleMoveStart(); onMoveStart(); }}
@@ -195,6 +111,8 @@ export default function WorldMap({
             onPanTo={panTo}
             pinnedStop={pinnedStop}
             setPinnedStop={setPinnedStop}
+            showAllCards={showAllCards}
+            zoom={zoom}
           />
         </ZoomableGroup>
       </ComposableMap>

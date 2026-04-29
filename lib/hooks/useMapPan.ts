@@ -4,6 +4,8 @@ import { useMotionValue, useSpring, useMotionValueEvent } from "motion/react";
 import { MoveEndPosition } from "react-simple-maps";
 import { CareerStop, PanTarget } from "../types";
 
+const MAX_ZOOM = 4;
+
 interface UseMapPanParams {
   revealedStops: CareerStop[];
   puzzleIndex: number;
@@ -17,6 +19,7 @@ interface MapPanReturn {
   handleMoveEnd: (pos: MoveEndPosition) => void;
   handleWheel: (e: WheelEvent) => void;
   panTo: (lng: number, lat: number) => void;
+  panToOverview: (stops: CareerStop[]) => void;
 }
 
 export function useMapPan({
@@ -91,6 +94,10 @@ export function useMapPan({
 
   useEffect(() => {
     if (!panTarget) return;
+    if ("overview" in panTarget) {
+      panToOverview(revealedStops);
+      return;
+    }
     isUserInteracting.current = false;
     targetZoom.set(2);
     zoomRef.current = 2;
@@ -127,6 +134,34 @@ export function useMapPan({
     targetLat.set(lat);
   };
 
+  const panToOverview = (stops: CareerStop[]) => {
+    if (stops.length === 0) return;
+    if (stops.length === 1) {
+      panTo(stops[0].lng, stops[0].lat);
+      return;
+    }
+    const lngs = stops.map((s) => s.lng);
+    const lats = stops.map((s) => s.lat);
+    const minLng = Math.min(...lngs);
+    const maxLng = Math.max(...lngs);
+    const minLat = Math.min(...lats);
+    const maxLat = Math.max(...lats);
+    const centerLng = (minLng + maxLng) / 2;
+    const centerLat = (minLat + maxLat) / 2;
+    // fit the bounding box into ~800x450 viewport (geoMercator at zoom=1)
+    const lngSpan = Math.max(maxLng - minLng, 10);
+    const latSpan = Math.max(maxLat - minLat, 10);
+    const zoomLng = 360 / (lngSpan * 2.4);
+    const zoomLat = 180 / (latSpan * 2.4);
+    const fitZoom = Math.min(zoomLng, zoomLat, 5);
+    isUserInteracting.current = false;
+    hasDragged.current = false;
+    targetLng.set(centerLng);
+    targetLat.set(centerLat);
+    targetZoom.set(Math.min(MAX_ZOOM, Math.max(1, fitZoom)));
+    zoomRef.current = Math.min(MAX_ZOOM, Math.max(1, fitZoom));
+  };
+
   const handleWheel = (e: WheelEvent) => {
     e.preventDefault();
     isUserInteracting.current = true;
@@ -137,12 +172,12 @@ export function useMapPan({
     springLat.jump(curLat);
 
     const factor = Math.pow(0.999, e.deltaY);
-    const next = Math.min(7, Math.max(1, zoomRef.current * factor));
+    const next = Math.min(MAX_ZOOM, Math.max(1, zoomRef.current * factor));
     zoomRef.current = next;
     targetZoom.jump(next);
     springZoom.jump(next);
     setZoom(next);
   };
 
-  return { center, zoom, handleMoveStart, handleMoveEnd, handleWheel, panTo };
+  return { center, zoom, handleMoveStart, handleMoveEnd, handleWheel, panTo, panToOverview };
 }
