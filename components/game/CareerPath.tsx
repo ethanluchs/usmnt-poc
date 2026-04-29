@@ -34,10 +34,8 @@ export default function CareerPath({
   const [hoveredStop, setHoveredStop] = useState<PinnedStop>(null);
   const seenIndices = useRef<Set<number>>(new Set());
 
-  const { text, textInv, darkBlue, lightBlue } = getColors(isDark);
-  const totalStops = stops.length;
-  const lineColor = (i: number) =>
-    lerpColor(darkBlue, lightBlue, totalStops <= 1 ? 1 : (i + 0.5) / (totalStops - 1));
+  const { text, textInv } = getColors(isDark);
+  const lineColor = (_i: number) => "rgba(255,255,255,0.85)";
 
   useEffect(() => {
     if (stops.length === 0 || currentStop === 0) return;

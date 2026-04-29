@@ -6,14 +6,93 @@ import {
   Geography,
   Geographies,
   ZoomableGroup,
+  useMapContext,
 } from "react-simple-maps";
 import CareerPath from "./CareerPath";
-import { lerpColor } from "../../lib/color";
 import { getColors } from "../../lib/theme";
+import { getFlagUrl } from "../../lib/countryFlags";
 import { useMapPan } from "../../lib/hooks/useMapPan";
 import { CareerStop, GuessResult, PanTarget, PinnedStop } from "../../lib/types";
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+
+function FlagGeographies({ revealedCodes, bg, bgHover, strokeColor, guessResult }: {
+  revealedCodes: Set<string>;
+  bg: string;
+  bgHover: string;
+  strokeColor: string;
+  guessResult: string | null;
+}) {
+  const { path } = useMapContext() as any;
+
+  return (
+    <g
+      filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
+      style={{ transition: "filter 0.4s ease" }}
+    >
+      <Geographies geography={GEO_URL}>
+        {({ geographies }) => {
+          const patterns: React.ReactNode[] = [];
+          const shapes: React.ReactNode[] = [];
+
+          geographies.forEach((geo) => {
+            const code = String(geo.id);
+            const isRevealed = revealedCodes.has(code);
+            const flagUrl = isRevealed ? getFlagUrl(code) : null;
+
+            if (flagUrl) {
+              const bounds = path.bounds(geo as any);
+              const bx = bounds[0][0];
+              const by = bounds[0][1];
+              const bw = bounds[1][0] - bounds[0][0];
+              const bh = bounds[1][1] - bounds[0][1];
+              // cover-scale: expand flag so it fills the bbox on both axes
+              const flagAspect = 2;
+              let fw, fh;
+              if (bw / bh > flagAspect) {
+                fw = bw; fh = bw / flagAspect;
+              } else {
+                fh = bh; fw = bh * flagAspect;
+              }
+              const fx = bx + (bw - fw) / 2;
+              const fy = by + (bh - fh) / 2;
+              patterns.push(
+                <pattern
+                  key={`pat-${code}`}
+                  id={`flag-${code}`}
+                  patternUnits="userSpaceOnUse"
+                  x={bx} y={by} width={bw} height={bh}
+                >
+                  <image
+                    href={flagUrl}
+                    x={fx - bx} y={fy - by}
+                    width={fw} height={fh}
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </pattern>
+              );
+            }
+
+            const fill = flagUrl ? `url(#flag-${code})` : bg;
+            const fillHover = flagUrl ? `url(#flag-${code})` : bgHover;
+            shapes.push(
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                style={{
+                  default: { fill, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
+                  hover: { fill: fillHover, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
+                }}
+              />
+            );
+          });
+
+          return <>{patterns.length > 0 && <defs>{patterns}</defs>}{shapes}</>;
+        }}
+      </Geographies>
+    </g>
+  );
+}
 
 interface WorldMapProps {
   isDark: boolean;
@@ -38,7 +117,9 @@ export default function WorldMap({
   guessResult,
   panTarget,
 }: WorldMapProps) {
-  const { bg, bgHover, stroke, darkBlue, lightBlue } = getColors(isDark);
+  const { stroke } = getColors(isDark);
+  const bg = "#3a7a3a";
+  const bgHover = "#2a5c2a";
 
   const strokeMV: MotionValue<string> = useMotionValue(stroke);
   const [strokeColor, setStrokeColor] = useState(stroke);
@@ -56,12 +137,7 @@ export default function WorldMap({
     animate(strokeMV, target, { duration, ease: "easeOut" });
   }, [guessResult, stroke]);
 
-  const total = revealedStops.length;
-  const countryFills: Record<string, string> = {};
-  revealedStops.forEach((stop, i) => {
-    const t = total <= 1 ? 1 : i / (total - 1);
-    countryFills[stop.countryCode] = lerpColor(darkBlue, lightBlue, t);
-  });
+  const revealedCodes = new Set(revealedStops.map((s) => s.countryCode));
 
   const [pinnedStop, setPinnedStop] = useState<PinnedStop>(null);
   useEffect(() => { setPinnedStop(null); }, [puzzleIndex]);
@@ -79,7 +155,7 @@ export default function WorldMap({
         projection="geoMercator"
         width={800}
         height={450}
-        style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }}
+        style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab", touchAction: "none", background: "#1a6aaa" }}
       >
         <defs>
           <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
@@ -103,29 +179,13 @@ export default function WorldMap({
           onMoveStart={() => { handleMoveStart(); onMoveStart(); }}
           onMoveEnd={(e) => { handleMoveEnd(e); onMoveEnd(); }}
         >
-          <g
-            filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
-            style={{ transition: "filter 0.4s ease" }}
-          >
-            <Geographies geography={GEO_URL}>
-              {({ geographies }) =>
-                geographies.map((geo) => {
-                  const fill = countryFills[String(geo.id)] ?? bg;
-                  const fillHover = countryFills[String(geo.id)] ?? bgHover;
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      style={{
-                        default: { fill, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
-                        hover: { fill: fillHover, stroke: strokeColor, strokeWidth: 0.5, outline: "none" },
-                      }}
-                    />
-                  );
-                })
-              }
-            </Geographies>
-          </g>
+          <FlagGeographies
+            revealedCodes={revealedCodes}
+            bg={bg}
+            bgHover={bgHover}
+            strokeColor={strokeColor}
+            guessResult={guessResult}
+          />
 
           <CareerPath
             key={puzzleIndex}

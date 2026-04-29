@@ -12,7 +12,8 @@ interface StopCardProps {
 
 export default function StopCard({ stop, x, y, isDark }: StopCardProps) {
   if (!stop) return null;
-  const { cardBg, stroke, text } = getColors(isDark);
+  const { stroke, text } = getColors(isDark);
+  const cardBg = "#ede8d0";
 
   return (
     <foreignObject
