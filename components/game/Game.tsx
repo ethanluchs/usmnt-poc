@@ -4,10 +4,9 @@ import { motion, AnimatePresence } from "motion/react";
 import TopBar from "./TopBar";
 import WorldMap from "./WorldMap";
 import BottomBar from "./BottomBar";
-import LoadingOverlay from "../LoadingOverlay";
+import AsciiOverlay from "../AsciiOverlay";
 import PuzzleTransition from "./PuzzleTransition";
 import SessionOverScreen from "./SessionOverScreen";
-import CardOverlay from "./CardOverlay";
 import { useGameState } from "../../lib/hooks/useGameState";
 import { useTheme } from "../../lib/hooks/useTheme";
 import { useSessionManager } from "../../lib/hooks/useSessionManager";
@@ -34,7 +33,6 @@ export default function Game() {
   const [showSessionOver, setShowSessionOver] = useState(false);
   const [guessResult, setGuessResult] = useState<GuessResult>(null);
   const [panTarget, setPanTarget] = useState<PanTarget>(null);
-  const [showCards, setShowCards] = useState(false);
   const advancingRef = useRef<boolean>(false);
 
   const {
@@ -102,7 +100,7 @@ export default function Game() {
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
       <AnimatePresence>
-        {showOverlay && <LoadingOverlay onDone={() => setShowOverlay(false)} />}
+        {showOverlay && <AsciiOverlay onDone={() => setShowOverlay(false)} isDark={false} />}
       </AnimatePresence>
 
       <AnimatePresence>
@@ -132,6 +130,8 @@ export default function Game() {
         isDragging={isDragging}
         puzzleIndex={totalPuzzles === 0 ? 0 : puzzleIndex + 1}
         totalPuzzles={totalPuzzles}
+        unlockedCards={unlockedCards}
+        playerPool={playerPool}
       />
 
       <WorldMap
@@ -152,16 +152,6 @@ export default function Game() {
         onNextStop={onNextStop}
         solved={solved || !player || loadingPuzzles}
         isLastStop={isLastStop}
-        playerPool={playerPool}
-        onOpenCards={() => setShowCards(true)}
-        cardCount={unlockedCards.length}
-      />
-
-      <CardOverlay
-        isDark={isDark}
-        isOpen={showCards}
-        onClose={() => setShowCards(false)}
-        unlockedCards={unlockedCards}
         playerPool={playerPool}
       />
     </motion.main>

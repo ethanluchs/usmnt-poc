@@ -21,11 +21,13 @@ export default function AsciiOverlay({
   const doneRef = useRef(false);
 
   useEffect(() => {
+    const delay = 2000 + Math.random() * 2000;
     fetch("/weah-goal-bw.json")
       .then((r) => r.json())
       .then((data: string[][]) => setFrames(data))
       .catch(() => dismiss());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const t = setTimeout(dismiss, delay);
+    return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export default function AsciiOverlay({
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-500 ${fading ? "opacity-0" : "opacity-100"} ${isDark ? "bg-black" : "bg-[#ede8d0]"}`}
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-500 ${fading ? "opacity-0" : "opacity-100"} ${isDark ? "bg-black" : "bg-[#ede8d0]"}`}
     >
       <pre
         className={`leading-[1] overflow-hidden select-none ${isDark ? "text-[#ede8d0]" : "text-black"}`}

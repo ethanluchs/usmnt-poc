@@ -1,7 +1,9 @@
 "use client";
-import { AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { AnimatePresence, useDragControls, useMotionValue, animate, motion } from "motion/react";
+import { useState, useEffect } from "react";
 import InfoModal from "./InfoModal";
+import CardOverlay from "./CardOverlay";
+import { Player } from "../../lib/types";
 
 interface TopBarProps {
   isDark: boolean;
@@ -9,6 +11,8 @@ interface TopBarProps {
   puzzleIndex?: number;
   totalPuzzles?: number;
   isDragging?: boolean;
+  unlockedCards?: Player[];
+  playerPool?: Player[];
 }
 
 export default function TopBar({
@@ -17,91 +21,123 @@ export default function TopBar({
   puzzleIndex = 1,
   totalPuzzles = 5,
   isDragging = false,
+  unlockedCards = [],
+  playerPool = [],
 }: TopBarProps) {
   const [showInfo, setShowInfo] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [screenH, setScreenH] = useState(800);
+  const dragControls = useDragControls();
+
+  // Read window height only on client to avoid hydration mismatch
+  useEffect(() => {
+    setScreenH(window.innerHeight);
+  }, []);
+
+  const y = useMotionValue(-800); // start hidden; will snap after screenH is known
+  const tabY = useMotionValue(0);
+
+  // Once screenH is known, push overlay to correct hidden position
+  useEffect(() => {
+    if (screenH === 800) return;
+    y.set(-screenH);
+  }, [screenH]);
+
+  // Tab tracks overlay: tabY = y + screenH (0 when hidden, screenH when open — but tab sits at top so it starts at 0)
+  useEffect(() => {
+    return y.on("change", (v) => {
+      tabY.set(v + screenH);
+    });
+  }, [y, screenH, tabY]);
+
+  const snapOpen = () => {
+    animate(y, 0, { type: "spring", stiffness: 300, damping: 35 });
+    setIsOpen(true);
+  };
+
+  const snapClosed = () => {
+    animate(y, -screenH, { type: "spring", stiffness: 300, damping: 35 });
+    setIsOpen(false);
+  };
+
+  const handleDragEnd = (_: unknown, info: { velocity: { y: number } }) => {
+    if (info.velocity.y > 300 || y.get() > -screenH * 0.5) {
+      snapOpen();
+    } else {
+      snapClosed();
+    }
+  };
 
   return (
-    <div className="absolute top-0 left-0 right-0 flex flex-col items-center pt-3 pb-3 z-10 bg-white">
-      <div style={{
-        display: "inline-flex",
-        borderRadius: "3px",
-        overflow: "hidden",
-        border: "0px solid #111",
-        lineHeight: 1,
-        userSelect: "none",
-        background: "#ffffff",
-        padding: "4px 10px",
-        alignItems: "baseline",
-        gap: 0,
-      }}>
-        <span style={{
-          fontFamily: "'UniversCn', sans-serif",
-          fontStyle: "italic",
-          fontWeight: 700,
-          fontSize: "20px",
-          color: "#000000",
-          letterSpacing: "0px",
-          whiteSpace: "nowrap",
+    <div className="absolute top-0 left-0 right-0 flex justify-center z-50" style={{ pointerEvents: "none" }}>
+      {/* overlay — always mounted, slides in from top */}
+      <motion.div
+        drag="y"
+        dragControls={dragControls}
+        dragListener={isOpen}
+        dragConstraints={{ top: -screenH, bottom: 0 }}
+        dragElastic={0.05}
+        onDragEnd={handleDragEnd}
+        style={{ y, pointerEvents: "auto" }}
+        className={`fixed inset-0 z-40 flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-[#ede8d0]"}`}
+      >
+        <CardOverlay
+          isDark={isDark}
+          isOpen={isOpen}
+          onClose={snapClosed}
+          unlockedCards={unlockedCards}
+          playerPool={playerPool}
+        />
+      </motion.div>
+
+      {/* tab — rides at the bottom edge of the overlay */}
+      <motion.div
+        style={{ y: tabY, pointerEvents: "auto" }}
+        className="absolute top-0 flex justify-center"
+        onPointerDown={(e) => dragControls.start(e)}
+        onClick={() => isOpen ? snapClosed() : snapOpen()}
+      >
+        <div style={{
+          background: "#ede8d0",
+          borderRadius: "0 0 8px 8px",
+          padding: "6px 20px 10px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "2px",
+          userSelect: "none",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+          cursor: "grab",
+          touchAction: "none",
         }}>
-          WordleCup
-        </span>
-        <span style={{
-          fontFamily: "'Univers', sans-serif",
-          fontStyle: "normal",
-          fontWeight: 300,
-          fontSize: "20px",
-          color: "#cc1020",
-          letterSpacing: "-0.5px",
-          whiteSpace: "nowrap",
-          marginLeft: "2px",
-        }}>
-          CUM
-        </span>
-        <span style={{
-          fontFamily: "'UniversCn', sans-serif",
-          fontStyle: "normal",
-          fontWeight: 700,
-          fontSize: "20px",
-          color: "#000000",
-          letterSpacing: "0px",
-          whiteSpace: "nowrap",
-          marginLeft: "1px"
-        }}>
-          26
-        </span>
-      </div>
-      <span style={{
-        fontFamily: "'UniversCn', sans-serif",
-        fontStyle: "normal",
-        fontWeight: 800,
-        fontSize: "15px",
-        color: "#000000",
-        letterSpacing: "1px",
-        textTransform: "",
-        userSelect: "none",
-        marginTop: "-4px"
-      }}>
-        Puzzle {puzzleIndex} / {totalPuzzles}
-      </span>
+          <div style={{ display: "inline-flex", alignItems: "baseline", gap: 0, lineHeight: 1 }}>
+            <span style={{ fontFamily: "'UniversCn', sans-serif", fontStyle: "italic", fontWeight: 700, fontSize: "20px", color: "#000000", letterSpacing: "0px", whiteSpace: "nowrap" }}>
+              WordleCup
+            </span>
+            <span style={{ fontFamily: "'Univers', sans-serif", fontStyle: "normal", fontWeight: 300, fontSize: "20px", color: "#cc1020", letterSpacing: "-0.5px", whiteSpace: "nowrap", marginLeft: "2px" }}>
+              USA
+            </span>
+            <span style={{ fontFamily: "'UniversCn', sans-serif", fontStyle: "normal", fontWeight: 700, fontSize: "20px", color: "#000000", letterSpacing: "0px", whiteSpace: "nowrap", marginLeft: "1px" }}>
+              26
+            </span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ fontFamily: "'UniversCn', sans-serif", fontWeight: 800, fontSize: "11px", color: "#000000", letterSpacing: "1px", textTransform: "uppercase" }}>
+              Puzzle {puzzleIndex} / {totalPuzzles}
+            </span>
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowInfo(true); }}
+              style={{ fontFamily: "'Univers', sans-serif", fontSize: "11px", fontWeight: 600, color: "#000000", opacity: 1, lineHeight: 1, cursor: "pointer", background: "none", border: "none", padding: 0, touchAction: "none" }}
+            >
+              ?
+            </button>
+          </div>
+        </div>
+      </motion.div>
+
       <AnimatePresence>
         {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
     </div>
   );
 }
-
-const SunIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5" />
-    <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-  </svg>
-);
-
-const MoonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-);

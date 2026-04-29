@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import Button from "../ui/Button";
 import { Player } from "../../lib/types";
 
@@ -79,45 +79,37 @@ interface StrikeDotsProps {
 }
 
 function StrikeDots({ incorrectGuesses, maxGuesses = 3 }: StrikeDotsProps) {
-  const [flashingIndex, setFlashingIndex] = useState<number | null>(null);
   const prevCount = useRef(incorrectGuesses.length);
+  const [flashingIndex, setFlashingIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (incorrectGuesses.length > prevCount.current) {
-      const newIndex = maxGuesses - incorrectGuesses.length;
-      setFlashingIndex(newIndex);
-      setTimeout(() => setFlashingIndex(null), 400);
+      const lostIndex = incorrectGuesses.length - 1;
+      setFlashingIndex(lostIndex);
+      setTimeout(() => setFlashingIndex(null), 500);
     }
     prevCount.current = incorrectGuesses.length;
   }, [incorrectGuesses.length, maxGuesses]);
 
-  const remaining = maxGuesses - incorrectGuesses.length;
-
   return (
-    <div className="flex gap-1.5">
+    <div className="flex gap-2 justify-center">
       {Array.from({ length: maxGuesses }).map((_, i) => {
-        const isGone = i >= remaining;
+        const isLost = i < incorrectGuesses.length;
         const isFlashing = i === flashingIndex;
         return (
-          <AnimatePresence key={i} mode="wait">
-            {isFlashing ? (
-              <motion.div
-                key="flash"
-                initial={{ backgroundColor: "#ffffff" }}
-                animate={{ backgroundColor: "#dc2626" }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ duration: 0.25 }}
-                className="w-2 h-2 rounded-full border border-black dark:border-[#b8b2a0]"
-              />
-            ) : !isGone ? (
-              <motion.div
-                key="dot"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="w-2 h-2 rounded-full bg-white dark:bg-[#b8b2a0] border border-black"
-              />
-            ) : null}
-          </AnimatePresence>
+          <motion.img
+            key={i}
+            src="/soccer_ball.svg"
+            alt=""
+            animate={isFlashing ? { scale: [1, 1.4, 0.8, 1], rotate: [0, -20, 20, 0] } : {}}
+            transition={{ duration: 0.4 }}
+            style={{
+              width: 20,
+              height: 20,
+              opacity: isLost ? 0 : 1,
+              transition: "opacity 0.3s",
+            }}
+          />
         );
       })}
     </div>
@@ -131,8 +123,6 @@ interface BottomBarProps {
   solved: boolean;
   isLastStop: boolean;
   playerPool?: Player[];
-  onOpenCards?: () => void;
-  cardCount?: number;
 }
 
 export default function BottomBar({
@@ -142,8 +132,6 @@ export default function BottomBar({
   solved,
   isLastStop,
   playerPool = [],
-  onOpenCards,
-  cardCount = 0,
 }: BottomBarProps) {
   const [input, setInput] = useState("");
   const isDisabled = solved || incorrectGuesses.length >= 5;
@@ -174,12 +162,6 @@ export default function BottomBar({
           <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-[#ede8d0]">
             Next Stop →
           </Button>
-          <button
-            onClick={onOpenCards}
-            className="w-8 h-8 shrink-0 self-center rounded-full bg-[#ede8d0] border border-black flex items-center justify-center text-black text-xs font-bold leading-none shadow hover:bg-[#d8d3bb] transition-colors duration-300"
-          >
-            {cardCount}
-          </button>
         </div>
       </div>
     </div>
