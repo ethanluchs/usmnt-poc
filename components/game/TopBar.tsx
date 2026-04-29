@@ -1,10 +1,7 @@
 "use client";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
-
-const LETTERS_EXPANDED = ["W", "o", "r", "d", "l", "e", " ", "C", "u", "p"];
-const LETTERS_COLLAPSED = ["W", "C", "2", "6"];
 
 interface TopBarProps {
   isDark: boolean;
@@ -21,80 +18,71 @@ export default function TopBar({
   totalPuzzles = 5,
   isDragging = false,
 }: TopBarProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
-  if (isDragging && isExpanded) setIsExpanded(false);
-
   return (
-    <div
-      onMouseEnter={() => { if (!isDragging) setIsExpanded(true); }}
-      onMouseLeave={() => setIsExpanded(false)}
-      className="absolute top-0 left-0 right-0 flex flex-col items-center pt-4 pb-3 z-10 gap-1 rounded-b-xl"
-    >
-<motion.div layout className="relative flex items-center justify-center gap-1">
-        {/* mode="wait" is valid here because there is exactly one child key ("exp" or "col") */}
-        <AnimatePresence mode="wait">
-          <motion.div key={isExpanded ? "exp" : "col"} className="flex gap-1">
-            {(isExpanded ? LETTERS_EXPANDED : LETTERS_COLLAPSED).map((letter, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -6, filter: "blur(4px)" }}
-                transition={{ duration: 0.2, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
-                className="text-2xl leading-none tracking-widest uppercase text-black dark:text-[#b8b2a0]"
-                style={{ display: "inline-block", minWidth: letter === " " ? "0.5rem" : undefined }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.button
-              key="theme-toggle"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={onToggleTheme}
-              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-2"
-            >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-            </motion.button>
-          )}
-          {isExpanded && (
-            <motion.button
-              key="info-toggle"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setShowInfo(true)}
-              className="flex items-center justify-center text-black dark:text-[#b8b2a0] ml-1 text-sm leading-none opacity-60 hover:opacity-100 transition-opacity"
-            >
-              ?
-            </motion.button>
-          )}
-        </AnimatePresence>
-      </motion.div>
-
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="relative text-xs tracking-widest text-black dark:text-[#b8b2a0] opacity-60"
-          >
-            PUZZLE {puzzleIndex} / {totalPuzzles}
-          </motion.p>
-        )}
-      </AnimatePresence>
+    <div className="absolute top-0 left-0 right-0 flex flex-col items-center pt-3 pb-3 z-10 bg-white">
+      <div style={{
+        display: "inline-flex",
+        borderRadius: "3px",
+        overflow: "hidden",
+        border: "0px solid #111",
+        lineHeight: 1,
+        userSelect: "none",
+        background: "#ffffff",
+        padding: "4px 10px",
+        alignItems: "baseline",
+        gap: 0,
+      }}>
+        <span style={{
+          fontFamily: "'UniversCn', sans-serif",
+          fontStyle: "italic",
+          fontWeight: 700,
+          fontSize: "20px",
+          color: "#000000",
+          letterSpacing: "0px",
+          whiteSpace: "nowrap",
+        }}>
+          WordleCup
+        </span>
+        <span style={{
+          fontFamily: "'Univers', sans-serif",
+          fontStyle: "normal",
+          fontWeight: 300,
+          fontSize: "20px",
+          color: "#cc1020",
+          letterSpacing: "-0.5px",
+          whiteSpace: "nowrap",
+          marginLeft: "2px",
+        }}>
+          CUM
+        </span>
+        <span style={{
+          fontFamily: "'UniversCn', sans-serif",
+          fontStyle: "normal",
+          fontWeight: 700,
+          fontSize: "20px",
+          color: "#000000",
+          letterSpacing: "0px",
+          whiteSpace: "nowrap",
+          marginLeft: "1px"
+        }}>
+          26
+        </span>
+      </div>
+      <span style={{
+        fontFamily: "'UniversCn', sans-serif",
+        fontStyle: "normal",
+        fontWeight: 800,
+        fontSize: "15px",
+        color: "#000000",
+        letterSpacing: "1px",
+        textTransform: "",
+        userSelect: "none",
+        marginTop: "-4px"
+      }}>
+        Puzzle {puzzleIndex} / {totalPuzzles}
+      </span>
       <AnimatePresence>
         {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
       </AnimatePresence>
