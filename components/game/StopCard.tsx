@@ -28,7 +28,7 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
   ];
   const [cardBg, cardText] = totalStops && stop.order <= STOP_COLORS.length
     ? STOP_COLORS[stop.order - 1]
-    : ["#ede8d0", "#000000"];
+    : ["#ffffff", "#000000"];
 
   return (
     <foreignObject

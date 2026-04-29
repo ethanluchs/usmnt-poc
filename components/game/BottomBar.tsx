@@ -27,7 +27,7 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
   };
 
   return (
-    <div className="relative flex items-stretch border border-black rounded bg-[#ede8d0] overflow-visible">
+    <div className="relative flex items-stretch border border-black rounded bg-white overflow-visible">
       <input
         type="text"
         value={input}
@@ -41,21 +41,21 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
       <button
         onMouseDown={(e) => { e.preventDefault(); input.trim() && handleSelect(input.trim()); }}
         disabled={disabled || !input.trim()}
-        className="px-3 flex items-center justify-center border-l border-black text-black disabled:opacity-30 hover:bg-black hover:text-[#ede8d0] transition-colors"
+        className="px-3 flex items-center justify-center border-l border-black text-black disabled:opacity-30 hover:bg-black hover:text-white transition-colors"
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 7h10M8 3l4 4-4 4" />
         </svg>
       </button>
       {showDropdown && filtered.length > 0 && (
-        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black bg-[#ede8d0] text-black rounded overflow-hidden z-50">
+        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black bg-white text-black rounded overflow-hidden z-50">
           {filtered.map((p) => {
             const isGuessed = guessedNames.has(p.name.toLowerCase());
             return (
               <li
                 key={p.id}
                 onMouseDown={() => !isGuessed && handleSelect(p.name)}
-                className={`px-3 py-2 text-sm transition-colors ${isGuessed ? "line-through opacity-40 cursor-default" : "cursor-pointer hover:bg-black hover:text-[#ede8d0]"}`}
+                className={`px-3 py-2 text-sm transition-colors ${isGuessed ? "line-through opacity-40 cursor-default" : "cursor-pointer hover:bg-black hover:text-white"}`}
               >
                 {p.name}
               </li>
@@ -135,7 +135,7 @@ export default function BottomBar({
           onClick={onOverview}
           disabled={revealedStops.length === 0}
           className={`flex items-center justify-center w-9 h-9 border border-black rounded transition-colors disabled:opacity-30
-            ${showAllCards ? "bg-black text-[#ede8d0]" : "bg-[#ede8d0] text-black hover:bg-black hover:text-[#ede8d0]"}`}
+            ${showAllCards ? "bg-black text-[#ede8d0]" : "bg-white text-black hover:bg-black hover:text-white"}`}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="6" cy="14" r="4" />
@@ -154,7 +154,7 @@ export default function BottomBar({
           incorrectGuesses={incorrectGuesses}
           playerPool={playerPool}
         />
-        <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-[#ede8d0]">
+        <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white">
           Next Stop
         </Button>
         <StrikeDots incorrectGuesses={incorrectGuesses} />
