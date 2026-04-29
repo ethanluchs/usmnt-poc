@@ -46,7 +46,7 @@ export default function OverviewCards({ stops, points, isDark, zoom }: OverviewC
               strokeWidth={0.6 * zoom}
               strokeDasharray={`${2 * zoom} ${2 * zoom}`}
             />
-            <StopCard stop={stop} x={lx} y={ly} isDark={isDark} raw />
+            <StopCard stop={stop} x={lx} y={ly} isDark={isDark} raw totalStops={stops.length} />
           </g>
         );
       })}
