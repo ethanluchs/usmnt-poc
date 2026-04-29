@@ -21,7 +21,7 @@ export default function SessionOverScreen({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="absolute inset-0 z-50 flex items-center justify-center"
+      className="absolute inset-0 z-[60] flex items-center justify-center"
       style={{ background: bg }}
     >
       <div className="flex flex-col items-center gap-6 text-center px-8">
