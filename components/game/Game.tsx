@@ -28,6 +28,7 @@ export default function Game() {
   } = useSessionManager(userId);
 
   const [isDragging, setIsDragging] = useState(false);
+  const [showAllCards, setShowAllCards] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
   const [showTransition, setShowTransition] = useState(false);
   const [showSessionOver, setShowSessionOver] = useState(false);
@@ -41,6 +42,7 @@ export default function Game() {
     currentStop,
     incorrectGuesses,
     solved,
+    puzzleFailed,
     revealedStops,
     onGuess,
     onNextStop,
@@ -59,23 +61,29 @@ export default function Game() {
   };
 
   useEffect(() => {
+    setShowAllCards(false);
+  }, [revealedStops.length]);
+
+  useEffect(() => {
     if (!solved || !player) return;
-
     handlePuzzleSolved(player, puzzleIndex);
-
-    if (isLastPuzzle) {
-      setShowSessionOver(true);
-      return;
-    }
+    if (isLastPuzzle) { setShowSessionOver(true); return; }
     advancingRef.current = false;
     setShowTransition(true);
     if (nextFirstStop) {
-      setTimeout(
-        () => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }),
-        600
-      );
+      setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600);
     }
   }, [solved, player, puzzleIndex, isLastPuzzle, nextFirstStop, handlePuzzleSolved]);
+
+  useEffect(() => {
+    if (!puzzleFailed || !player) return;
+    if (isLastPuzzle) { setShowSessionOver(true); return; }
+    advancingRef.current = false;
+    setShowTransition(true);
+    if (nextFirstStop) {
+      setTimeout(() => setPanTarget({ lng: nextFirstStop.lng, lat: nextFirstStop.lat }), 600);
+    }
+  }, [puzzleFailed, player, isLastPuzzle, nextFirstStop]);
 
   useEffect(() => {
     if (loadingPuzzles) return;
@@ -144,15 +152,19 @@ export default function Game() {
         currentStop={currentStop}
         guessResult={guessResult}
         panTarget={panTarget}
+        showAllCards={showAllCards}
       />
 
       <BottomBar
         incorrectGuesses={incorrectGuesses}
         onGuess={handleGuess}
         onNextStop={onNextStop}
-        solved={solved || !player || loadingPuzzles}
+        solved={solved || puzzleFailed || !player || loadingPuzzles}
         isLastStop={isLastStop}
         playerPool={playerPool}
+        revealedStops={revealedStops}
+        showAllCards={showAllCards}
+        onOverview={() => { setShowAllCards((v) => !v); setPanTarget({ overview: true }); }}
       />
     </motion.main>
   );

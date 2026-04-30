@@ -10,6 +10,7 @@ interface GameStateReturn {
   currentStop: number;
   incorrectGuesses: string[];
   solved: boolean;
+  puzzleFailed: boolean;
   revealedStops: CareerStop[];
   onGuess: (name: string) => GuessResult;
   onNextStop: () => void;
@@ -43,8 +44,8 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
   const revealedStops: CareerStop[] =
     player?.careerStops?.slice(0, currentStop + 1) ?? [];
 
-  const outOfGuesses = incorrectGuesses.length >= MAX_GUESSES;
-  const sessionOver = sessionPlayers.length === 0 || outOfGuesses;
+  const puzzleFailed = incorrectGuesses.length >= MAX_GUESSES;
+  const sessionOver = sessionPlayers.length === 0;
 
   const onGuess = (name: string): GuessResult => {
     const normalized = name.trim().toLowerCase();
@@ -85,6 +86,7 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
     currentStop,
     incorrectGuesses,
     solved,
+    puzzleFailed,
     revealedStops,
     onGuess,
     onNextStop,
