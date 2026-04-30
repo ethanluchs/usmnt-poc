@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import Button from "../ui/Button";
 import { Player, CareerStop } from "../../lib/types";
 
@@ -69,31 +68,29 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
 
 function StrikeDots({ incorrectGuesses, maxGuesses = 3 }: { incorrectGuesses: string[]; maxGuesses?: number }) {
   const prevCount = useRef(incorrectGuesses.length);
-  const [flashingIndex, setFlashingIndex] = useState<number | null>(null);
+  const [explodingIndex, setExplodingIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (incorrectGuesses.length > prevCount.current) {
       const lostIndex = incorrectGuesses.length - 1;
-      setFlashingIndex(lostIndex);
-      setTimeout(() => setFlashingIndex(null), 500);
+      setExplodingIndex(lostIndex);
+      setTimeout(() => setExplodingIndex(null), 600);
     }
     prevCount.current = incorrectGuesses.length;
-  }, [incorrectGuesses.length, maxGuesses]);
+  }, [incorrectGuesses.length]);
 
   return (
     <div className="flex gap-2 justify-center">
       {Array.from({ length: maxGuesses }).map((_, i) => {
         const isLost = i < incorrectGuesses.length;
-        const isFlashing = i === flashingIndex;
+        const isExploding = i === explodingIndex;
         return (
-          <motion.img
+          <img
             key={i}
-            src="/soccer_ball.svg"
+            src={isExploding ? "/cartoon_explosion.png" : "/soccer_ball.svg"}
             alt=""
-            animate={isFlashing ? { scale: [1, 1.4, 0.8, 1], rotate: [0, -20, 20, 0] } : {}}
-            transition={{ duration: 0.4 }}
-            className="w-5 h-5 transition-opacity duration-300"
-            style={{ opacity: isLost ? 0 : 1 }}
+            className="w-5 h-5"
+            style={{ opacity: isLost && !isExploding ? 0 : 1 }}
           />
         );
       })}

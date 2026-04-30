@@ -67,6 +67,7 @@ export default function TopBar({
   };
 
   return (
+    <>
     <div className="absolute top-0 left-0 right-0 flex justify-center z-50" style={{ pointerEvents: "none" }}>
       <motion.div
         drag="y"
@@ -131,9 +132,10 @@ export default function TopBar({
         </div>
       </motion.div>
 
-      <AnimatePresence>
-        {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
-      </AnimatePresence>
     </div>
+    <AnimatePresence>
+      {showInfo && <InfoModal isDark={isDark} onClose={() => setShowInfo(false)} />}
+    </AnimatePresence>
+    </>
   );
 }
