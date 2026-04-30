@@ -22,7 +22,7 @@ export type Puzzle = Player;
 
 export type GuessResult = "correct" | "wrong" | null;
 
-export type PanTarget = { lng: number; lat: number } | null;
+export type PanTarget = { lng: number; lat: number } | { overview: true } | null;
 
 export type PinnedStop = { stop: CareerStop; x: number; y: number } | false | null;
 

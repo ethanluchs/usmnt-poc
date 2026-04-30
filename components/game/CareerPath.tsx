@@ -3,13 +3,11 @@ import { useMapContext } from "react-simple-maps";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import StopCard from "./StopCard";
-import { lerpColor } from "../../lib/color";
+import OverviewCards from "./OverviewCards";
 import { getColors } from "../../lib/theme";
 import { CareerStop, PinnedStop } from "../../lib/types";
 
-function isActivePinnedStop(
-  p: PinnedStop
-): p is { stop: CareerStop; x: number; y: number } {
+function isActivePinnedStop(p: PinnedStop): p is { stop: CareerStop; x: number; y: number } {
   return p !== null && p !== false;
 }
 
@@ -20,6 +18,8 @@ interface CareerPathProps {
   onPanTo?: (lng: number, lat: number) => void;
   pinnedStop: PinnedStop;
   setPinnedStop: React.Dispatch<React.SetStateAction<PinnedStop>>;
+  showAllCards?: boolean;
+  zoom?: number;
 }
 
 export default function CareerPath({
@@ -29,13 +29,14 @@ export default function CareerPath({
   onPanTo,
   pinnedStop,
   setPinnedStop,
+  showAllCards = false,
+  zoom = 1,
 }: CareerPathProps) {
   const { projection } = useMapContext();
   const [hoveredStop, setHoveredStop] = useState<PinnedStop>(null);
   const seenIndices = useRef<Set<number>>(new Set());
 
   const { text, textInv } = getColors(isDark);
-  const lineColor = (_i: number) => "rgba(255,255,255,0.85)";
 
   useEffect(() => {
     if (stops.length === 0 || currentStop === 0) return;
@@ -72,7 +73,7 @@ export default function CareerPath({
             key={`line-${i}`}
             d={d}
             fill="none"
-            stroke={lineColor(i)}
+            stroke="rgba(255,255,255,0.85)"
             strokeWidth={1}
             strokeDasharray="4 3"
             initial={!seenIndices.current.has(i) ? { pathLength: 0, opacity: 0 } : false}
@@ -125,15 +126,18 @@ export default function CareerPath({
       ))}
 
       <AnimatePresence>
-        {activeStop && (
-          <StopCard
-            key={activeStop.stop.order}
-            stop={activeStop.stop}
-            x={activeStop.x}
-            y={activeStop.y}
-            isDark={isDark}
-          />
-        )}
+        {showAllCards
+          ? <OverviewCards stops={stops} points={points} isDark={isDark} zoom={zoom} />
+          : activeStop && (
+              <StopCard
+                key={activeStop.stop.order}
+                stop={activeStop.stop}
+                x={activeStop.x}
+                y={activeStop.y}
+                isDark={isDark}
+              />
+            )
+        }
       </AnimatePresence>
     </g>
   );

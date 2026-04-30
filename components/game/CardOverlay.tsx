@@ -25,7 +25,7 @@ export default function CardOverlay({
   );
 
   return (
-    <div className={`w-full h-full flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-[#ede8d0]"}`}>
+    <div className={`w-full h-full flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-white"}`}>
       <div className="flex items-center justify-between px-12 py-3 shrink-0">
         <span className={`text-md font-bold tracking-widest uppercase ${isDark ? "text-white" : "text-black"}`}>
           {unlockedCards.length} / {playerPool.length} cards
