@@ -8,7 +8,7 @@ interface InfoModalProps {
 }
 
 export default function InfoModal({ isDark, onClose }: InfoModalProps) {
-  const bg = isDark ? "#1a1917" : "#ede8d0";
+  const bg = isDark ? "#1a1917" : "#ffffff";
   const border = isDark ? "#b8b2a0" : "#000000";
   const text = isDark ? "#b8b2a0" : "#000000";
   const dimText = isDark ? "#6b6660" : "#888";
