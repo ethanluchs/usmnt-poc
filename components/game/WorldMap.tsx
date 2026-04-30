@@ -5,6 +5,7 @@ import { ComposableMap, ZoomableGroup } from "react-simple-maps";
 import CareerPath from "./CareerPath";
 import FlagGeographies from "./FlagGeographies";
 import { getColors } from "../../lib/theme";
+import { getFlagUrl } from "../../lib/countryFlags";
 import { useMapPan } from "../../lib/hooks/useMapPan";
 import { CareerStop, GuessResult, PanTarget, PinnedStop } from "../../lib/types";
 
