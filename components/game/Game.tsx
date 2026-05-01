@@ -75,8 +75,12 @@ export default function Game() {
     }
   }, [solved, player, puzzleIndex, isLastPuzzle, nextFirstStop, handlePuzzleSolved]);
 
+  const failHandledRef = useRef<boolean>(false);
+
   useEffect(() => {
-    if (!puzzleFailed || !player) return;
+    if (!puzzleFailed) { failHandledRef.current = false; return; }
+    if (!player || failHandledRef.current) return;
+    failHandledRef.current = true;
     if (isLastPuzzle) { setShowSessionOver(true); return; }
     advancingRef.current = false;
     setShowTransition(true);
