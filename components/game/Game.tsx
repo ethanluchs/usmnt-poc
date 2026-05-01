@@ -114,7 +114,8 @@ export default function Game() {
       <AnimatePresence>
         {showTransition && totalPuzzles > 0 && (
           <PuzzleTransition
-            puzzleNumber={puzzleIndex + 2}
+            fromNumber={puzzleIndex + 1}
+            toNumber={puzzleIndex + 2}
             totalPuzzles={totalPuzzles}
             onDone={handleNextPuzzle}
           />

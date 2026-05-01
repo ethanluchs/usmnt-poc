@@ -23,10 +23,7 @@ export default function FlagGeographies({
   const { path } = useMapContext() as any;
 
   return (
-    <g
-      filter={guessResult === "correct" ? "url(#glow-green)" : undefined}
-      style={{ transition: "filter 0.4s ease" }}
-    >
+    <g>
       <Geographies geography={GEO_URL}>
         {({ geographies }) => {
           const patterns: React.ReactNode[] = [];
