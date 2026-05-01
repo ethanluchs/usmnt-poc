@@ -83,7 +83,7 @@ export default function AsciiOverlay({
     <div
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-500 ${fading ? "opacity-0" : "opacity-100"} ${isDark ? "bg-black" : "bg-white"}`}
     >
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
     </div>
   );
 }
