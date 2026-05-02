@@ -9,6 +9,7 @@ interface GameStateReturn {
   puzzleIndex: number;
   currentStop: number;
   incorrectGuesses: string[];
+  guessLog: { stop: number }[];
   solved: boolean;
   puzzleFailed: boolean;
   revealedStops: CareerStop[];
@@ -27,6 +28,7 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
   const [player, setPlayer] = useState<Player | null>(null);
   const [currentStop, setCurrentStop] = useState(0);
   const [incorrectGuesses, setIncorrectGuesses] = useState<string[]>([]);
+  const [guessLog, setGuessLog] = useState<{ stop: number }[]>([]);
   const [solved, setSolved] = useState(false);
 
   useEffect(() => {
@@ -38,6 +40,7 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
     setPlayer(p || null);
     setCurrentStop(0);
     setIncorrectGuesses([]);
+    setGuessLog([]);
     setSolved(false);
   }, [sessionPlayers, puzzleIndex]);
 
@@ -57,6 +60,7 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
       return "correct";
     } else {
       setIncorrectGuesses((prev) => [...prev, name.trim()]);
+      setGuessLog((prev) => [...prev, { stop: currentStop }]);
       return "wrong";
     }
   };
@@ -85,6 +89,7 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
     puzzleIndex,
     currentStop,
     incorrectGuesses,
+    guessLog,
     solved,
     puzzleFailed,
     revealedStops,
