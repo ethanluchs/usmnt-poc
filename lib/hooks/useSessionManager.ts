@@ -20,7 +20,8 @@ interface SessionManagerReturn {
   unlockedCards: Player[];
   loadingPuzzles: boolean;
   puzzlesCompleted: number;
-  handlePuzzleSolved: (player: Player, puzzleIndex: number) => Promise<void>;
+  totalPoints: number;
+  handlePuzzleSolved: (player: Player, puzzleIndex: number, stopsUsed: number) => Promise<void>;
 }
 
 export function useSessionManager(
@@ -32,6 +33,7 @@ export function useSessionManager(
   const unlockedCardIdsRef = useRef<Set<string>>(new Set());
   const [unlockedCards, setUnlockedCards] = useState<Player[]>([]);
   const [puzzlesCompleted, setPuzzlesCompleted] = useState(0);
+  const [totalPoints, setTotalPoints] = useState(0);
   const processedSolvesRef = useRef<Set<string>>(new Set());
   const cacheKey = `wordle-cup:cards:${userId ?? "guest"}`;
 
@@ -54,6 +56,7 @@ export function useSessionManager(
           setPlayerPool(parsed.allCards);
           setSessionPlayers(selectedPuzzles);
           setPuzzlesCompleted(0);
+          setTotalPoints(0);
           processedSolvesRef.current = new Set();
           return;
         }
@@ -73,6 +76,7 @@ export function useSessionManager(
         setPlayerPool(allPuzzles);
         setSessionPlayers(selectedPuzzles);
         setPuzzlesCompleted(0);
+        setTotalPoints(0);
         processedSolvesRef.current = new Set();
 
         localStorage.setItem(
@@ -99,12 +103,15 @@ export function useSessionManager(
   }, [userId]);
 
   const handlePuzzleSolved = useCallback(
-    async (player: Player, puzzleIndex: number): Promise<void> => {
+    async (player: Player, puzzleIndex: number, stopsUsed: number): Promise<void> => {
       if (!player) return;
 
       const solveKey = `${puzzleIndex}:${player.id}`;
       if (processedSolvesRef.current.has(solveKey)) return;
       processedSolvesRef.current.add(solveKey);
+
+      const points = Math.max(0, 3 - stopsUsed);
+      setTotalPoints((prev) => prev + points);
 
       setUnlockedCards((prev) => [...prev, player]);
 
@@ -134,6 +141,7 @@ export function useSessionManager(
     unlockedCards,
     loadingPuzzles,
     puzzlesCompleted,
+    totalPoints,
     handlePuzzleSolved,
   };
 }
