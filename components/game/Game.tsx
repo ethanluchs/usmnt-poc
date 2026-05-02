@@ -11,7 +11,14 @@ import { useGameState } from "../../lib/hooks/useGameState";
 import { useTheme } from "../../lib/hooks/useTheme";
 import { useSessionManager } from "../../lib/hooks/useSessionManager";
 import { useAuth } from "../AuthProvider";
-import { GuessResult, PanTarget } from "../../lib/types";
+import { GuessResult, PanTarget, Player } from "../../lib/types";
+
+interface PuzzleResult {
+  player: Player;
+  stopsRevealed: number;
+  solved: boolean;
+  guessLog: { stop: number }[];
+}
 
 export default function Game() {
   const { user, loading: authLoading } = useAuth();
@@ -24,6 +31,7 @@ export default function Game() {
     unlockedCards,
     loadingPuzzles,
     puzzlesCompleted,
+    totalPoints,
     handlePuzzleSolved,
   } = useSessionManager(userId);
 
@@ -35,12 +43,14 @@ export default function Game() {
   const [guessResult, setGuessResult] = useState<GuessResult>(null);
   const [panTarget, setPanTarget] = useState<PanTarget>(null);
   const advancingRef = useRef<boolean>(false);
+  const puzzleResultsRef = useRef<PuzzleResult[]>([]);
 
   const {
     player,
     puzzleIndex,
     currentStop,
     incorrectGuesses,
+    guessLog,
     solved,
     puzzleFailed,
     revealedStops,
@@ -66,7 +76,10 @@ export default function Game() {
 
   useEffect(() => {
     if (!solved || !player) return;
-    handlePuzzleSolved(player, puzzleIndex);
+    handlePuzzleSolved(player, puzzleIndex, currentStop);
+    if (!puzzleResultsRef.current.some((r) => r.player.id === player.id)) {
+      puzzleResultsRef.current = [...puzzleResultsRef.current, { player, stopsRevealed: currentStop + 1, solved: true, guessLog }];
+    }
     if (isLastPuzzle) { setShowSessionOver(true); return; }
     advancingRef.current = false;
     setShowTransition(true);
@@ -81,6 +94,9 @@ export default function Game() {
     if (!puzzleFailed) { failHandledRef.current = false; return; }
     if (!player || failHandledRef.current) return;
     failHandledRef.current = true;
+    if (!puzzleResultsRef.current.some((r) => r.player.id === player.id)) {
+      puzzleResultsRef.current = [...puzzleResultsRef.current, { player, stopsRevealed: currentStop + 1, solved: false, guessLog }];
+    }
     if (isLastPuzzle) { setShowSessionOver(true); return; }
     advancingRef.current = false;
     setShowTransition(true);
@@ -131,8 +147,10 @@ export default function Game() {
           <SessionOverScreen
             isDark={isDark}
             puzzlesCompleted={puzzlesCompleted}
-            incorrectGuesses={incorrectGuesses.length}
+            totalPoints={totalPoints}
             totalPuzzles={totalPuzzles}
+            sessionPlayers={sessionPlayers}
+            puzzleResults={puzzleResultsRef.current}
           />
         )}
       </AnimatePresence>
