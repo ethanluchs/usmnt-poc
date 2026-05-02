@@ -7,7 +7,7 @@ import FlagGeographies from "./FlagGeographies";
 import { getColors } from "../../lib/theme";
 import { getFlagUrl } from "../../lib/countryFlags";
 import { useMapPan } from "../../lib/hooks/useMapPan";
-import { CareerStop, GuessResult, PanTarget, PinnedStop } from "../../lib/types";
+import { CareerStop, GuessResult, PanTarget } from "../../lib/types";
 
 interface WorldMapProps {
   isDark: boolean;
@@ -19,7 +19,6 @@ interface WorldMapProps {
   currentStop: number;
   guessResult: GuessResult;
   panTarget: PanTarget;
-  showAllCards?: boolean;
 }
 
 export default function WorldMap({
@@ -32,7 +31,6 @@ export default function WorldMap({
   currentStop,
   guessResult,
   panTarget,
-  showAllCards = false,
 }: WorldMapProps) {
   const { stroke } = getColors(isDark);
   const bg = "#3a7a3a";
@@ -56,16 +54,13 @@ export default function WorldMap({
 
   const revealedCodes = new Set(revealedStops.map((s) => s.countryCode));
 
-  const [pinnedStop, setPinnedStop] = useState<PinnedStop>(null);
-  useEffect(() => { setPinnedStop(null); }, [puzzleIndex]);
 
-  const { center, zoom, handleMoveStart, handleMoveEnd, handleWheel, panTo } =
+  const { center, zoom, handleMoveStart, handleMoveEnd, handleWheel } =
     useMapPan({ revealedStops, puzzleIndex, panTarget });
 
   return (
     <div
       style={{ width: "100%", height: "100%" }}
-      onClick={() => setPinnedStop(false)}
       onWheel={handleWheel as unknown as React.WheelEventHandler<HTMLDivElement>}
     >
       <ComposableMap
@@ -109,10 +104,6 @@ export default function WorldMap({
             stops={revealedStops}
             isDark={isDark}
             currentStop={currentStop}
-            onPanTo={panTo}
-            pinnedStop={pinnedStop}
-            setPinnedStop={setPinnedStop}
-            showAllCards={showAllCards}
             zoom={zoom}
           />
         </ZoomableGroup>

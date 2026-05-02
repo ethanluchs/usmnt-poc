@@ -1,52 +1,26 @@
 "use client";
 import { useMapContext } from "react-simple-maps";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect, useRef } from "react";
-import StopCard from "./StopCard";
+import { useRef } from "react";
 import OverviewCards from "./OverviewCards";
 import { getColors } from "../../lib/theme";
-import { CareerStop, PinnedStop } from "../../lib/types";
-
-function isActivePinnedStop(p: PinnedStop): p is { stop: CareerStop; x: number; y: number } {
-  return p !== null && p !== false;
-}
+import { CareerStop } from "../../lib/types";
 
 interface CareerPathProps {
   stops?: CareerStop[];
   isDark: boolean;
   currentStop: number;
-  onPanTo?: (lng: number, lat: number) => void;
-  pinnedStop: PinnedStop;
-  setPinnedStop: React.Dispatch<React.SetStateAction<PinnedStop>>;
-  showAllCards?: boolean;
   zoom?: number;
 }
 
 export default function CareerPath({
   stops = [],
   isDark,
-  currentStop,
-  onPanTo,
-  pinnedStop,
-  setPinnedStop,
-  showAllCards = false,
   zoom = 1,
 }: CareerPathProps) {
   const { projection } = useMapContext();
-  const [hoveredStop, setHoveredStop] = useState<PinnedStop>(null);
   const seenIndices = useRef<Set<number>>(new Set());
-
   const { text, textInv } = getColors(isDark);
-
-  useEffect(() => {
-    if (stops.length === 0 || currentStop === 0) return;
-    const last = stops[stops.length - 1];
-    const pt = projection([last.lng, last.lat]);
-    if (!pt) return;
-    const t = setTimeout(() => setPinnedStop({ stop: last, x: pt[0], y: pt[1] }), 450);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stops.length]);
 
   if (stops.length === 0) return null;
 
@@ -55,11 +29,6 @@ export default function CareerPath({
     .filter((pt): pt is [number, number] => pt !== null);
 
   if (points.length !== stops.length) return null;
-
-  const activeStop =
-    pinnedStop ||
-    hoveredStop ||
-    (pinnedStop !== false ? { stop: stops[0], x: points[0][0], y: points[0][1] } : null);
 
   return (
     <g>
@@ -75,7 +44,6 @@ export default function CareerPath({
             fill="none"
             stroke="rgba(255,255,255,0.85)"
             strokeWidth={1}
-            strokeDasharray="4 3"
             initial={!seenIndices.current.has(i) ? { pathLength: 0, opacity: 0 } : false}
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ pathLength: { duration: 1.2, ease: "easeInOut" }, opacity: { duration: 0.3 } }}
@@ -88,7 +56,7 @@ export default function CareerPath({
           <motion.circle
             cx={pt[0]}
             cy={pt[1]}
-            r={isActivePinnedStop(pinnedStop) && pinnedStop.stop === stops[i] ? 4.5 : 3}
+            r={3}
             fill={text}
             stroke={text}
             strokeWidth={1}
@@ -96,23 +64,11 @@ export default function CareerPath({
             animate={{ scale: 1, opacity: 1 }}
             onAnimationComplete={() => seenIndices.current.add(i)}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            style={{ cursor: "pointer" }}
-            onMouseEnter={() => setHoveredStop({ stop: stops[i], x: pt[0], y: pt[1] })}
-            onMouseLeave={() => setHoveredStop(null)}
-            onClick={(e) => {
-              e.stopPropagation();
-              setPinnedStop((prev) =>
-                isActivePinnedStop(prev) && prev.stop === stops[i]
-                  ? false
-                  : { stop: stops[i], x: pt[0], y: pt[1] }
-              );
-              onPanTo?.(stops[i].lng, stops[i].lat);
-            }}
           />
           <motion.text
             x={pt[0]}
             y={pt[1] + 1.5}
-            fontSize={isActivePinnedStop(pinnedStop) && pinnedStop.stop === stops[i] ? 5.5 : 4}
+            fontSize={4}
             fill={textInv}
             textAnchor="middle"
             initial={!seenIndices.current.has(i) ? { opacity: 0 } : false}
@@ -126,18 +82,7 @@ export default function CareerPath({
       ))}
 
       <AnimatePresence>
-        {showAllCards
-          ? <OverviewCards stops={stops} points={points} isDark={isDark} zoom={zoom} />
-          : activeStop && (
-              <StopCard
-                key={activeStop.stop.order}
-                stop={activeStop.stop}
-                x={activeStop.x}
-                y={activeStop.y}
-                isDark={isDark}
-              />
-            )
-        }
+        <OverviewCards stops={stops} points={points} isDark={isDark} zoom={zoom} />
       </AnimatePresence>
     </g>
   );
