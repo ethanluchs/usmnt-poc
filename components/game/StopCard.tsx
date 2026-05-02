@@ -34,8 +34,8 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
     <foreignObject
       x={fx}
       y={fy}
-      width={120}
-      height={50}
+      width={90}
+      height={42}
       style={{ overflow: "visible" }}
     >
       <motion.div
@@ -47,11 +47,11 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
           background: cardBg,
           border: `1px solid ${stroke}`,
           color: cardText,
-          padding: "5px 9px",
+          padding: "4px 7px",
           fontSize: "7px",
-          lineHeight: 1.6,
+          lineHeight: 1.4,
           whiteSpace: "normal",
-          maxWidth: "120px",
+          maxWidth: "90px",
           pointerEvents: "none",
           position: "relative",
         }}
