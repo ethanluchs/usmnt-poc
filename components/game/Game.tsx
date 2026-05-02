@@ -36,7 +36,6 @@ export default function Game() {
   } = useSessionManager(userId);
 
   const [isDragging, setIsDragging] = useState(false);
-  const [showAllCards, setShowAllCards] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
   const [showTransition, setShowTransition] = useState(false);
   const [showSessionOver, setShowSessionOver] = useState(false);
@@ -70,9 +69,6 @@ export default function Game() {
     if (result === "wrong") setTimeout(() => setGuessResult(null), 900);
   };
 
-  useEffect(() => {
-    setShowAllCards(false);
-  }, [revealedStops.length]);
 
   useEffect(() => {
     if (!solved || !player) return;
@@ -175,7 +171,6 @@ export default function Game() {
         currentStop={currentStop}
         guessResult={guessResult}
         panTarget={panTarget}
-        showAllCards={showAllCards}
       />
 
       <BottomBar
@@ -186,8 +181,6 @@ export default function Game() {
         isLastStop={isLastStop}
         playerPool={playerPool}
         revealedStops={revealedStops}
-        showAllCards={showAllCards}
-        onOverview={() => { setShowAllCards((v) => !v); setPanTarget({ overview: true }); }}
       />
     </motion.main>
   );
