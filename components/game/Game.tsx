@@ -180,7 +180,6 @@ export default function Game() {
         solved={solved || puzzleFailed || !player || loadingPuzzles}
         isLastStop={isLastStop}
         playerPool={playerPool}
-        revealedStops={revealedStops}
       />
     </motion.main>
   );
