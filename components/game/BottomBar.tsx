@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Button from "../ui/Button";
-import { Player, CareerStop } from "../../lib/types";
+import { Player } from "../../lib/types";
 
 interface AutocompleteInputProps {
   input: string;
@@ -106,9 +106,6 @@ interface BottomBarProps {
   solved: boolean;
   isLastStop: boolean;
   playerPool?: Player[];
-  revealedStops?: CareerStop[];
-  onOverview?: () => void;
-  showAllCards?: boolean;
 }
 
 export default function BottomBar({
@@ -118,9 +115,6 @@ export default function BottomBar({
   solved,
   isLastStop,
   playerPool = [],
-  revealedStops = [],
-  onOverview = () => {},
-  showAllCards = false,
 }: BottomBarProps) {
   const [input, setInput] = useState("");
   const isDisabled = solved || incorrectGuesses.length >= 5;
@@ -128,21 +122,6 @@ export default function BottomBar({
   return (
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-1.5 pb-3">
       <div className="flex items-center gap-2">
-        <button
-          onClick={onOverview}
-          disabled={revealedStops.length === 0}
-          className={`flex items-center justify-center w-9 h-9 border border-black rounded transition-colors disabled:opacity-30
-            ${showAllCards ? "bg-black text-[#ede8d0]" : "bg-white text-black hover:bg-black hover:text-white"}`}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="6" cy="14" r="4" />
-            <circle cx="18" cy="14" r="4" />
-            <path d="M2 14h0M10 14h4M22 14h0" />
-            <path d="M6 10V7a1 1 0 0 1 1-1h2M18 10V7a1 1 0 0 0-1-1h-2" />
-            <path d="M10 7h4" />
-          </svg>
-        </button>
-
         <AutocompleteInput
           input={input}
           setInput={setInput}

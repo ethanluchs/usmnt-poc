@@ -1,4 +1,4 @@
-export const CARD_W = 120;
+export const CARD_W = 90;
 export const CARD_H = 36;
 
 const GAP = 8;
