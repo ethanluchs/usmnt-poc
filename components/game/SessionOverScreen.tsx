@@ -141,7 +141,7 @@ export default function SessionOverScreen({
 
         <button
           onClick={() => window.location.reload()}
-          className="mt-2 px-8 py-2.5 text-xs uppercase tracking-widest border border-black text-black hover:opacity-60 transition-opacity active:scale-95"
+          className="mt-2 px-8 py-2.5 text-xs uppercase tracking-widest border border-black rounded text-black bg-white hover:bg-black hover:text-white active:scale-95 transition-all"
         >
           PLAY AGAIN
         </button>
