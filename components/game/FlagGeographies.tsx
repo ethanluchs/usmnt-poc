@@ -40,7 +40,7 @@ export default function FlagGeographies({
               const by = bounds[0][1];
               const bw = bounds[1][0] - bounds[0][0];
               const bh = bounds[1][1] - bounds[0][1];
-              // cover-scale: expand flag so it fills the bbox on both axes
+              // expand flag so it fills the bbox on both axes
               const flagAspect = 2;
               let fw, fh;
               if (bw / bh > flagAspect) {

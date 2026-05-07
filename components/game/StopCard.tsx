@@ -18,12 +18,11 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
   const fx = raw ? x : x + 6;
   const fy = raw ? y : y - 28;
 
-  // step from white → light gray → mid gray → dark gray → near-black
   const STOP_COLORS: [string, string][] = [
     ["#ffffff", "#000000"],  // 1
-    ["#D1D4D1", "#000000"],  // 2 — WC26 light gray
-    ["#9ea1a1", "#000000"],  // 3 — mid
-    ["#474A4A", "#ffffff"],  // 4 — WC26 dark gray
+    ["#D1D4D1", "#000000"],  // 2
+    ["#9ea1a1", "#000000"],  // 3 
+    ["#474A4A", "#ffffff"],  // 4 
     ["#1a1a1a", "#ffffff"],  // 5
   ];
   const [cardBg, cardText] = totalStops && stop.order <= STOP_COLORS.length

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import JerseyEmblem from "./JerseyEmblem";
 
 // USA stripes animation preserved in USAStripesOverlay (unused)
-// STRIPE_PATH, easeInOutQuad, and canvas logic kept in git history
 
 interface AsciiOverlayProps {
   onDone?: () => void;
