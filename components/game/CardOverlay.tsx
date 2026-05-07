@@ -2,6 +2,7 @@
 import PlayerCard from "./PlayerCard";
 import { useAuth } from "../AuthProvider";
 import { Player } from "../../lib/types";
+import { useState } from "react";
 
 interface CardOverlayProps {
   isDark: boolean;
@@ -9,6 +10,7 @@ interface CardOverlayProps {
   onClose: () => void;
   unlockedCards?: Player[];
   playerPool?: Player[];
+  allCountries: String[]
 }
 
 export default function CardOverlay({
@@ -17,12 +19,14 @@ export default function CardOverlay({
   onClose,
   unlockedCards = [],
   playerPool = [],
+  allCountries = []
 }: CardOverlayProps) {
   const { user, signInWithGoogle } = useAuth();
   const unlockedIds = new Set(unlockedCards.map((c) => c.id));
   const sortedPool = [...playerPool].sort(
-    (a, b) => Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id))
+    (a, b) => Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id) && allCountries.includes(a.nationality))
   );
+const [filteredCountries, setFilteredCountries] = useState(allCountries);
 
   return (
     <div className={`w-full h-full flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-white"}`}>
@@ -44,6 +48,13 @@ export default function CardOverlay({
             ✕
           </button>
         </div>
+      </div>
+
+      <div>
+        {/*country select dropwdown Implement select filter here*/}
+        <select>
+          {}
+        </select>
       </div>
 
       <div className="flex-1 overflow-y-auto scrollbar-none px-12 pb-16">
