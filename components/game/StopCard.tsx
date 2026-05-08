@@ -18,12 +18,11 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
   const fx = raw ? x : x + 6;
   const fy = raw ? y : y - 28;
 
-  // step from white → light gray → mid gray → dark gray → near-black
   const STOP_COLORS: [string, string][] = [
     ["#ffffff", "#000000"],  // 1
-    ["#D1D4D1", "#000000"],  // 2 — WC26 light gray
-    ["#9ea1a1", "#000000"],  // 3 — mid
-    ["#474A4A", "#ffffff"],  // 4 — WC26 dark gray
+    ["#D1D4D1", "#000000"],  // 2
+    ["#9ea1a1", "#000000"],  // 3 
+    ["#474A4A", "#ffffff"],  // 4 
     ["#1a1a1a", "#ffffff"],  // 5
   ];
   const [cardBg, cardText] = totalStops && stop.order <= STOP_COLORS.length
@@ -34,8 +33,8 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
     <foreignObject
       x={fx}
       y={fy}
-      width={90}
-      height={42}
+      width={96}
+      height={48}
       style={{ overflow: "visible" }}
     >
       <motion.div
@@ -47,22 +46,36 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
           background: cardBg,
           border: `1px solid ${stroke}`,
           color: cardText,
-          padding: "4px 7px",
+          padding: "3px 7px",
           fontSize: "7px",
-          lineHeight: 1.4,
+          lineHeight: 1.25,
           whiteSpace: "normal",
-          maxWidth: "90px",
+          maxWidth: "96px",
           pointerEvents: "none",
           position: "relative",
+          boxSizing: "border-box",
         }}
       >
-        <div style={{ position: "absolute", top: "4px", right: "6px", fontSize: "7px", fontWeight: "bold" }}>
+        <div style={{ position: "absolute", top: "3px", right: "6px", fontSize: "7px", fontWeight: "bold" }}>
           #{stop.order}
         </div>
         <div style={{ fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.05em", paddingRight: "14px" }}>
           {stop.club}
         </div>
-        <div style={{ opacity: 0.5 }}>{stop.years}</div>
+        {stop.years ? (
+          <div
+            style={{
+              marginTop: "2px",
+              fontSize: "8px",
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+              opacity: 0.92,
+              lineHeight: 1.2,
+            }}
+          >
+            {stop.years}
+          </div>
+        ) : null}
       </motion.div>
     </foreignObject>
   );
