@@ -41,6 +41,7 @@ export default function Game() {
   const [showSessionOver, setShowSessionOver] = useState(false);
   const [guessResult, setGuessResult] = useState<GuessResult>(null);
   const [panTarget, setPanTarget] = useState<PanTarget>(null);
+  const [positionRevealed, setPositionRevealed] = useState(false);
   const advancingRef = useRef<boolean>(false);
   const puzzleResultsRef = useRef<PuzzleResult[]>([]);
 
@@ -62,6 +63,10 @@ export default function Game() {
     nextFirstStop,
     totalPuzzles,
   } = useGameState(sessionPlayers);
+
+  useEffect(() => {
+    setPositionRevealed(false);
+  }, [player?.id]);
 
   const handleGuess = (name: string) => {
     const result = onGuess(name);
@@ -180,6 +185,9 @@ export default function Game() {
         solved={solved || puzzleFailed || !player || loadingPuzzles}
         isLastStop={isLastStop}
         playerPool={playerPool}
+        playerPosition={player?.position}
+        positionRevealed={positionRevealed}
+        onRevealPosition={() => setPositionRevealed(true)}
       />
     </motion.main>
   );
