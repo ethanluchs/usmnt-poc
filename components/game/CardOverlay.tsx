@@ -2,7 +2,7 @@
 import PlayerCard from "./PlayerCard";
 import { useAuth } from "../AuthProvider";
 import { Player } from "../../lib/types";
-import { useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CardOverlayProps {
   isDark: boolean;
@@ -24,35 +24,66 @@ export default function CardOverlay({
   const { user, signInWithGoogle } = useAuth();
   const unlockedIds = new Set(unlockedCards.map((c) => c.id));
 
-  const countryOptions = useMemo(() => {
-    const set = new Set<string>();
-    for (const c of allCountries) set.add(String(c));
-    for (const p of playerPool) {
-      if (p.nationality) set.add(p.nationality);
-    }
-    return [...set].sort((a, b) => a.localeCompare(b));
-  }, [allCountries, playerPool]);
+  const countrySet = new Set<string>();
+  for (const c of allCountries) countrySet.add(String(c));
+  for (const p of playerPool) {
+    if (p.nationality) countrySet.add(p.nationality);
+  }
+  const countryOptions = [...countrySet].sort((a, b) => a.localeCompare(b));
 
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+  const [countryMenuOpen, setCountryMenuOpen] = useState(false);
+  const countryMenuRef = useRef<HTMLDivElement>(null);
 
-  const sortedPool = useMemo(() => {
-    const list = [...playerPool].sort(
-      (a, b) => Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id))
-    );
-    if (selectedCountries.length === 0) return list;
+  useEffect(() => {
+    if (!isOpen) setCountryMenuOpen(false);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!countryMenuOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      if (countryMenuRef.current && !countryMenuRef.current.contains(e.target as Node)) {
+        setCountryMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [countryMenuOpen]);
+
+  useEffect(() => {
+    if (!countryMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setCountryMenuOpen(false);
+    };
+    globalThis.addEventListener("keydown", onKey);
+    return () => globalThis.removeEventListener("keydown", onKey);
+  }, [countryMenuOpen]);
+
+  const list = [...playerPool].sort(
+    (a, b) => Number(unlockedIds.has(b.id)) - Number(unlockedIds.has(a.id))
+  );
+  let sortedPool = list;
+  if (selectedCountries.length > 0) {
     const sel = new Set(selectedCountries);
-    return list.filter((p) => sel.has(p.nationality));
-  }, [playerPool, unlockedCards, selectedCountries]);
+    sortedPool = list.filter((p) => sel.has(p.nationality));
+  }
 
-  const selectClass = isDark
+  const visibleTotal = sortedPool.length;
+  const visibleUnlocked = sortedPool.reduce((n, p) => n + (unlockedIds.has(p.id) ? 1 : 0), 0);
+
+  const countryTriggerClass = isDark
     ? "border border-white/20 bg-black/30 text-white text-sm"
     : "border border-black/20 bg-white text-black text-sm";
+
+  let countrySummary = "All countries";
+  if (selectedCountries.length === 1) countrySummary = selectedCountries[0];
+  else if (selectedCountries.length > 1) countrySummary = `${selectedCountries.length} countries`;
 
   return (
     <div className={`w-full h-full flex flex-col ${isDark ? "bg-[#1a1917]" : "bg-white"}`}>
       <div className="flex items-center justify-between px-12 py-3 shrink-0">
         <span className={`text-md font-bold tracking-widest uppercase ${isDark ? "text-white" : "text-black"}`}>
-          {unlockedCards.length} / {playerPool.length} cards
+          {visibleUnlocked} / {visibleTotal} cards
         </span>
         <div className="flex items-center gap-4">
           {!user && (
@@ -72,24 +103,65 @@ export default function CardOverlay({
 
       {countryOptions.length > 0 && (
         <div className={`px-12 pb-2 flex flex-wrap items-end gap-2 ${isDark ? "text-white/80" : "text-black/80"}`}>
-          <label className="flex flex-col gap-1 text-xs uppercase tracking-wide">
-            Countries
-            <select
-              multiple
-              size={Math.min(10, countryOptions.length)}
-              value={selectedCountries}
-              onChange={(e) =>
-                setSelectedCountries(Array.from(e.target.selectedOptions, (o) => o.value))
-              }
-              className={`min-w-[12rem] px-2 py-1 ${selectClass}`}
+          <div ref={countryMenuRef} className="relative flex flex-col gap-1">
+            <span className="text-xs uppercase tracking-wide">Countries</span>
+            <button
+              type="button"
+              aria-expanded={countryMenuOpen}
+              aria-haspopup="dialog"
+              onClick={() => setCountryMenuOpen((o) => !o)}
+              className={`flex min-w-[12rem] max-w-[min(100%,20rem)] items-center justify-between gap-2 rounded px-2 py-1.5 text-left ${countryTriggerClass}`}
             >
-              {countryOptions.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </label>
+              <span className="truncate">{countrySummary}</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                className={`shrink-0 opacity-60 transition-transform ${countryMenuOpen ? "rotate-180" : ""}`}
+                aria-hidden
+              >
+                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            {countryMenuOpen && (
+              <div
+                role="group"
+                aria-label="Filter by country"
+                className={`absolute left-0 top-full z-50 mt-1 w-[min(calc(100vw-6rem),22rem)] overflow-hidden rounded border shadow-lg ${
+                  isDark ? "border-white/20 bg-[#252422]" : "border-black/15 bg-white shadow-black/10"
+                }`}
+              >
+                <div className="p-2">
+                  <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3">
+                    {countryOptions.map((c) => {
+                      const checked = selectedCountries.includes(c);
+                      return (
+                        <label
+                          key={c}
+                          className={`flex cursor-pointer items-center gap-2 rounded px-2 py-1 text-sm ${
+                            isDark ? "hover:bg-white/10" : "hover:bg-black/5"
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            className="rounded border-current"
+                            checked={checked}
+                            onChange={() => {
+                              setSelectedCountries((prev) =>
+                                prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
+                              );
+                            }}
+                          />
+                          <span className="truncate">{c}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           <button
             type="button"
             onClick={() => setSelectedCountries([])}
@@ -97,9 +169,6 @@ export default function CardOverlay({
           >
             Clear filter
           </button>
-          <span className={`text-xs ${isDark ? "text-white/40" : "text-black/40"}`}>
-            Ctrl/Cmd+click for multiple
-          </span>
         </div>
       )}
 
