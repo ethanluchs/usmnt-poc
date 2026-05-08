@@ -33,8 +33,8 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
     <foreignObject
       x={fx}
       y={fy}
-      width={90}
-      height={42}
+      width={96}
+      height={48}
       style={{ overflow: "visible" }}
     >
       <motion.div
@@ -46,22 +46,36 @@ export default function StopCard({ stop, x, y, isDark, raw = false, totalStops }
           background: cardBg,
           border: `1px solid ${stroke}`,
           color: cardText,
-          padding: "4px 7px",
+          padding: "3px 7px",
           fontSize: "7px",
-          lineHeight: 1.4,
+          lineHeight: 1.25,
           whiteSpace: "normal",
-          maxWidth: "90px",
+          maxWidth: "96px",
           pointerEvents: "none",
           position: "relative",
+          boxSizing: "border-box",
         }}
       >
-        <div style={{ position: "absolute", top: "4px", right: "6px", fontSize: "7px", fontWeight: "bold" }}>
+        <div style={{ position: "absolute", top: "3px", right: "6px", fontSize: "7px", fontWeight: "bold" }}>
           #{stop.order}
         </div>
         <div style={{ fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.05em", paddingRight: "14px" }}>
           {stop.club}
         </div>
-        <div style={{ opacity: 0.5 }}>{stop.years}</div>
+        {stop.years ? (
+          <div
+            style={{
+              marginTop: "2px",
+              fontSize: "8px",
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+              opacity: 0.92,
+              lineHeight: 1.2,
+            }}
+          >
+            {stop.years}
+          </div>
+        ) : null}
       </motion.div>
     </foreignObject>
   );

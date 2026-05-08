@@ -106,6 +106,9 @@ interface BottomBarProps {
   solved: boolean;
   isLastStop: boolean;
   playerPool?: Player[];
+  playerPosition?: string;
+  positionRevealed?: boolean;
+  onRevealPosition?: () => void;
 }
 
 export default function BottomBar({
@@ -115,21 +118,43 @@ export default function BottomBar({
   solved,
   isLastStop,
   playerPool = [],
+  playerPosition,
+  positionRevealed = false,
+  onRevealPosition,
 }: BottomBarProps) {
   const [input, setInput] = useState("");
   const isDisabled = solved || incorrectGuesses.length >= 5;
 
   return (
     <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-1.5 pb-3">
-      <div className="flex items-center gap-2">
-        <AutocompleteInput
-          input={input}
-          setInput={setInput}
-          onSubmit={onGuess}
-          disabled={isDisabled}
-          incorrectGuesses={incorrectGuesses}
-          playerPool={playerPool}
-        />
+      <div className="flex items-end gap-2">
+        <div className="flex min-w-0 flex-col gap-0">
+          {playerPosition ? (
+            <div className="mb-0.5 pl-1">
+              {positionRevealed ? (
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-black">
+                  {playerPosition}
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => onRevealPosition?.()}
+                  className="text-[10px] text-black/55 hover:text-black underline decoration-black/30 underline-offset-2"
+                >
+                  Reveal position
+                </button>
+              )}
+            </div>
+          ) : null}
+          <AutocompleteInput
+            input={input}
+            setInput={setInput}
+            onSubmit={onGuess}
+            disabled={isDisabled}
+            incorrectGuesses={incorrectGuesses}
+            playerPool={playerPool}
+          />
+        </div>
         <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white">
           Next Stop
         </Button>
