@@ -25,11 +25,9 @@ function overlaps(ax: number, ay: number, bx: number, by: number, gap: number): 
   );
 }
 
-// Returns [dx, dy] offsets relative to each pin
 export function placeLabels(pins: [number, number][]): [number, number][] {
   if (pins.length === 0) return [];
 
-  // Pass 1: greedy anchor — pick first anchor where no pin falls inside the card
   const positions: [number, number][] = pins.map((pin) => {
     const [px, py] = pin;
     for (const [dx, dy] of ANCHORS) {
@@ -42,7 +40,6 @@ export function placeLabels(pins: [number, number][]): [number, number][] {
     return [px + ANCHORS[0][0], py + ANCHORS[0][1]];
   });
 
-  // Pass 2: iterative PBD separation
   for (let iter = 0; iter < ITERS; iter++) {
     let anyOverlap = false;
 
@@ -78,7 +75,6 @@ export function placeLabels(pins: [number, number][]): [number, number][] {
     if (!anyOverlap) break;
   }
 
-  // Convert absolute positions back to pin-relative offsets
   return positions.map(([lx, ly], i) => [lx - pins[i][0], ly - pins[i][1]]);
 }
 
