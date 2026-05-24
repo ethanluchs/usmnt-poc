@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import TopBar from "./TopBar";
 import WorldMap from "./WorldMap";
 import BottomBar from "./BottomBar";
-import AsciiOverlay from "../AsciiOverlay";
+import AsciiOverlay, { LoadingVariant } from "../AsciiOverlay";
 import PuzzleTransition from "./PuzzleTransition";
 import SessionOverScreen from "./SessionOverScreen";
 import { useGameState } from "../../lib/hooks/useGameState";
@@ -37,6 +37,7 @@ export default function Game() {
 
   const [isDragging, setIsDragging] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [loadingVariant, setLoadingVariant] = useState<LoadingVariant>("usa");
   const [showTransition, setShowTransition] = useState(false);
   const [showSessionOver, setShowSessionOver] = useState(false);
   const [guessResult, setGuessResult] = useState<GuessResult>(null);
@@ -124,7 +125,7 @@ export default function Game() {
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
       <AnimatePresence>
-        {showOverlay && <AsciiOverlay onDone={() => setShowOverlay(false)} isDark={false} />}
+        {showOverlay && <AsciiOverlay onDone={(v) => { setLoadingVariant(v); setShowOverlay(false); }} isDark={false} />}
       </AnimatePresence>
 
       <AnimatePresence>
@@ -159,6 +160,7 @@ export default function Game() {
         totalPuzzles={totalPuzzles}
         unlockedCards={unlockedCards}
         playerPool={playerPool}
+        loadingVariant={loadingVariant}
       />
 
       <WorldMap
