@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useMotionValue, useSpring, useMotionValueEvent } from "motion/react";
 import { MoveEndPosition } from "react-simple-maps";
 import { CareerStop, PanTarget } from "../types";
@@ -27,8 +27,11 @@ export function useMapPan({
   puzzleIndex,
   panTarget,
 }: UseMapPanParams): MapPanReturn {
-  const [center, setCenter] = useState<[number, number]>([0, 10]);
-  const [zoom, setZoom] = useState(2);
+  // Refs hold the true live values; state is only used to trigger re-renders
+  const centerRef = useRef<[number, number]>([0, 10]);
+  const zoomStateRef = useRef(2);
+  const [, forceUpdate] = useState(0);
+
   const zoomRef = useRef(2);
   const isUserInteracting = useRef(false);
 
@@ -39,21 +42,30 @@ export function useMapPan({
   const springLat = useSpring(targetLat, { stiffness: 120, damping: 28 });
   const springZoom = useSpring(targetZoom, { stiffness: 120, damping: 28 });
 
-  const actualCenter = useRef<[number, number]>([0, 10]);
   const hasDragged = useRef(false);
   const lastPuzzleIndex = useRef(puzzleIndex);
+  const rafPending = useRef(false);
+
+  const scheduleRaf = useCallback(() => {
+    if (rafPending.current) return;
+    rafPending.current = true;
+    requestAnimationFrame(() => {
+      rafPending.current = false;
+      if (isUserInteracting.current) return;
+      centerRef.current = [springLng.get(), springLat.get()];
+      zoomStateRef.current = springZoom.get();
+      forceUpdate((n) => n + 1);
+    });
+  }, [springLng, springLat, springZoom]);
 
   useMotionValueEvent(springLng, "change", () => {
     if (isUserInteracting.current) return;
-    const lng = springLng.get();
-    const lat = springLat.get();
-    setCenter([lng, lat]);
-    actualCenter.current = [lng, lat];
+    scheduleRaf();
   });
 
-  useMotionValueEvent(springZoom, "change", (v) => {
+  useMotionValueEvent(springZoom, "change", () => {
     if (isUserInteracting.current) return;
-    setZoom(v);
+    scheduleRaf();
   });
 
   useEffect(() => {
@@ -71,13 +83,14 @@ export function useMapPan({
       targetZoom.jump(2);
       springZoom.jump(2);
       zoomRef.current = 2;
-      setCenter([last.lng, last.lat]);
-      actualCenter.current = [last.lng, last.lat];
+      centerRef.current = [last.lng, last.lat];
+      zoomStateRef.current = 2;
       hasDragged.current = false;
+      forceUpdate((n) => n + 1);
       return;
     }
     if (hasDragged.current) {
-      const [curLng, curLat] = actualCenter.current;
+      const [curLng, curLat] = centerRef.current;
       targetLng.jump(curLng);
       targetLat.jump(curLat);
       springLng.jump(curLng);
@@ -114,8 +127,9 @@ export function useMapPan({
   };
 
   const handleMoveEnd = ({ coordinates, zoom: z }: MoveEndPosition) => {
-    actualCenter.current = coordinates;
+    centerRef.current = coordinates;
     zoomRef.current = z;
+    zoomStateRef.current = z;
     hasDragged.current = true;
     targetZoom.jump(z);
     springZoom.jump(z);
@@ -124,8 +138,7 @@ export function useMapPan({
     springLng.jump(coordinates[0]);
     springLat.jump(coordinates[1]);
     isUserInteracting.current = false;
-    setCenter(coordinates);
-    setZoom(z);
+    forceUpdate((n) => n + 1);
   };
 
   const panTo = (lng: number, lat: number) => {
@@ -148,7 +161,6 @@ export function useMapPan({
     const maxLat = Math.max(...lats);
     const centerLng = (minLng + maxLng) / 2;
     const centerLat = (minLat + maxLat) / 2;
-    // fit the bounding box into ~800x450 viewport (geoMercator at zoom=1)
     const lngSpan = Math.max(maxLng - minLng, 10);
     const latSpan = Math.max(maxLat - minLat, 10);
     const zoomLng = 360 / (lngSpan * 2.4);
@@ -165,7 +177,7 @@ export function useMapPan({
   const handleWheel = (e: WheelEvent) => {
     e.preventDefault();
     isUserInteracting.current = true;
-    const [curLng, curLat] = actualCenter.current;
+    const [curLng, curLat] = centerRef.current;
     targetLng.jump(curLng);
     targetLat.jump(curLat);
     springLng.jump(curLng);
@@ -174,10 +186,19 @@ export function useMapPan({
     const factor = Math.pow(0.999, e.deltaY);
     const next = Math.min(MAX_ZOOM, Math.max(1, zoomRef.current * factor));
     zoomRef.current = next;
+    zoomStateRef.current = next;
     targetZoom.jump(next);
     springZoom.jump(next);
-    setZoom(next);
+    forceUpdate((n) => n + 1);
   };
 
-  return { center, zoom, handleMoveStart, handleMoveEnd, handleWheel, panTo, panToOverview };
+  return {
+    center: centerRef.current,
+    zoom: zoomStateRef.current,
+    handleMoveStart,
+    handleMoveEnd,
+    handleWheel,
+    panTo,
+    panToOverview,
+  };
 }

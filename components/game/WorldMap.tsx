@@ -38,8 +38,11 @@ export default function WorldMap({
 
   const strokeMV: MotionValue<string> = useMotionValue(stroke);
   const [strokeColor, setStrokeColor] = useState(stroke);
-  useEffect(() => strokeMV.on("change", (v) => setStrokeColor(v)), []);
   const prevGuessResult = useRef<GuessResult>(null);
+
+  useEffect(() => {
+    return strokeMV.on("change", (v) => setStrokeColor(v));
+  }, [strokeMV]);
 
   useEffect(() => {
     const prev = prevGuessResult.current;

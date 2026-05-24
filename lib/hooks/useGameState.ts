@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CareerStop, GuessResult, Player } from "../types";
 
 const MAX_GUESSES = 3;
@@ -31,17 +31,18 @@ export function useGameState(sessionPlayers: Player[] = []): GameStateReturn {
   const [guessLog, setGuessLog] = useState<{ stop: number }[]>([]);
   const [solved, setSolved] = useState(false);
 
-  useEffect(() => {
-    setPuzzleIndex(0);
-  }, [sessionPlayers]);
+  const puzzleIndexRef = useRef(puzzleIndex);
+  puzzleIndexRef.current = puzzleIndex;
 
+  // Runs when session loads or puzzleIndex advances
   useEffect(() => {
-    const p = sessionPlayers[puzzleIndex];
+    const p = sessionPlayers[puzzleIndexRef.current];
     setPlayer(p || null);
     setCurrentStop(0);
     setIncorrectGuesses([]);
     setGuessLog([]);
     setSolved(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionPlayers, puzzleIndex]);
 
   const revealedStops: CareerStop[] =
