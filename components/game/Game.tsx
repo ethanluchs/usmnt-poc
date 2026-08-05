@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import TopBar from "./TopBar";
 import WorldMap from "./WorldMap";
 import BottomBar from "./BottomBar";
-import AsciiOverlay, { LoadingVariant } from "../AsciiOverlay";
+import { LoadingVariant } from "../AsciiOverlay";
 import PuzzleTransition from "./PuzzleTransition";
 import SessionOverScreen from "./SessionOverScreen";
 import { useGameState } from "../../lib/hooks/useGameState";
@@ -36,8 +36,7 @@ export default function Game() {
   } = useSessionManager(userId);
 
   const [isDragging, setIsDragging] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(true);
-  const [loadingVariant, setLoadingVariant] = useState<LoadingVariant>("usa");
+  const [loadingVariant] = useState<LoadingVariant>("usa");
   const [showTransition, setShowTransition] = useState(false);
   const [showSessionOver, setShowSessionOver] = useState(false);
   const [guessResult, setGuessResult] = useState<GuessResult>(null);
@@ -124,10 +123,6 @@ export default function Game() {
       animate={guessResult === "wrong" ? { x: [0, -12, 12, -9, 9, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
-      <AnimatePresence>
-        {showOverlay && <AsciiOverlay onDone={(v) => { setLoadingVariant(v); setShowOverlay(false); }} isDark={false} />}
-      </AnimatePresence>
-
       <AnimatePresence>
         {showTransition && totalPuzzles > 0 && (
           <PuzzleTransition

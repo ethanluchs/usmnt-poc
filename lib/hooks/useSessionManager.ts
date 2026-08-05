@@ -5,13 +5,13 @@ import {
   fetchUserUnlockedCardIds,
   saveUserUnlockedCard,
 } from "../game";
-import { selectSessionPuzzles } from "../sessionHelpers";
+import { selectDailyPuzzles, todayDateKey } from "../sessionHelpers";
 import { Player } from "../types";
 
 interface CacheEntry {
   allCards: Player[];
   unlockedIds: string[];
-  cachedAt: number;
+  dateKey: string;
 }
 
 interface SessionManagerReturn {
@@ -45,12 +45,13 @@ export function useSessionManager(
     const loadSession = async () => {
       setLoadingPuzzles(true);
       try {
+        const dateKey = todayDateKey();
         const cached = localStorage.getItem(cacheKey);
         const parsed: CacheEntry | null = cached ? JSON.parse(cached) : null;
 
-        if (parsed && Date.now() - parsed.cachedAt < 3600000) {
+        if (parsed && parsed.dateKey === dateKey) {
           const cachedUnlockedIds = new Set(parsed.unlockedIds);
-          const selectedPuzzles = selectSessionPuzzles(parsed.allCards, cachedUnlockedIds);
+          const selectedPuzzles = selectDailyPuzzles(parsed.allCards, dateKey);
           unlockedCardIdsRef.current = cachedUnlockedIds;
           setUnlockedCards(parsed.allCards.filter((c) => cachedUnlockedIds.has(c.id)));
           setPlayerPool(parsed.allCards);
@@ -70,7 +71,7 @@ export function useSessionManager(
 
         if (cancelled) return;
 
-        const selectedPuzzles = selectSessionPuzzles(allPuzzles, userCardIds);
+        const selectedPuzzles = selectDailyPuzzles(allPuzzles, dateKey);
         unlockedCardIdsRef.current = userCardIds;
         setUnlockedCards(allPuzzles.filter((c) => userCardIds.has(c.id)));
         setPlayerPool(allPuzzles);
@@ -84,7 +85,7 @@ export function useSessionManager(
           JSON.stringify({
             allCards: allPuzzles,
             unlockedIds: [...userCardIds],
-            cachedAt: Date.now(),
+            dateKey,
           } satisfies CacheEntry)
         );
       } catch (error) {
