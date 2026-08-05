@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "lionel-messi",
+    "name": "Lionel Messi",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "nationality": "Portugal",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "diego-maradona",
+    "name": "Diego Maradona",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "zinedine-zidane",
+    "name": "Zinedine Zidane",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "ronaldo-nazario",
+    "name": "Ronaldo Nazário",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "ronaldinho",
+    "name": "Ronaldinho",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "erling-haaland",
+    "name": "Erling Haaland",
+    "nationality": "Norway",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "kevin-de-bruyne",
+    "name": "Kevin De Bruyne",
+    "nationality": "Belgium",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "mohamed-salah",
+    "name": "Mohamed Salah",
+    "nationality": "Egypt",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "robert-lewandowski",
+    "name": "Robert Lewandowski",
+    "nationality": "Poland",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "luka-modric",
+    "name": "Luka Modrić",
+    "nationality": "Croatia",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "thierry-henry",
+    "name": "Thierry Henry",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "david-beckham",
+    "name": "David Beckham",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "wayne-rooney",
+    "name": "Wayne Rooney",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "frank-lampard",
+    "name": "Frank Lampard",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "gianluigi-buffon",
+    "name": "Gianluigi Buffon",
+    "nationality": "Italy",
+    "position": "GK",
+    "fameTier": 1
+  },
+  {
+    "id": "andrea-pirlo",
+    "name": "Andrea Pirlo",
+    "nationality": "Italy",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "xabi-alonso",
+    "name": "Xabi Alonso",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "didier-drogba",
+    "name": "Didier Drogba",
+    "nationality": "Ivory Coast",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "samuel-etoo",
+    "name": "Samuel Eto'o",
+    "nationality": "Cameroon",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "franz-beckenbauer",
+    "name": "Franz Beckenbauer",
+    "nationality": "Germany",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "johan-cruyff",
+    "name": "Johan Cruyff",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "george-best",
+    "name": "George Best",
+    "nationality": "Northern Ireland",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "eusebio",
+    "name": "Eusébio",
+    "nationality": "Portugal",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "roberto-baggio",
+    "name": "Roberto Baggio",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "zico",
+    "name": "Zico",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "romario",
+    "name": "Romário",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "rivaldo",
+    "name": "Rivaldo",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "garrincha",
+    "name": "Garrincha",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "sergio-ramos",
+    "name": "Sergio Ramos",
+    "nationality": "Spain",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "christian-pulisic",
+    "name": "Christian Pulisic",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "harry-kane",
+    "name": "Harry Kane",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "vinicius-junior",
+    "name": "Vinícius Júnior",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "jude-bellingham",
+    "name": "Jude Bellingham",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "zlatan-ibrahimovic",
+    "name": "Zlatan Ibrahimović",
+    "nationality": "Sweden",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "luis-suarez",
+    "name": "Luis Suárez",
+    "nationality": "Uruguay",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "sergio-aguero",
+    "name": "Sergio Agüero",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "thiago-silva",
+    "name": "Thiago Silva",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "dani-alves",
+    "name": "Dani Alves",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "toni-kroos",
+    "name": "Toni Kroos",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "virgil-van-dijk",
+    "name": "Virgil van Dijk",
+    "nationality": "Netherlands",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "ngolo-kante",
+    "name": "N'Golo Kanté",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "bruno-fernandes",
+    "name": "Bruno Fernandes",
+    "nationality": "Portugal",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "sadio-mane",
+    "name": "Sadio Mané",
+    "nationality": "Senegal",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "antoine-griezmann",
+    "name": "Antoine Griezmann",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "pedri",
+    "name": "Pedri",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "gavi",
+    "name": "Gavi",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "rodri",
+    "name": "Rodri",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "phil-foden",
+    "name": "Phil Foden",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "bukayo-saka",
+    "name": "Bukayo Saka",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "declan-rice",
+    "name": "Declan Rice",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "jamal-musiala",
+    "name": "Jamal Musiala",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "florian-wirtz",
+    "name": "Florian Wirtz",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "victor-osimhen",
+    "name": "Victor Osimhen",
+    "nationality": "Nigeria",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "ousmane-dembele",
+    "name": "Ousmane Dembélé",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "arjen-robben",
+    "name": "Arjen Robben",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "robin-van-persie",
+    "name": "Robin van Persie",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "wesley-sneijder",
+    "name": "Wesley Sneijder",
+    "nationality": "Netherlands",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "dennis-bergkamp",
+    "name": "Dennis Bergkamp",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "ruud-van-nistelrooy",
+    "name": "Ruud van Nistelrooy",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "edwin-van-der-sar",
+    "name": "Edwin van der Sar",
+    "nationality": "Netherlands",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "luis-figo",
+    "name": "Luís Figo",
+    "nationality": "Portugal",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "rui-costa",
+    "name": "Rui Costa",
+    "nationality": "Portugal",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "michael-ballack",
+    "name": "Michael Ballack",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "miroslav-klose",
+    "name": "Miroslav Klose",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "bastian-schweinsteiger",
+    "name": "Bastian Schweinsteiger",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "mesut-Ã¶zil",
+    "name": "Mesut Özil",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "lothar-matthÃ¤us",
+    "name": "Lothar Matthäus",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "jurgen-klinsmann",
+    "name": "Jürgen Klinsmann",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "alessandro-nesta",
+    "name": "Alessandro Nesta",
+    "nationality": "Italy",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "fabio-cannavaro",
+    "name": "Fabio Cannavaro",
+    "nationality": "Italy",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "alessandro-del-piero",
+    "name": "Alessandro Del Piero",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "cafu",
+    "name": "Cafu",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "roberto-carlos",
+    "name": "Roberto Carlos",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "kaka",
+    "name": "Kaká",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "carlos-alberto",
+    "name": "Carlos Alberto",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "socrates",
+    "name": "Sócrates",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "gary-lineker",
+    "name": "Gary Lineker",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "alan-shearer",
+    "name": "Alan Shearer",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "peter-schmeichel",
+    "name": "Peter Schmeichel",
+    "nationality": "Denmark",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "landon-donovan",
+    "name": "Landon Donovan",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "clint-dempsey",
+    "name": "Clint Dempsey",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "tim-howard",
+    "name": "Tim Howard",
+    "nationality": "USA",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "damarcus-beasley",
+    "name": "DaMarcus Beasley",
+    "nationality": "USA",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "weston-mckennie",
+    "name": "Weston McKennie",
+    "nationality": "USA",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "tyler-adams",
+    "name": "Tyler Adams",
+    "nationality": "USA",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "gio-reyna",
+    "name": "Gio Reyna",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "carlos-vela",
+    "name": "Carlos Vela",
+    "nationality": "Mexico",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "javier-hernandez",
+    "name": "Javier Hernández",
+    "nationality": "Mexico",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "rafael-marquez",
+    "name": "Rafael Márquez",
+    "nationality": "Mexico",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "andres-guardado",
+    "name": "Andrés Guardado",
+    "nationality": "Mexico",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "hugo-sanchez",
+    "name": "Hugo Sánchez",
+    "nationality": "Mexico",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "yaya-toure",
+    "name": "Yaya Touré",
+    "nationality": "Ivory Coast",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "kolo-toure",
+    "name": "Kolo Touré",
+    "nationality": "Ivory Coast",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "michael-essien",
+    "name": "Michael Essien",
+    "nationality": "Ghana",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "riyad-mahrez",
+    "name": "Riyad Mahrez",
+    "nationality": "Algeria",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "achraf-hakimi",
+    "name": "Achraf Hakimi",
+    "nationality": "Morocco",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "sebastien-haller",
+    "name": "Sébastien Haller",
+    "nationality": "Ivory Coast",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "thomas-partey",
+    "name": "Thomas Partey",
+    "nationality": "Ghana",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "andre-onana",
+    "name": "André Onana",
+    "nationality": "Cameroon",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "jay-jay-okocha",
+    "name": "Jay-Jay Okocha",
+    "nationality": "Nigeria",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "nwankwo-kanu",
+    "name": "Nwankwo Kanu",
+    "nationality": "Nigeria",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "emmanuel-adebayor",
+    "name": "Emmanuel Adebayor",
+    "nationality": "Togo",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "george-weah",
+    "name": "George Weah",
+    "nationality": "Liberia",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "roger-milla",
+    "name": "Roger Milla",
+    "nationality": "Cameroon",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "shinji-kagawa",
+    "name": "Shinji Kagawa",
+    "nationality": "Japan",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "takefusa-kubo",
+    "name": "Takefusa Kubo",
+    "nationality": "Japan",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "takumi-minamino",
+    "name": "Takumi Minamino",
+    "nationality": "Japan",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "hidetoshi-nakata",
+    "name": "Hidetoshi Nakata",
+    "nationality": "Japan",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "keisuke-honda",
+    "name": "Keisuke Honda",
+    "nationality": "Japan",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "lautaro-martinez",
+    "name": "Lautaro Martínez",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "julian-alvarez",
+    "name": "Julián Álvarez",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "rodrigo-de-paul",
+    "name": "Rodrigo De Paul",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "enzo-fernandez",
+    "name": "Enzo Fernández",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "alexis-mac-allister",
+    "name": "Alexis Mac Allister",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "angel-di-maria",
+    "name": "Ángel Di María",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "gabriel-jesus",
+    "name": "Gabriel Jesus",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "richarlison",
+    "name": "Richarlison",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "alisson-becker",
+    "name": "Alisson Becker",
+    "nationality": "Brazil",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "ederson",
+    "name": "Ederson",
+    "nationality": "Brazil",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "fabinho",
+    "name": "Fabinho",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "raphinha",
+    "name": "Raphinha",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "rodrygo",
+    "name": "Rodrygo",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "eder-militÃ£o",
+    "name": "Éder Militão",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "marquinhos",
+    "name": "Marquinhos",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "edinson-cavani",
+    "name": "Edinson Cavani",
+    "nationality": "Uruguay",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "federico-chiesa",
+    "name": "Federico Chiesa",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "nicolÃ²-barella",
+    "name": "Nicolò Barella",
+    "nationality": "Italy",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "marco-verratti",
+    "name": "Marco Verratti",
+    "nationality": "Italy",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "gianluigi-donnarumma",
+    "name": "Gianluigi Donnarumma",
+    "nationality": "Italy",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "ciro-immobile",
+    "name": "Ciro Immobile",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "lorenzo-insigne",
+    "name": "Lorenzo Insigne",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "marcus-rashford",
+    "name": "Marcus Rashford",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "raheem-sterling",
+    "name": "Raheem Sterling",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "jack-grealish",
+    "name": "Jack Grealish",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "mason-mount",
+    "name": "Mason Mount",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "trent-alexander-arnold",
+    "name": "Trent Alexander-Arnold",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "john-stones",
+    "name": "John Stones",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "jordan-pickford",
+    "name": "Jordan Pickford",
+    "nationality": "England",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "martin-Ã¸degaard",
+    "name": "Martin Ødegaard",
+    "nationality": "Norway",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "piotr-zieliÅski",
+    "name": "Piotr Zieliński",
+    "nationality": "Poland",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "wojciech-szczesny",
+    "name": "Wojciech Szczęsny",
+    "nationality": "Poland",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "kai-havertz",
+    "name": "Kai Havertz",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "timo-werner",
+    "name": "Timo Werner",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "leroy-sane",
+    "name": "Leroy Sané",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "serge-gnabry",
+    "name": "Serge Gnabry",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "joshua-kimmich",
+    "name": "Joshua Kimmich",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "iÌlkay-gundoÄan",
+    "name": "İlkay Gündoğan",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "antonio-rudiger",
+    "name": "Antonio Rüdiger",
+    "nationality": "Germany",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "marc-andre-ter-stegen",
+    "name": "Marc-André ter Stegen",
+    "nationality": "Germany",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "frenkie-de-jong",
+    "name": "Frenkie de Jong",
+    "nationality": "Netherlands",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "memphis-depay",
+    "name": "Memphis Depay",
+    "nationality": "Netherlands",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "matthijs-de-ligt",
+    "name": "Matthijs de Ligt",
+    "nationality": "Netherlands",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "christian-eriksen",
+    "name": "Christian Eriksen",
+    "nationality": "Denmark",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "pierre-emerick-aubameyang",
+    "name": "Pierre-Emerick Aubameyang",
+    "nationality": "Gabon",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "alexandre-lacazette",
+    "name": "Alexandre Lacazette",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "olivier-giroud",
+    "name": "Olivier Giroud",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "hugo-lloris",
+    "name": "Hugo Lloris",
+    "nationality": "France",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "raphaÃ«l-varane",
+    "name": "Raphaël Varane",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "aurelien-tchouameni",
+    "name": "Aurélien Tchouaméni",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "eduardo-camavinga",
+    "name": "Eduardo Camavinga",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "william-saliba",
+    "name": "William Saliba",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "theo-hernandez",
+    "name": "Theo Hernández",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "mike-maignan",
+    "name": "Mike Maignan",
+    "nationality": "France",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "rafael-leÃ£o",
+    "name": "Rafael Leão",
+    "nationality": "Portugal",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "khvicha-kvaratskhelia",
+    "name": "Khvicha Kvaratskhelia",
+    "nationality": "Georgia",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "federico-valverde",
+    "name": "Federico Valverde",
+    "nationality": "Uruguay",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "marcelo",
+    "name": "Marcelo",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "sergio-busquets",
+    "name": "Sergio Busquets",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "gerard-pique",
+    "name": "Gerard Piqué",
+    "nationality": "Spain",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "jordi-alba",
+    "name": "Jordi Alba",
+    "nationality": "Spain",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "alvaro-morata",
+    "name": "Álvaro Morata",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "mikel-oyarzabal",
+    "name": "Mikel Oyarzabal",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "marco-asensio",
+    "name": "Marco Asensio",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "dani-olmo",
+    "name": "Dani Olmo",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "david-villa",
+    "name": "David Villa",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "fernando-torres",
+    "name": "Fernando Torres",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "cesc-fÃ bregas",
+    "name": "Cesc Fàbregas",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "david-silva",
+    "name": "David Silva",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "juan-mata",
+    "name": "Juan Mata",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "santi-cazorla",
+    "name": "Santi Cazorla",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "diego-costa",
+    "name": "Diego Costa",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "petr-cech",
+    "name": "Petr Čech",
+    "nationality": "Czech Republic",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "patrick-vieira",
+    "name": "Patrick Vieira",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "emmanuel-petit",
+    "name": "Emmanuel Petit",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "marcel-desailly",
+    "name": "Marcel Desailly",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "youri-djorkaeff",
+    "name": "Youri Djorkaeff",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "david-trezeguet",
+    "name": "David Trezeguet",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "nicolas-anelka",
+    "name": "Nicolas Anelka",
+    "nationality": "France",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "robert-pirÃ¨s",
+    "name": "Robert Pirès",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "claude-makelele",
+    "name": "Claude Makelele",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "john-terry",
+    "name": "John Terry",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "rio-ferdinand",
+    "name": "Rio Ferdinand",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "ashley-cole",
+    "name": "Ashley Cole",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "michael-owen",
+    "name": "Michael Owen",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "paul-gascoigne",
+    "name": "Paul Gascoigne",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "jamie-vardy",
+    "name": "Jamie Vardy",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "mario-gÃ¶tze",
+    "name": "Mario Götze",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "sami-khedira",
+    "name": "Sami Khedira",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "mats-hummels",
+    "name": "Mats Hummels",
+    "nationality": "Germany",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "jerÃ´me-boateng",
+    "name": "Jérôme Boateng",
+    "nationality": "Germany",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "thomas-muller",
+    "name": "Thomas Müller",
+    "nationality": "Germany",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "marco-reus",
+    "name": "Marco Reus",
+    "nationality": "Germany",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "bernardo-silva",
+    "name": "Bernardo Silva",
+    "nationality": "Portugal",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "joÃ£o-felix",
+    "name": "João Félix",
+    "nationality": "Portugal",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "ruben-dias",
+    "name": "Rúben Dias",
+    "nationality": "Portugal",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "joÃ£o-cancelo",
+    "name": "João Cancelo",
+    "nationality": "Portugal",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "pepe",
+    "name": "Pepe",
+    "nationality": "Portugal",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "nani",
+    "name": "Nani",
+    "nationality": "Portugal",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "eden-hazard",
+    "name": "Eden Hazard",
+    "nationality": "Belgium",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "romelu-lukaku",
+    "name": "Romelu Lukaku",
+    "nationality": "Belgium",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "thibaut-courtois",
+    "name": "Thibaut Courtois",
+    "nationality": "Belgium",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "vincent-kompany",
+    "name": "Vincent Kompany",
+    "nationality": "Belgium",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "jan-vertonghen",
+    "name": "Jan Vertonghen",
+    "nationality": "Belgium",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "toby-alderweireld",
+    "name": "Toby Alderweireld",
+    "nationality": "Belgium",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "axel-witsel",
+    "name": "Axel Witsel",
+    "nationality": "Belgium",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "dries-mertens",
+    "name": "Dries Mertens",
+    "nationality": "Belgium",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "diego-godin",
+    "name": "Diego Godín",
+    "nationality": "Uruguay",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "alexis-sanchez",
+    "name": "Alexis Sánchez",
+    "nationality": "Chile",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "arturo-vidal",
+    "name": "Arturo Vidal",
+    "nationality": "Chile",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "claudio-bravo",
+    "name": "Claudio Bravo",
+    "nationality": "Chile",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "james-rodriguez",
+    "name": "James Rodríguez",
+    "nationality": "Colombia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "radamel-falcao",
+    "name": "Radamel Falcao",
+    "nationality": "Colombia",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "juan-cuadrado",
+    "name": "Juan Cuadrado",
+    "nationality": "Colombia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "david-ospina",
+    "name": "David Ospina",
+    "nationality": "Colombia",
+    "position": "GK",
+    "fameTier": 2
+  },
+  {
+    "id": "ivan-rakitic",
+    "name": "Ivan Rakitić",
+    "nationality": "Croatia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "mario-mandzukic",
+    "name": "Mario Mandžukić",
+    "nationality": "Croatia",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "duÅ¡an-tadic",
+    "name": "Dušan Tadić",
+    "nationality": "Serbia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "aleksandar-mitrovic",
+    "name": "Aleksandar Mitrović",
+    "nationality": "Serbia",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "sergej-milinkovic-savic",
+    "name": "Sergej Milinković-Savić",
+    "nationality": "Serbia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "nemanja-matic",
+    "name": "Nemanja Matić",
+    "nationality": "Serbia",
+    "position": "MF",
+    "fameTier": 2
+  },
+  {
+    "id": "diego-forlan",
+    "name": "Diego Forlán",
+    "nationality": "Uruguay",
+    "position": "FW",
+    "fameTier": 2
+  },
+  {
+    "id": "alphonso-davies",
+    "name": "Alphonso Davies",
+    "nationality": "Canada",
+    "position": "DF",
+    "fameTier": 2
+  },
+  {
+    "id": "gary-neville",
+    "name": "Gary Neville",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "gabriel-batistuta",
+    "name": "Gabriel Batistuta",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "cristian-romero",
+    "name": "Cristian Romero",
+    "nationality": "Argentina",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "bruno-guimarÃ£es",
+    "name": "Bruno Guimarães",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "gabriel-magalhÃ£es",
+    "name": "Gabriel Magalhães",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "nico-williams",
+    "name": "Nico Williams",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "rodrigo-moreno",
+    "name": "Rodrigo Moreno",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "antonio-cassano",
+    "name": "Antonio Cassano",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "kalidou-koulibaly",
+    "name": "Kalidou Koulibaly",
+    "nationality": "Senegal",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "bixente-lizarazu",
+    "name": "Bixente Lizarazu",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "ivan-zamorano",
+    "name": "Ivan Zamorano",
+    "nationality": "Chile",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "moises-caicedo",
+    "name": "Moisés Caicedo",
+    "nationality": "Ecuador",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "darwin-nunez",
+    "name": "Darwin Núñez",
+    "nationality": "Uruguay",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "son-jong-gug",
+    "name": "Son Jong-gug",
+    "nationality": "South Korea",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "mark-viduka",
+    "name": "Mark Viduka",
+    "nationality": "Australia",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "folarin-balogun",
+    "name": "Folarin Balogun",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "brad-friedel",
+    "name": "Brad Friedel",
+    "nationality": "USA",
+    "position": "GK",
+    "fameTier": 3
+  },
+  {
+    "id": "hirving-lozano",
+    "name": "Hirving Lozano",
+    "nationality": "Mexico",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "kieran-trippier",
+    "name": "Kieran Trippier",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "emile-heskey",
+    "name": "Emile Heskey",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "paul-scholes",
+    "name": "Paul Scholes",
+    "nationality": "England",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "hernan-crespo",
+    "name": "Hernán Crespo",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "paulo-dybala",
+    "name": "Paulo Dybala",
+    "nationality": "Argentina",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "antony",
+    "name": "Antony",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "bremer",
+    "name": "Bremer",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "lamine-yamal",
+    "name": "Lamine Yamal",
+    "nationality": "Spain",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "fabio-grosso",
+    "name": "Fabio Grosso",
+    "nationality": "Italy",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "mario-balotelli",
+    "name": "Mario Balotelli",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "idrissa-gueye",
+    "name": "Idrissa Gueye",
+    "nationality": "Senegal",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "lilian-thuram",
+    "name": "Lilian Thuram",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "marcelo-salas",
+    "name": "Marcelo Salas",
+    "nationality": "Chile",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "piero-hincapie",
+    "name": "Piero Hincapié",
+    "nationality": "Ecuador",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "ronald-araujo",
+    "name": "Ronald Araújo",
+    "nationality": "Uruguay",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "ki-sung-yueng",
+    "name": "Ki Sung-yueng",
+    "nationality": "South Korea",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "mathew-leckie",
+    "name": "Mathew Leckie",
+    "nationality": "Australia",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "matt-turner",
+    "name": "Matt Turner",
+    "nationality": "USA",
+    "position": "GK",
+    "fameTier": 3
+  },
+  {
+    "id": "jozy-altidore",
+    "name": "Jozy Altidore",
+    "nationality": "USA",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "edson-alvarez",
+    "name": "Edson Álvarez",
+    "nationality": "Mexico",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "kyle-walker",
+    "name": "Kyle Walker",
+    "nationality": "England",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "teddy-sheringham",
+    "name": "Teddy Sheringham",
+    "nationality": "England",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "ryan-giggs",
+    "name": "Ryan Giggs",
+    "nationality": "Wales",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "juan-roman-riquelme",
+    "name": "Juan Román Riquelme",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "adriano",
+    "name": "Adriano",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "endrick",
+    "name": "Endrick",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "xabi-prieto",
+    "name": "Xabi Prieto",
+    "nationality": "Spain",
+    "position": "MF",
+    "fameTier": 3
+  },
+  {
+    "id": "pau-cubarsi",
+    "name": "Pau Cubarsí",
+    "nationality": "Spain",
+    "position": "DF",
+    "fameTier": 3
+  },
+  {
+    "id": "filippo-inzaghi",
+    "name": "Filippo Inzaghi",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "federico-bernardeschi",
+    "name": "Federico Bernardeschi",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "papiss-cisse",
+    "name": "Papiss Cissé",
+    "nationality": "Senegal",
+    "position": "FW",
+    "fameTier": 3
+  },
+  {
+    "id": "david-de-gea",
+    "name": "David de Gea",
+    "nationality": "Spain",
+    "position": "GK",
+    "fameTier": 1
+  },
+  {
+    "id": "christian-vieri",
+    "name": "Christian Vieri",
+    "nationality": "Italy",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "didier-deschamps",
+    "name": "Didier Deschamps",
+    "nationality": "France",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "patrice-evra",
+    "name": "Patrice Evra",
+    "nationality": "France",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "fernando-hierro",
+    "name": "Fernando Hierro",
+    "nationality": "Spain",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "diego-simeone",
+    "name": "Diego Simeone",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "clarence-seedorf",
+    "name": "Clarence Seedorf",
+    "nationality": "Netherlands",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "edgar-davids",
+    "name": "Edgar Davids",
+    "nationality": "Netherlands",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "david-luiz",
+    "name": "David Luiz",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "willian",
+    "name": "Willian",
+    "nationality": "Brazil",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "fred-brazil",
+    "name": "Fred",
+    "nationality": "Brazil",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "danilo-luiz",
+    "name": "Danilo",
+    "nationality": "Brazil",
+    "position": "DF",
+    "fameTier": 1
+  },
+  {
+    "id": "ederson-moraes",
+    "name": "Ederson Moraes",
+    "nationality": "Brazil",
+    "position": "GK",
+    "fameTier": 1
+  },
+  {
+    "id": "andriy-shevchenko",
+    "name": "Andriy Shevchenko",
+    "nationality": "Ukraine",
+    "position": "FW",
+    "fameTier": 1
+  },
+  {
+    "id": "juan-veron",
+    "name": "Juan Sebastián Verón",
+    "nationality": "Argentina",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "gennaro-gattuso",
+    "name": "Gennaro Gattuso",
+    "nationality": "Italy",
+    "position": "MF",
+    "fameTier": 1
+  },
+  {
+    "id": "ruud-gullit",
+    "name": "Ruud Gullit",
+    "nationality": "Netherlands",
+    "position": "MF",
+    "fameTier": 1
+  }
+]

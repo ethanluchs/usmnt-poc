@@ -1,0 +1,1494 @@
+[
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newells Old Boys\" via \"Rosario, Santa Fe Province, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"CD Nacional de Madeira\" via \"Funchal, Madeira, Portugal\""
+  },
+  {
+    "level": "warn",
+    "msg": "No name-similar match for \"Pelé\" (pele) — best candidate was \"Bryan Pele\" (similarity too low, skipped)"
+  },
+  {
+    "level": "warn",
+    "msg": "No confident match for \"Pelé\" (pele), 1 candidates"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newells Old Boys\" via \"Rosario, Santa Fe Province, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bordeaux\" via \"Bordeaux, France\""
+  },
+  {
+    "level": "warn",
+    "msg": "No search results for \"Ronaldo Nazário\" (ronaldo-nazario)"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Gremio\" via \"Porto Alegre, Brazil\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Paris SG\" via \"Paris, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Paris SG\" via \"Paris, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Paris SG\" via \"Paris, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bryne\" via \"Bryne, Norway\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Molde\" via \"Molde, Norway\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"SV Salzburg\" via \"Wals-Siezenheim, Salzburg, Austria\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Gent\" via \"Ghent, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Genk\" via \"Genk, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Wolfsburg\" via \"Wolfsburg, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Al-Mokawloon al-Arab\" via \"Nasr City, Cairo, Egypt\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Basel\" via \"Basel, Switzerland\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Legia Warsaw\" via \"Warsaw, Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Znicz Pruszków\" via \"Pruszków, Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lech Poznan\" via \"Poznań, Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Zagreb\" via \"Zagreb, Croatia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Zrinjski\" via \"Mostar, Bosnia and Herzegovina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"NK Inter Zaprešić\" via \"Zaprešić\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Catalonia\" via \"Barcelona\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Emirates Club\" via \"Ras Al Khaimah, United Arab Emirates\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Preston\" via \"Preston, Lancashire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Paris SG\" via \"Paris, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Derby\" via \"Pride Park, Derby\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sunderland\" via \"Sunderland, Tyne and Wear\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Darlington F.C.\" via \"Darlington, County Durham, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Alfreton Town\" via \"Alfreton, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Burton\" via \"Burton-on-Trent, Staffordshire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stroemsgodset\" via \"Drammen\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"SC Heerenveen\" via \"Heerenveen, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Vitesse\" via \"Arnhem, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Poland U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Zaglebie Lubin\" via \"Lubin, Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Udinese\" via \"Udine, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Empoli\" via \"Empoli, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Legia Warsaw\" via \"Warsaw, Poland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Brentford\" via \"Brentford, London, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Aachen\" via \"Aachen, North Rhine-Westphalia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leverkusen\" via \"Leverkusen, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stuttgart\" via \"Stuttgart, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"RasenBallsport Leipzig\" via \"Am Sportforum 3, Leipzig, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"SG Wattenscheid 09\" via \"Bochum-Wattenscheid, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leverkusen\" via \"Leverkusen, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stuttgart\" via \"Stuttgart, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hoffenheim\" via \"Sinsheim, Baden-Württemberg, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stuttgart\" via \"Stuttgart, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"RasenBallsport Leipzig\" via \"Am Sportforum 3, Leipzig, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bochum\" via \"Bochum, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nurnberg\" via \"Nuremberg, Bavaria, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stuttgart II\" via \"Aspach\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Mönchengladbach\" via \"Mönchengladbach, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Mönchengladbach\" via \"Mönchengladbach, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Girona\" via \"Girona\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Netherlands U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Willem II\" via \"Tilburg, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sparta\" via \"Rotterdam, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Odense BK\" via \"Odense\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dijon\" via \"Dijon, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"St Etienne\" via \"14 Rue Paul et Pierre Guichard, 42000 Saint-Étienne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Grenoble\" via \"Grenoble\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Tours\" via \"Tours, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Montpellier\" via \"Montpellier, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nice\" via \"Nice, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Los Angeles FC\" via \"Los Angeles\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lens\" via \"Lens, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Como\" via \"Como, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"France U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bordeaux\" via \"Bordeaux, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"St Etienne\" via \"14 Rue Paul et Pierre Guichard, 42000 Saint-Étienne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nice\" via \"Nice, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Marseille\" via \"Marseille, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Alaves\" via \"Vitoria\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sociedad\" via \"San Sebastián, Guipúzcoa\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Tbilisi\" via \"Tbilisi, Georgia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Metalurgi Rustavi\" via \"Rustavi, Georgia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lok. Moscow\" via \"Moscow\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FK Rubin Kazan\" via \"Kazan, Tatarstan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Batumi\" via \"Batumi, Georgia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Peñarol\" via \"Bañados de Carrasco, Montevideo\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"La Coruna\" via \"A Coruña, Galicia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Brazil\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Brazil U23\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Catalonia\" via \"Barcelona\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Zaragoza\" via \"Zaragoza\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Cornellà\" via \"Cornellà de Llobregat, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain U23\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Eibar\" via \"Éibar, Gipuzkoa\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain U23\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Mallorca\" via \"Palma de Mallorca\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Espanol\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Zagreb II\" via \"Zagreb, Croatia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sp Gijon\" via \"Gijón\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Zaragoza\" via \"Zaragoza\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Eibar\" via \"Éibar, Gipuzkoa\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Celta Vigo\" via \"Vigo, Galicia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Real Oviedo\" via \"Oviedo, Asturias\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Recreativo\" via \"Huelva, Andalusia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Malaga\" via \"Málaga\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Braga\" via \"Braga, Portugal\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Penafiel\" via \"Penafiel, Portugal\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Braga\" via \"Braga, Portugal\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Celta Vigo\" via \"Vigo, Galicia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Viktoria Plzen\" via \"Plzeň, Czech Republic\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sparta Prague\" via \"Prague, Czech Republic\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nantes\" via \"Nantes\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Marseille\" via \"Marseille, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Grenoble\" via \"Grenoble\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Strasbourg\" via \"Strasbourg, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Platense\" via \"Florida, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hercules\" via \"Alicante, Valencia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stade de Reims\" via \"Reims\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Metz\" via \"Metz, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Marseille\" via \"Marseille, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nantes\" via \"Nantes\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Marseille\" via \"Marseille, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Celta Vigo\" via \"Vigo, Galicia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"West Ham\" via \"London Stadium, Queen Elizabeth Olympic Park, London\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nottingham F.\" via \"City Ground, Nottingham\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"West Ham\" via \"London Stadium, Queen Elizabeth Olympic Park, London\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leeds\" via \"Beeston, Leeds, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"QPR\" via \"Shepherds Bush\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Derby\" via \"Pride Park, Derby\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newcastle\" via \"Newcastle upon Tyne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stoke\" via \"Stanley Matthews Way, Stoke-on-Trent\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newcastle\" via \"Newcastle upon Tyne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Middlesbrough\" via \"Riverside, Middlesbrough\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sheffield Weds\" via \"Owlerton, Sheffield, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stocksbridge Park Steels\" via \"Stocksbridge, Sheffield, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Halifax\" via \"Shay Syke, Halifax\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Fleetwood Town\" via \"Fleetwood\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stuttgart\" via \"Stuttgart, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hertha\" via \"Berlin\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dortmund\" via \"Dortmund, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hertha\" via \"Berlin\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hamburg\" via \"Hamburg, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Germany U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Rot Weiss Ahlen\" via \"Ahlen, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Portugal U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Maritimo\" via \"Funchal, Madeira\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Besiktas\" via \"Beşiktaş, Istanbul, Turkey\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Fenerbahce\" via \"Kadıköy, Istanbul\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Orlando City\" via \"Orlando, Florida\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Tubize\" via \"Tubize, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lierse\" via \"Lier\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Anderlecht\" via \"Anderlecht, Belgium\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Genk\""
+  },
+  {
+    "level": "error",
+    "msg": "Vincent Kompany: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Jan Vertonghen: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Toby Alderweireld: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Axel Witsel: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Dries Mertens: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Diego Godín: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Alexis Sánchez: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Arturo Vidal: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Claudio Bravo: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "James Rodríguez: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Radamel Falcao: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Juan Cuadrado: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "David Ospina: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Ivan Rakitić: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Mario Mandžukić: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Dušan Tadić: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Aleksandar Mitrović: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Sergej Milinković-Savić: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Nemanja Matić: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Diego Forlán: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Alphonso Davies: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Gary Neville: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Gabriel Batistuta: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Cristian Romero: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Bruno Guimarães: fetch failed"
+  },
+  {
+    "level": "error",
+    "msg": "Gabriel Magalhães: fetch failed"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Pamplona\" via \"Pamplona, Navarre, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Basconia\" via \"Basauri, Basque Country, Spain\""
+  },
+  {
+    "level": "error",
+    "msg": "Antonio Cassano: fetch failed"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Metz\" via \"Metz, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Genk\" via \"Genk, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bordeaux\" via \"Bordeaux, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Bilbao\" via \"Bilbao, Vizcaya\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Marseille\" via \"Marseille, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"St. Gallen\" via \"St. Gallen\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"CF America\" via \"Mexico City, Mexico\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Independiente del Valle\" via \"Sangolquí\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Beerschot VA\" via \"Antwerp, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Uruguay\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Peñarol\" via \"Bañados de Carrasco, Montevideo\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Almeria\" via \"Almería\""
+  },
+  {
+    "level": "warn",
+    "msg": "No search results for \"Son Jong-gug\" (son-jong-gug)"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Melbourne Knights\" via \"Sunshine North, Melbourne, Victoria, Australia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Zagreb\" via \"Zagreb, Croatia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leeds\" via \"Beeston, Leeds, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Middlesbrough\" via \"Riverside, Middlesbrough\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Middlesbrough\" via \"Riverside, Middlesbrough\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Stade de Reims\" via \"Reims\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Brøndby\" via \"Brøndby\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Columbus Crew\" via \"Columbus, Ohio\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Blackburn\" via \"Blackburn, Lancashire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Pachuca\" via \"Pachuca, Hidalgo, Mexico\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"San Diego FC\" via \"San Diego, CA\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Barnsley\" via \"Barnsley\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Burnley\" via \"Burnley, Lancashire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leicester\" via \"Filbert Way, Leicester\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Birmingham\" via \"Birmingham, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Wigan\" via \"Wigan, Lancashire, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Oldham\" via \"Oldham, Greater Manchester\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Salford City\" via \"Kersal, Salford\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Parma\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Instituto ACC\" via \"Córdoba, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Palermo\" via \"Palermo\""
+  },
+  {
+    "level": "warn",
+    "msg": "No name-similar match for \"Antony\" (antony) — best candidate was \"Antony Golec\" (similarity too low, skipped)"
+  },
+  {
+    "level": "warn",
+    "msg": "No confident match for \"Antony\" (antony), 1 candidates"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Atletico MG\" via \"Belo Horizonte, Brazil\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Torino\" via \"Turin, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Perugia\" via \"Perugia, Italy\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Palermo\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lumezzane\" via \"Lumezzane, Lombardy, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Diambars\" via \"Saly, Senegal\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Parma Calcio 1913\" via \"Parma, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Independiente del Valle\" via \"Sangolquí\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Talleres de Cordoba\" via \"Córdoba, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Rentistas\" via \"Montevideo\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Boston River\" via \"Las Piedras, Canelones, Uruguay\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Seoul\" via \"Seoul\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Swansea\" via \"Swansea, Wales\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newcastle\" via \"Newcastle upon Tyne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Adelaide United\" via \"Adelaide\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Mönchengladbach\" via \"Mönchengladbach, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Mgladbach II\" via \"Mönchengladbach, North Rhine Westphalia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FSV Frankfurt\" via \"Bornheim, Frankfurt am Main, Hesse\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"New England Rev.\" via \"Foxborough, Massachusetts\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Richmond Kickers\" via \"Richmond, Virginia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Xerez\" via \"Chapín, Jerez, Andalusia, Spain\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hull\" via \"Kingston upon Hull, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bursaspor\" via \"Bursa, Turkey\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"CF America\" via \"Mexico City, Mexico\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sheffield United\" via \"Sheffield, South Yorkshire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nottingham F.\" via \"City Ground, Nottingham\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Portsmouth\" via \"Portsmouth, Hampshire\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"West Ham\" via \"London Stadium, Queen Elizabeth Olympic Park, London\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Wales\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Wales\""
+  },
+  {
+    "level": "warn",
+    "msg": "No search results for \"Juan Román Riquelme\" (juan-roman-riquelme)"
+  },
+  {
+    "level": "warn",
+    "msg": "No name-similar match for \"Adriano\" (adriano) — best candidate was \"Adriano Correia\" (similarity too low, skipped)"
+  },
+  {
+    "level": "warn",
+    "msg": "No confident match for \"Adriano\" (adriano), 1 candidates"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sociedad\" via \"San Sebastián, Guipúzcoa\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Girona\" via \"Girona\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Piacenza\" via \"Piacenza, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Parma Calcio 1913\" via \"Parma, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Italy U21\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Crotone\" via \"Crotone, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Anderlecht\" via \"Anderlecht, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Hamburg\" via \"Hamburg, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Anderlecht\" via \"Anderlecht, Belgium\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Germinal\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"RKC Waalwijk\" via \"Waalwijk, Netherlands\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Germinal\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Southampton\" via \"Britannia Rd, Southampton, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Standard\" via \"Liège, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Zenit St Petersburg\" via \"St. Petersburg\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Tianjin Quanjian\" via \"Tianjin, China\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Anderlecht\" via \"Anderlecht, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Gent\" via \"Ghent, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Utrecht\" via \"Utrecht, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"CA Cerro\" via \"Montevideo, Uruguay\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nacional Montevideo\" via \"Montevideo, Uruguay\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Cobreloa\" via \"Calama, Chile\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Udinese\" via \"Udine, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Colo-Colo\" via \"Macul, Santiago, Chile\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Leverkusen\" via \"Leverkusen, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Colo-Colo\" via \"Macul, Santiago, Chile\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sociedad\" via \"San Sebastián, Guipúzcoa\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Colo-Colo\" via \"Macul, Santiago, Chile\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Envigado F.C.\" via \"Envigado, Colombia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Banfield\" via \"Banfield, Buenos Aires\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Udinese\" via \"Udine, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Lecce\" via \"Lecce, Apulia, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Atlético Nacional\" via \"Medellín, Colombia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Nice\" via \"Nice, France\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Atlético Nacional\" via \"Medellín, Colombia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Basel\" via \"Basel, Switzerland\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Dinamo Zagreb\" via \"Zagreb, Croatia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Wolfsburg\" via \"Wolfsburg, Germany\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Vojvodina\" via \"Novi Sad, Vojvodina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Groningen\" via \"Groningen, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"FC Twente\" via \"Enschede, Netherlands\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Southampton\" via \"Britannia Rd, Southampton, England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Partizan Belgrade\" via \"Belgrade, Serbia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Anderlecht\" via \"Anderlecht, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newcastle\" via \"Newcastle upon Tyne\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Grazer AK\" via \"Graz, Austria\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Vojvodina\" via \"Novi Sad, Vojvodina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Genk\" via \"Genk, Belgium\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Kosice\" via \"Košice\""
+  },
+  {
+    "level": "warn",
+    "msg": "No coordinates found for club \"Independiente\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Ath Madrid\" via \"Madrid\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Inter\" via \"Milan, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Vancouver Whitecaps\" via \"Vancouver, British Columbia, Canada\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"England\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"England\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Newells Old Boys\" via \"Rosario, Santa Fe Province, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Belgrano\" via \"Barrio Alberdi, Córdoba, Argentina\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Genoa\" via \"Genoa, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Brazil U23\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Atletico PR\" via \"Curitiba\""
+  },
+  {
+    "level": "warn",
+    "msg": "No name-similar match for \"Gabriel Magalhães\" (gabriel-magalhÃ£es) — best candidate was \"Gabriel\" (similarity too low, skipped)"
+  },
+  {
+    "level": "warn",
+    "msg": "No confident match for \"Gabriel Magalhães\" (gabriel-magalhÃ£es), 1 candidates"
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Bari\" via \"Bari, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Sampdoria\" via \"Genoa, Italy\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Milan\" via \"San Siro, Milan\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Catalonia\""
+  },
+  {
+    "level": "info",
+    "msg": "Geocoded \"Levante\" via \"Valencia\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Catalonia\""
+  },
+  {
+    "level": "info",
+    "msg": "Dropped likely national-team entry \"Spain\""
+  }
+]

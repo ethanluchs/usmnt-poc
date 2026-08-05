@@ -12,11 +12,21 @@ interface AutocompleteInputProps {
   playerPool: Player[];
 }
 
+const VISIBLE_SUGGESTIONS = 5;
+
 function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuesses, playerPool }: AutocompleteInputProps) {
   const [showDropdown, setShowDropdown] = useState(false);
   const guessedNames = new Set(incorrectGuesses.map((g) => g.toLowerCase()));
   const filtered = input.length > 1
-    ? playerPool.filter((p) => p.name?.toLowerCase().includes(input.toLowerCase()))
+    ? playerPool
+        .filter((p) => p.name?.toLowerCase().includes(input.toLowerCase()))
+        .sort((a, b) => {
+          const q = input.toLowerCase();
+          const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1;
+          const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1;
+          if (aStarts !== bStarts) return aStarts - bStarts;
+          return a.name.length - b.name.length;
+        })
     : [];
 
   const handleSelect = (name: string) => {
@@ -47,7 +57,10 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
         </svg>
       </button>
       {showDropdown && filtered.length > 0 && (
-        <ul className="absolute bottom-full mb-1 left-0 right-0 border border-black bg-white text-black rounded overflow-hidden z-50">
+        <ul
+          className="absolute bottom-full mb-1 left-0 right-0 border border-black bg-white text-black rounded overflow-y-auto z-50"
+          style={{ maxHeight: `${VISIBLE_SUGGESTIONS * 36}px` }}
+        >
           {filtered.map((p) => {
             const isGuessed = guessedNames.has(p.name.toLowerCase());
             return (

@@ -1,0 +1,856 @@
+[
+  {
+    "name": "Pelé",
+    "id": "pele",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Ronaldo Nazário",
+    "id": "ronaldo-nazario",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Xavi Hernández",
+    "id": "xavi-hernandez",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Samuel Eto'o",
+    "id": "samuel-etoo",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "George Best",
+    "id": "george-best",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Eusébio",
+    "id": "eusebio",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Zico",
+    "id": "zico",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Son Heung-min",
+    "id": "son-heung-min",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "N'Golo Kanté",
+    "id": "ngolo-kante",
+    "fameTier": 1,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Gavi",
+    "id": "gavi",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Rodri",
+    "id": "rodri",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Jamal Musiala",
+    "id": "jamal-musiala",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Sócrates",
+    "id": "socrates",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Javier Hernández",
+    "id": "javier-hernandez",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Roger Milla",
+    "id": "roger-milla",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Lautaro Martínez",
+    "id": "lautaro-martinez",
+    "fameTier": 2,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Rodrigo Moreno",
+    "id": "rodrigo-moreno",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Son Jong-gug",
+    "id": "son-jong-gug",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Antony",
+    "id": "antony",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Juan Román Riquelme",
+    "id": "juan-roman-riquelme",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "not_found"
+  },
+  {
+    "name": "Adriano",
+    "id": "adriano",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Papiss Cissé",
+    "id": "papiss-cisse",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "thin"
+  },
+  {
+    "name": "Gabriel Magalhães",
+    "id": "gabriel-magalhÃ£es",
+    "fameTier": 3,
+    "stops": 0,
+    "status": "ambiguous"
+  },
+  {
+    "name": "Paolo Maldini",
+    "id": "paolo-maldini",
+    "fameTier": 1,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Francesco Totti",
+    "id": "francesco-totti",
+    "fameTier": 1,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Iker Casillas",
+    "id": "iker-casillas",
+    "fameTier": 1,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Gerd Müller",
+    "id": "gerd-muller",
+    "fameTier": 1,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Manuel Neuer",
+    "id": "manuel-neuer",
+    "fameTier": 1,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Phil Foden",
+    "id": "phil-foden",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Bukayo Saka",
+    "id": "bukayo-saka",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Carlos Alberto",
+    "id": "carlos-alberto",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Gio Reyna",
+    "id": "gio-reyna",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Hidetoshi Nakata",
+    "id": "hidetoshi-nakata",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Thomas Müller",
+    "id": "thomas-muller",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Alphonso Davies",
+    "id": "alphonso-davies",
+    "fameTier": 2,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Marcelo Salas",
+    "id": "marcelo-salas",
+    "fameTier": 3,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Ryan Giggs",
+    "id": "ryan-giggs",
+    "fameTier": 3,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Xabi Prieto",
+    "id": "xabi-prieto",
+    "fameTier": 3,
+    "stops": 1,
+    "status": "thin"
+  },
+  {
+    "name": "Lionel Messi",
+    "id": "lionel-messi",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Kylian Mbappé",
+    "id": "kylian-mbappe",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Karim Benzema",
+    "id": "karim-benzema",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Philipp Lahm",
+    "id": "philipp-lahm",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Marco van Basten",
+    "id": "marco-van-basten",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Christian Pulisic",
+    "id": "christian-pulisic",
+    "fameTier": 1,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Rui Costa",
+    "id": "rui-costa",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Rodrigo De Paul",
+    "id": "rodrigo-de-paul",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Marco Verratti",
+    "id": "marco-verratti",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Trent Alexander-Arnold",
+    "id": "trent-alexander-arnold",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "John Stones",
+    "id": "john-stones",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Timo Werner",
+    "id": "timo-werner",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Joshua Kimmich",
+    "id": "joshua-kimmich",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Frenkie de Jong",
+    "id": "frenkie-de-jong",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Alexandre Lacazette",
+    "id": "alexandre-lacazette",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Aurélien Tchouaméni",
+    "id": "aurelien-tchouameni",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Eduardo Camavinga",
+    "id": "eduardo-camavinga",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Mike Maignan",
+    "id": "mike-maignan",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Rafael Leão",
+    "id": "rafael-leÃ£o",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Marcelo",
+    "id": "marcelo",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Mikel Oyarzabal",
+    "id": "mikel-oyarzabal",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Marco Asensio",
+    "id": "marco-asensio",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Bernardo Silva",
+    "id": "bernardo-silva",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Rúben Dias",
+    "id": "ruben-dias",
+    "fameTier": 2,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Bremer",
+    "id": "bremer",
+    "fameTier": 3,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Edson Álvarez",
+    "id": "edson-alvarez",
+    "fameTier": 3,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Kyle Walker",
+    "id": "kyle-walker",
+    "fameTier": 3,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Gary Neville",
+    "id": "gary-neville",
+    "fameTier": 3,
+    "stops": 2,
+    "status": "ok"
+  },
+  {
+    "name": "Zinedine Zidane",
+    "id": "zinedine-zidane",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Andrés Iniesta",
+    "id": "andres-iniesta",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Steven Gerrard",
+    "id": "steven-gerrard",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Gianluigi Buffon",
+    "id": "gianluigi-buffon",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Michel Platini",
+    "id": "michel-platini",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Bobby Charlton",
+    "id": "bobby-charlton",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Sergio Agüero",
+    "id": "sergio-aguero",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Casemiro",
+    "id": "casemiro",
+    "fameTier": 1,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Antoine Griezmann",
+    "id": "antoine-griezmann",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Declan Rice",
+    "id": "declan-rice",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Florian Wirtz",
+    "id": "florian-wirtz",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Victor Osimhen",
+    "id": "victor-osimhen",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Ousmane Dembélé",
+    "id": "ousmane-dembele",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Dennis Bergkamp",
+    "id": "dennis-bergkamp",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Bastian Schweinsteiger",
+    "id": "bastian-schweinsteiger",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Fabio Cannavaro",
+    "id": "fabio-cannavaro",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Alessandro Del Piero",
+    "id": "alessandro-del-piero",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Alan Shearer",
+    "id": "alan-shearer",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Weston McKennie",
+    "id": "weston-mckennie",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Tyler Adams",
+    "id": "tyler-adams",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Riyad Mahrez",
+    "id": "riyad-mahrez",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Achraf Hakimi",
+    "id": "achraf-hakimi",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "André Onana",
+    "id": "andre-onana",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Keisuke Honda",
+    "id": "keisuke-honda",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Julián Álvarez",
+    "id": "julian-alvarez",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Enzo Fernández",
+    "id": "enzo-fernandez",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Gabriel Jesus",
+    "id": "gabriel-jesus",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Alisson Becker",
+    "id": "alisson-becker",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Fabinho",
+    "id": "fabinho",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Rodrygo",
+    "id": "rodrygo",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Éder Militão",
+    "id": "eder-militÃ£o",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Edinson Cavani",
+    "id": "edinson-cavani",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Federico Chiesa",
+    "id": "federico-chiesa",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Nicolò Barella",
+    "id": "nicolÃ²-barella",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Gianluigi Donnarumma",
+    "id": "gianluigi-donnarumma",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Marcus Rashford",
+    "id": "marcus-rashford",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Piotr Zieliński",
+    "id": "piotr-zieliÅski",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Antonio Rüdiger",
+    "id": "antonio-rudiger",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "William Saliba",
+    "id": "william-saliba",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Sergio Busquets",
+    "id": "sergio-busquets",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Gerard Piqué",
+    "id": "gerard-pique",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Dani Olmo",
+    "id": "dani-olmo",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Jérôme Boateng",
+    "id": "jerÃ´me-boateng",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Marco Reus",
+    "id": "marco-reus",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Eden Hazard",
+    "id": "eden-hazard",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Thibaut Courtois",
+    "id": "thibaut-courtois",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Jan Vertonghen",
+    "id": "jan-vertonghen",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Toby Alderweireld",
+    "id": "toby-alderweireld",
+    "fameTier": 2,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Kalidou Koulibaly",
+    "id": "kalidou-koulibaly",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Darwin Núñez",
+    "id": "darwin-nunez",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Folarin Balogun",
+    "id": "folarin-balogun",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Paul Scholes",
+    "id": "paul-scholes",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Paulo Dybala",
+    "id": "paulo-dybala",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Ronald Araújo",
+    "id": "ronald-araujo",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Endrick",
+    "id": "endrick",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  },
+  {
+    "name": "Federico Bernardeschi",
+    "id": "federico-bernardeschi",
+    "fameTier": 3,
+    "stops": 3,
+    "status": "ok"
+  }
+]

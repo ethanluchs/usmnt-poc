@@ -11,6 +11,8 @@ interface CardOverlayProps {
   playerPool?: Player[];
 }
 
+const SHOW_AUTH_UI = false;
+
 export default function CardOverlay({
   isDark,
   isOpen,
@@ -31,7 +33,7 @@ export default function CardOverlay({
           {unlockedCards.length} / {playerPool.length} cards
         </span>
         <div className="flex items-center gap-4">
-          {!user && (
+          {SHOW_AUTH_UI && !user && (
             <span className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
               <a className="underline cursor-pointer" onClick={signInWithGoogle}>Sign in</a>
               {" to save progress"}
