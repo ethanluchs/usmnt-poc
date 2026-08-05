@@ -46,6 +46,7 @@
 
 html, body {
   height: 100%;
+  height: -webkit-fill-available;
   font-family: 'FWC2026', sans-serif;
   overflow: hidden;
   background-color: #ede8d0;
