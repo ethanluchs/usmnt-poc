@@ -11,12 +11,14 @@ interface CareerPathProps {
   isDark: boolean;
   currentStop: number;
   zoom?: number;
+  cardScale?: number;
 }
 
 export default function CareerPath({
   stops = [],
   isDark,
   zoom = 1,
+  cardScale = 1,
 }: CareerPathProps) {
   const { projection } = useMapContext();
   const seenIndices = useRef<Set<number>>(new Set());
@@ -82,7 +84,7 @@ export default function CareerPath({
       ))}
 
       <AnimatePresence>
-        <OverviewCards stops={stops} points={points} isDark={isDark} zoom={zoom} />
+        <OverviewCards stops={stops} points={points} isDark={isDark} zoom={zoom} cardScale={cardScale} />
       </AnimatePresence>
     </g>
   );
