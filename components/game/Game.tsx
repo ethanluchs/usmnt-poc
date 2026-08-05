@@ -119,7 +119,8 @@ export default function Game() {
 
   return (
     <motion.main
-      className="relative w-screen h-screen bg-[#ede8d0] dark:bg-[#1a1917] transition-colors duration-300"
+      className="relative w-screen bg-[#ede8d0] dark:bg-[#1a1917] transition-colors duration-300"
+      style={{ height: "100dvh" }}
       animate={guessResult === "wrong" ? { x: [0, -12, 12, -9, 9, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
     >
