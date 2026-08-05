@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /locationPuzzles/{puzzleId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Not yet consumed by the client; players here lack careerStops until
+    // promoted into locationPuzzles. Admin SDK writes bypass these rules.
+    match /playerRoster/{playerId} {
+      allow read, write: if false;
+    }
+
+    match /users/{userId}/cards/{cardId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
