@@ -21,6 +21,8 @@ interface WorldMapProps {
   panTarget: PanTarget;
 }
 
+const REFERENCE_CONTAINER_WIDTH = 800; // container width at which cards render at their designed size
+
 export default function WorldMap({
   isDark,
   isDragging,
@@ -35,6 +37,28 @@ export default function WorldMap({
   const { stroke } = getColors(isDark);
   const bg = "#3a7a3a";
   const bgHover = "#2e6a2e";
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(REFERENCE_CONTAINER_WIDTH);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width;
+      if (width) setContainerWidth(width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // When the container is narrower than the reference width, the fixed
+  // 800-unit viewBox gets compressed and SVG-unit text/cards shrink with it.
+  // Scale card content up inversely so it holds a consistent on-screen size.
+  const cardScale = Math.min(
+    2,
+    Math.max(1, REFERENCE_CONTAINER_WIDTH / Math.max(containerWidth, 1))
+  );
 
   const strokeMV: MotionValue<string> = useMotionValue(stroke);
   const [strokeColor, setStrokeColor] = useState(stroke);
@@ -63,6 +87,7 @@ export default function WorldMap({
 
   return (
     <div
+      ref={containerRef}
       style={{ width: "100%", height: "100%" }}
       onWheel={handleWheel as unknown as React.WheelEventHandler<HTMLDivElement>}
     >
@@ -90,7 +115,7 @@ export default function WorldMap({
           minZoom={1}
           maxZoom={4}
           translateExtent={[[-25, -125], [850, 550]]}
-          filterZoomEvent={(e: Event) => e.type !== "wheel" && e.type !== "touchstart"}
+          filterZoomEvent={(e: Event) => e.type !== "wheel"}
           onMoveStart={() => { handleMoveStart(); onMoveStart(); }}
           onMoveEnd={(e) => { handleMoveEnd(e); onMoveEnd(); }}
         >
@@ -108,6 +133,7 @@ export default function WorldMap({
             isDark={isDark}
             currentStop={currentStop}
             zoom={zoom}
+            cardScale={cardScale}
           />
         </ZoomableGroup>
       </ComposableMap>
