@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "motion/react";
-import { MOCK_PLAYERS } from "../../lib/mockData";
 
 interface InfoModalProps {
   isDark: boolean;
@@ -43,26 +42,10 @@ export default function InfoModal({ isDark, onClose }: InfoModalProps) {
 
         <ol className="flex flex-col gap-2 text-sm" style={{ color: text }}>
           <li>1. Career stops are revealed one at a time on the map.</li>
-          <li>2. Guess the player from the list below after each stop.</li>
+          <li>2. Guess the player using the search box after each stop.</li>
           <li>3. Wrong guesses are recorded — try to guess in as few stops as possible.</li>
-          <li>4. You get 5 puzzles per session.</li>
+          <li>4. You get 3 puzzles per day, the same for everyone.</li>
         </ol>
-
-        <hr style={{ borderColor: border, opacity: 0.3 }} />
-
-        <div className="flex flex-col gap-2">
-          <span style={{ color: dimText }} className="text-xs tracking-widest uppercase">
-            Player Pool
-          </span>
-          <ul className="flex flex-col gap-1">
-            {MOCK_PLAYERS.map((p) => (
-              <li key={p.id} className="flex items-center justify-between text-sm">
-                <span style={{ color: text }}>{p.name}</span>
-                <span style={{ color: dimText }}>{p.nationality} · {p.position}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </motion.div>
     </motion.div>
   );
