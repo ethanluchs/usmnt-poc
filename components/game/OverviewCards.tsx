@@ -9,9 +9,10 @@ interface OverviewCardsProps {
   points: [number, number][];
   isDark: boolean;
   zoom: number;
+  cardScale?: number;
 }
 
-export default function OverviewCards({ stops, points, isDark, zoom }: OverviewCardsProps) {
+export default function OverviewCards({ stops, points, isDark, zoom, cardScale = 1 }: OverviewCardsProps) {
   const [topStopOrder, setTopStopOrder] = useState<number | null>(null);
 
   const offsets = placeLabels(points);
@@ -21,7 +22,7 @@ export default function OverviewCards({ stops, points, isDark, zoom }: OverviewC
       a.stop.order === topStopOrder ? 1 : b.stop.order === topStopOrder ? -1 : 0
     );
 
-  const s = 1 / zoom;
+  const s = (1 / zoom) * cardScale;
 
   return (
     <>
