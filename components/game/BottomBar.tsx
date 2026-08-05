@@ -45,12 +45,12 @@ function AutocompleteInput({ input, setInput, onSubmit, disabled, incorrectGuess
         onBlur={() => setTimeout(() => setShowDropdown(false), 100)}
         placeholder="Guess a player..."
         disabled={disabled}
-        className="flex-1 placeholder:text-gray-500 bg-transparent text-black px-3 py-2 outline-none disabled:opacity-40"
+        className="flex-1 min-w-0 placeholder:text-gray-500 bg-transparent text-black px-3 py-2.5 text-base outline-none disabled:opacity-40"
       />
       <button
         onMouseDown={(e) => { e.preventDefault(); input.trim() && handleSelect(input.trim()); }}
         disabled={disabled || !input.trim()}
-        className="px-3 flex items-center justify-center border-l border-black text-black disabled:opacity-30 hover:bg-black hover:text-white transition-colors"
+        className="px-3 min-w-[44px] flex items-center justify-center border-l border-black text-black disabled:opacity-30 hover:bg-black hover:text-white transition-colors"
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 7h10M8 3l4 4-4 4" />
@@ -133,21 +133,23 @@ export default function BottomBar({
   const isDisabled = solved || incorrectGuesses.length >= 5;
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-1.5 pb-3">
-      <div className="flex items-center gap-2">
-        <AutocompleteInput
-          input={input}
-          setInput={setInput}
-          onSubmit={onGuess}
-          disabled={isDisabled}
-          incorrectGuesses={incorrectGuesses}
-          playerPool={playerPool}
-        />
-        <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white">
+    <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-1.5 pb-3 px-3">
+      <div className="flex items-center gap-2 w-full max-w-md">
+        <div className="flex-1 min-w-0">
+          <AutocompleteInput
+            input={input}
+            setInput={setInput}
+            onSubmit={onGuess}
+            disabled={isDisabled}
+            incorrectGuesses={incorrectGuesses}
+            playerPool={playerPool}
+          />
+        </div>
+        <Button onClick={onNextStop} disabled={solved || isLastStop} className="bg-white shrink-0 whitespace-nowrap">
           Next Stop
         </Button>
-        <StrikeDots incorrectGuesses={incorrectGuesses} />
       </div>
+      <StrikeDots incorrectGuesses={incorrectGuesses} />
     </div>
   );
 }
