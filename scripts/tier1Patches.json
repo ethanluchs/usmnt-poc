@@ -1,0 +1,231 @@
+{
+  "pele": {
+    "birthYear": 1940,
+    "careerStops": [
+      { "order": 1, "club": "Santos", "country": "Brazil", "countryCode": "076", "lat": -23.9531, "lng": -46.3428, "years": "1956–1974" },
+      { "order": 2, "club": "New York Cosmos", "country": "USA", "countryCode": "840", "lat": 40.7291, "lng": -73.9965, "years": "1975–1977" }
+    ]
+  },
+  "ronaldo-nazario": {
+    "birthYear": 1976,
+    "careerStops": [
+      { "order": 1, "club": "Cruzeiro", "country": "Brazil", "countryCode": "076", "lat": -19.9057, "lng": -43.9506, "years": "1993–1994" },
+      { "order": 2, "club": "PSV Eindhoven", "country": "Netherlands", "countryCode": "528", "lat": 51.4416, "lng": 5.4672, "years": "1994–1996" },
+      { "order": 3, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "1996–1997" },
+      { "order": 4, "club": "Inter Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "1997–2002" },
+      { "order": 5, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "2002–2007" },
+      { "order": 6, "club": "AC Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "2007–2008" }
+    ]
+  },
+  "xavi-hernandez": {
+    "birthYear": 1980,
+    "careerStops": [
+      { "order": 1, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "1998–2015", "note": "Youth → First Team" },
+      { "order": 2, "club": "Al Sadd", "country": "Qatar", "countryCode": "634", "lat": 25.2597, "lng": 51.4451, "years": "2015–2019" }
+    ]
+  },
+  "samuel-etoo": {
+    "birthYear": 1981,
+    "careerStops": [
+      { "order": 1, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "1997–2000", "note": "Loan spells to Leganés, Espanyol" },
+      { "order": 2, "club": "Mallorca", "country": "Spain", "countryCode": "724", "lat": 39.5817, "lng": 2.6539, "years": "2000–2004" },
+      { "order": 3, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "2004–2009" },
+      { "order": 4, "club": "Inter Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "2009–2011" },
+      { "order": 5, "club": "Anzhi Makhachkala", "country": "Russia", "countryCode": "643", "lat": 42.9849, "lng": 47.5047, "years": "2011–2013" },
+      { "order": 6, "club": "Chelsea", "country": "England", "countryCode": "826", "lat": 51.4816, "lng": -0.1910, "years": "2013–2014" },
+      { "order": 7, "club": "Everton", "country": "England", "countryCode": "826", "lat": 53.4388, "lng": -2.9663, "years": "2014–2015" }
+    ]
+  },
+  "george-best": {
+    "birthYear": 1946,
+    "careerStops": [
+      { "order": 1, "club": "Manchester United", "country": "England", "countryCode": "826", "lat": 53.4631, "lng": -2.2913, "years": "1961–1974", "note": "Youth → First Team" },
+      { "order": 2, "club": "Fulham", "country": "England", "countryCode": "826", "lat": 51.4749, "lng": -0.2216, "years": "1976–1978" },
+      { "order": 3, "club": "Los Angeles Aztecs", "country": "USA", "countryCode": "840", "lat": 34.0141, "lng": -118.2879, "years": "1976–1978" },
+      { "order": 4, "club": "San Jose Earthquakes", "country": "USA", "countryCode": "840", "lat": 37.3494, "lng": -121.9251, "years": "1980–1981" }
+    ]
+  },
+  "eusebio": {
+    "birthYear": 1942,
+    "careerStops": [
+      { "order": 1, "club": "Sporting Lourenço Marques", "country": "Mozambique", "countryCode": "508", "lat": -25.9692, "lng": 32.5732, "years": "1957–1960", "note": "Youth" },
+      { "order": 2, "club": "Benfica", "country": "Portugal", "countryCode": "620", "lat": 38.7527, "lng": -9.1846, "years": "1960–1975" },
+      { "order": 3, "club": "New Jersey/Toronto Metros-Croatia", "country": "USA", "countryCode": "840", "lat": 40.7357, "lng": -74.1724, "years": "1975–1976" },
+      { "order": 4, "club": "Las Vegas Quicksilvers", "country": "USA", "countryCode": "840", "lat": 36.1699, "lng": -115.1398, "years": "1977–1977" }
+    ]
+  },
+  "zico": {
+    "birthYear": 1953,
+    "careerStops": [
+      { "order": 1, "club": "Flamengo", "country": "Brazil", "countryCode": "076", "lat": -22.9121, "lng": -43.2302, "years": "1971–1983", "note": "Youth → First Team" },
+      { "order": 2, "club": "Udinese", "country": "Italy", "countryCode": "380", "lat": 46.0748, "lng": 13.2062, "years": "1983–1985" },
+      { "order": 3, "club": "Flamengo", "country": "Brazil", "countryCode": "076", "lat": -22.9121, "lng": -43.2302, "years": "1985–1989" },
+      { "order": 4, "club": "Kashima Antlers", "country": "Japan", "countryCode": "392", "lat": 35.9917, "lng": 140.6431, "years": "1991–1994" }
+    ]
+  },
+  "son-heung-min": {
+    "birthYear": 1992,
+    "careerStops": [
+      { "order": 1, "club": "Hamburger SV", "country": "Germany", "countryCode": "276", "lat": 53.5872, "lng": 8.6522, "years": "2008–2013", "note": "Youth → First Team" },
+      { "order": 2, "club": "Bayer Leverkusen", "country": "Germany", "countryCode": "276", "lat": 51.0379, "lng": 7.0023, "years": "2013–2015" },
+      { "order": 3, "club": "Tottenham Hotspur", "country": "England", "countryCode": "826", "lat": 51.6043, "lng": -0.0668, "years": "2015–present" }
+    ]
+  },
+  "ngolo-kante": {
+    "birthYear": 1991,
+    "careerStops": [
+      { "order": 1, "club": "Boulogne", "country": "France", "countryCode": "250", "lat": 50.7264, "lng": 1.6147, "years": "2012–2013" },
+      { "order": 2, "club": "Caen", "country": "France", "countryCode": "250", "lat": 49.1829, "lng": -0.3707, "years": "2013–2015" },
+      { "order": 3, "club": "Leicester City", "country": "England", "countryCode": "826", "lat": 52.6204, "lng": -1.1422, "years": "2015–2016" },
+      { "order": 4, "club": "Chelsea", "country": "England", "countryCode": "826", "lat": 51.4816, "lng": -0.1910, "years": "2016–2023" },
+      { "order": 5, "club": "Al-Ittihad", "country": "Saudi Arabia", "countryCode": "682", "lat": 21.4620, "lng": 39.1868, "years": "2023–present" }
+    ]
+  },
+  "paolo-maldini": {
+    "birthYear": 1968,
+    "careerStops": [
+      { "order": 1, "club": "AC Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "1984–2009", "note": "Youth → First Team, one-club career" }
+    ]
+  },
+  "francesco-totti": {
+    "birthYear": 1976,
+    "careerStops": [
+      { "order": 1, "club": "AS Roma", "country": "Italy", "countryCode": "380", "lat": 41.9339, "lng": 12.4547, "years": "1992–2017", "note": "Youth → First Team, one-club career" }
+    ]
+  },
+  "iker-casillas": {
+    "birthYear": 1981,
+    "careerStops": [
+      { "order": 1, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "1999–2015", "note": "Youth → First Team" },
+      { "order": 2, "club": "FC Porto", "country": "Portugal", "countryCode": "620", "lat": 41.1617, "lng": -8.5836, "years": "2015–2020" }
+    ]
+  },
+  "gerd-muller": {
+    "birthYear": 1945,
+    "careerStops": [
+      { "order": 1, "club": "TSV 1861 Nördlingen", "country": "Germany", "countryCode": "276", "lat": 48.8514, "lng": 10.4890, "years": "1958–1964", "note": "Youth" },
+      { "order": 2, "club": "Bayern Munich", "country": "Germany", "countryCode": "276", "lat": 48.2188, "lng": 11.6247, "years": "1964–1979" },
+      { "order": 3, "club": "Fort Lauderdale Strikers", "country": "USA", "countryCode": "840", "lat": 26.1224, "lng": -80.1373, "years": "1979–1981" }
+    ]
+  },
+  "manuel-neuer": {
+    "birthYear": 1986,
+    "careerStops": [
+      { "order": 1, "club": "Schalke 04", "country": "Germany", "countryCode": "276", "lat": 51.5543, "lng": 7.0679, "years": "1991–2011", "note": "Youth → First Team" },
+      { "order": 2, "club": "Bayern Munich", "country": "Germany", "countryCode": "276", "lat": 48.2188, "lng": 11.6247, "years": "2011–present" }
+    ]
+  },
+  "lionel-messi": {
+    "birthYear": 1987,
+    "careerStops": [
+      { "order": 1, "club": "Newell's Old Boys", "country": "Argentina", "countryCode": "032", "lat": -32.8680, "lng": -60.6698, "years": "1994–2000", "note": "Youth" },
+      { "order": 2, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "2001–2021", "note": "Youth → First Team" },
+      { "order": 3, "club": "Paris Saint-Germain", "country": "France", "countryCode": "250", "lat": 48.8414, "lng": 2.2530, "years": "2021–2023" },
+      { "order": 4, "club": "Inter Miami", "country": "USA", "countryCode": "840", "lat": 26.1224, "lng": -80.1373, "years": "2023–present" }
+    ]
+  },
+  "kylian-mbappe": {
+    "birthYear": 1998,
+    "careerStops": [
+      { "order": 1, "club": "AS Monaco", "country": "Monaco", "countryCode": "492", "lat": 43.7276, "lng": 7.4152, "years": "2015–2017", "note": "Youth → First Team" },
+      { "order": 2, "club": "Paris Saint-Germain", "country": "France", "countryCode": "250", "lat": 48.8414, "lng": 2.2530, "years": "2017–2024" },
+      { "order": 3, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "2024–present" }
+    ]
+  },
+  "karim-benzema": {
+    "birthYear": 1987,
+    "careerStops": [
+      { "order": 1, "club": "Olympique Lyonnais", "country": "France", "countryCode": "250", "lat": 45.7654, "lng": 4.9822, "years": "1997–2009", "note": "Youth → First Team" },
+      { "order": 2, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "2009–2023" },
+      { "order": 3, "club": "Al-Ittihad", "country": "Saudi Arabia", "countryCode": "682", "lat": 21.4620, "lng": 39.1868, "years": "2023–present" }
+    ]
+  },
+  "philipp-lahm": {
+    "birthYear": 1983,
+    "careerStops": [
+      { "order": 1, "club": "Bayern Munich", "country": "Germany", "countryCode": "276", "lat": 48.2188, "lng": 11.6247, "years": "2000–2017", "note": "Youth → First Team" },
+      { "order": 2, "club": "VfB Stuttgart", "country": "Germany", "countryCode": "276", "lat": 48.7924, "lng": 9.2321, "years": "2003–2005", "note": "Loan" }
+    ]
+  },
+  "marco-van-basten": {
+    "birthYear": 1964,
+    "careerStops": [
+      { "order": 1, "club": "Ajax", "country": "Netherlands", "countryCode": "528", "lat": 52.3143, "lng": 4.9416, "years": "1981–1987", "note": "Youth → First Team" },
+      { "order": 2, "club": "AC Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "1987–1995" }
+    ]
+  },
+  "christian-pulisic": {
+    "birthYear": 1998,
+    "careerStops": [
+      { "order": 1, "club": "PA Classics", "country": "USA", "countryCode": "840", "lat": 40.0379, "lng": -76.3055, "years": "2008–2015", "note": "Youth" },
+      { "order": 2, "club": "Borussia Dortmund", "country": "Germany", "countryCode": "276", "lat": 51.4926, "lng": 7.4512, "years": "2015–2019", "note": "Youth → First Team" },
+      { "order": 3, "club": "Chelsea", "country": "England", "countryCode": "826", "lat": 51.4816, "lng": -0.1910, "years": "2019–2023" },
+      { "order": 4, "club": "AC Milan", "country": "Italy", "countryCode": "380", "lat": 45.4781, "lng": 9.1240, "years": "2023–present" }
+    ]
+  },
+  "zinedine-zidane": {
+    "birthYear": 1972,
+    "careerStops": [
+      { "order": 1, "club": "Cannes", "country": "France", "countryCode": "250", "lat": 43.5528, "lng": 7.0174, "years": "1988–1992", "note": "Youth → First Team" },
+      { "order": 2, "club": "Bordeaux", "country": "France", "countryCode": "250", "lat": 44.8412, "lng": -0.5800, "years": "1992–1996" },
+      { "order": 3, "club": "Juventus", "country": "Italy", "countryCode": "380", "lat": 45.1096, "lng": 7.6412, "years": "1996–2001" },
+      { "order": 4, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "2001–2006" }
+    ]
+  },
+  "andres-iniesta": {
+    "birthYear": 1984,
+    "careerStops": [
+      { "order": 1, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "2000–2018", "note": "Youth → First Team" },
+      { "order": 2, "club": "Vissel Kobe", "country": "Japan", "countryCode": "392", "lat": 34.6689, "lng": 135.1859, "years": "2018–2023" },
+      { "order": 3, "club": "Emirates Club", "country": "United Arab Emirates", "countryCode": "784", "lat": 25.7738, "lng": 55.9382, "years": "2023–2024" }
+    ]
+  },
+  "steven-gerrard": {
+    "birthYear": 1980,
+    "careerStops": [
+      { "order": 1, "club": "Liverpool", "country": "England", "countryCode": "826", "lat": 53.4308, "lng": -2.9608, "years": "1998–2015", "note": "Youth → First Team" },
+      { "order": 2, "club": "LA Galaxy", "country": "USA", "countryCode": "840", "lat": 33.8644, "lng": -118.2611, "years": "2015–2016" }
+    ]
+  },
+  "gianluigi-buffon": {
+    "birthYear": 1978,
+    "careerStops": [
+      { "order": 1, "club": "Parma", "country": "Italy", "countryCode": "380", "lat": 44.8015, "lng": 10.3279, "years": "1995–2001" },
+      { "order": 2, "club": "Juventus", "country": "Italy", "countryCode": "380", "lat": 45.1096, "lng": 7.6412, "years": "2001–2018" },
+      { "order": 3, "club": "Paris Saint-Germain", "country": "France", "countryCode": "250", "lat": 48.8414, "lng": 2.2530, "years": "2018–2019" },
+      { "order": 4, "club": "Juventus", "country": "Italy", "countryCode": "380", "lat": 45.1096, "lng": 7.6412, "years": "2019–2021" }
+    ]
+  },
+  "michel-platini": {
+    "birthYear": 1955,
+    "careerStops": [
+      { "order": 1, "club": "Nancy", "country": "France", "countryCode": "250", "lat": 48.6864, "lng": 6.2107, "years": "1972–1979", "note": "Youth → First Team" },
+      { "order": 2, "club": "Saint-Étienne", "country": "France", "countryCode": "250", "lat": 45.4608, "lng": 4.3901, "years": "1979–1982" },
+      { "order": 3, "club": "Juventus", "country": "Italy", "countryCode": "380", "lat": 45.1096, "lng": 7.6412, "years": "1982–1987" }
+    ]
+  },
+  "bobby-charlton": {
+    "birthYear": 1937,
+    "careerStops": [
+      { "order": 1, "club": "Manchester United", "country": "England", "countryCode": "826", "lat": 53.4631, "lng": -2.2913, "years": "1954–1973", "note": "Youth → First Team" },
+      { "order": 2, "club": "Preston North End", "country": "England", "countryCode": "826", "lat": 53.7593, "lng": -2.6993, "years": "1974–1975" }
+    ]
+  },
+  "sergio-aguero": {
+    "birthYear": 1988,
+    "careerStops": [
+      { "order": 1, "club": "Independiente", "country": "Argentina", "countryCode": "032", "lat": -34.6683, "lng": -58.3889, "years": "2003–2006", "note": "Youth → First Team" },
+      { "order": 2, "club": "Atlético Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4362, "lng": -3.5995, "years": "2006–2011" },
+      { "order": 3, "club": "Manchester City", "country": "England", "countryCode": "826", "lat": 53.4831, "lng": -2.2004, "years": "2011–2021" },
+      { "order": 4, "club": "Barcelona", "country": "Spain", "countryCode": "724", "lat": 41.3809, "lng": 2.1228, "years": "2021–2021" }
+    ]
+  },
+  "casemiro": {
+    "birthYear": 1992,
+    "careerStops": [
+      { "order": 1, "club": "São Paulo", "country": "Brazil", "countryCode": "076", "lat": -23.5980, "lng": -46.7580, "years": "2010–2013", "note": "Youth → First Team" },
+      { "order": 2, "club": "Real Madrid", "country": "Spain", "countryCode": "724", "lat": 40.4531, "lng": -3.6883, "years": "2013–2022" },
+      { "order": 3, "club": "Manchester United", "country": "England", "countryCode": "826", "lat": 53.4631, "lng": -2.2913, "years": "2022–present" }
+    ]
+  }
+}

@@ -12,7 +12,7 @@ interface PuzzleTransitionProps {
 export default function PuzzleTransition({
   fromNumber,
   toNumber,
-  totalPuzzles = 5,
+  totalPuzzles = 3,
   onDone,
 }: PuzzleTransitionProps) {
   const [current, setCurrent] = useState(fromNumber);

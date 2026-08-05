@@ -19,6 +19,8 @@ interface SessionOverScreenProps {
   puzzleResults: PuzzleResult[];
 }
 
+const SHOW_AUTH_UI = false;
+
 const WC_GREEN = "#3CAC3B";
 const WC_RED = "#E61D25";
 const WC_GRAY = "#D1D4D1";
@@ -113,9 +115,9 @@ export default function SessionOverScreen({
 
         <div className="flex flex-col items-center gap-1">
           <span className="text-lg tracking-widest text-black">
-            {puzzlesCompleted} / {totalPuzzles} SOLVED · {totalPoints} PTS
+            TODAY: {puzzlesCompleted} / {totalPuzzles} SOLVED · {totalPoints} PTS
           </span>
-          {!user && (
+          {SHOW_AUTH_UI && !user && (
             <span className="text-sm text-black">
               <a className="underline cursor-pointer" onClick={signInWithGoogle}>Log in</a>
               {" to save progress"}
