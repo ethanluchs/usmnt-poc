@@ -89,7 +89,7 @@ export default function WorldMap({
     <div
       ref={containerRef}
       style={{ width: "100%", height: "100%" }}
-      onWheel={handleWheel as unknown as React.WheelEventHandler<HTMLDivElement>}
+      onWheel={handleWheel}
     >
       <ComposableMap
         projection="geoMercator"
